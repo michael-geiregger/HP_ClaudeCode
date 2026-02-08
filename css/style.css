@@ -1219,14 +1219,11 @@ a {
 
 .footer-social {
     display: flex;
-    gap: 14px;
+    gap: 24px;
+    align-items: center;
 }
 
 .footer-social a {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1234,13 +1231,13 @@ a {
 }
 
 .footer-social a:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+    opacity: 0.7;
 }
 
 .footer-social svg {
-    width: 24px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
     fill: white;
 }
 
@@ -1801,7 +1798,7 @@ a {
 
     .hero-portrait img {
         opacity: 0.2;
-        object-position: 70% 15%;
+        object-position: 25% 15%;
     }
 
     .hero-content {

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Geiregger | Coach & Mentor für Unternehmer</title>
+    <meta name="description" content="Erlebe emotionale Freiheit, innere Klarheit und echte Lebensfreude. Coach & Mentor für Unternehmer, die Freiheit und Klarheit suchen.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-text">
+            <span class="highlight">Freiheit</span> beginnt hier.
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                Michael Geiregger
+                <span>Coach & Mentor</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="ueber-mich.html">Über mich</a></li>
+                <li><a href="leistungen.html">Leistungen</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="podcast.html">Podcast</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="kontakt.html" class="nav-cta">Klarheitsgespräch</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="start">
+        <div class="hero-bg">
+            <div class="hero-bg-gradient"></div>
+            <div class="hero-orb"></div>
+            <div class="hero-orb"></div>
+            <div class="hero-orb"></div>
+        </div>
+        <!-- Hero Portrait (ausfadend im Hintergrund) -->
+        <div class="hero-portrait">
+            <img src="images/podcast.jpg" alt="" aria-hidden="true">
+        </div>
+        <canvas class="hero-particles" id="heroParticles"></canvas>
+        <div class="container hero-content">
+            <div class="hero-badge reveal">
+                <span class="hero-badge-dot"></span>
+                Coach & Mentor für Unternehmer
+            </div>
+            <h1 class="reveal">
+                Vom ständigen Druck<br>
+                hin zu <span class="highlight">wahrer Freiheit</span>
+            </h1>
+            <p class="reveal">
+                Erlebe emotionale Freiheit, innere Klarheit und echte Lebensfreude.
+                Dein Weg zu einem Leben ohne innere Grenzen beginnt hier.
+            </p>
+            <div class="hero-buttons reveal">
+                <a href="kontakt.html" class="btn btn-primary">
+                    Klarheitsgespräch buchen
+                    <span class="btn-arrow">&rarr;</span>
+                </a>
+                <a href="ueber-mich.html" class="btn btn-outline">
+                    Mehr über mich
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SECTION -->
+    <section class="problem-section" id="problem">
+        <div class="divider-wave" style="position: absolute; top: -1px; left: 0; right: 0;">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,20 C360,80 720,0 1080,50 C1260,70 1380,30 1440,20 L1440,0 L0,0 Z" fill="#f5f0e6"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="section-label reveal">Das Gefühl kennen viele</div>
+            <h2 class="section-title reveal">
+                Kennst du das Gefühl, ständig<br>zu funktionieren?
+            </h2>
+            <p class="section-text reveal">
+                Du hast viel erreicht. Dein Business läuft. Doch innerlich fühlst du dich oft getrieben.
+                Der Kopf kommt selten zur Ruhe. Vielleicht spürst du eine subtile Unruhe, eine Last
+                auf den Schultern oder die Sehnsucht, einfach mal wieder <em>wirklich</em> durchzuatmen.
+            </p>
+            <div class="problem-grid stagger-children">
+                <div class="problem-card reveal" style="--i: 0">
+                    <div class="problem-icon gold">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8963E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Mentaler Druck</h3>
+                    <p>Das Gefühl, alles zusammenhalten zu müssen, raubt dir die Energie für das Wesentliche. Du funktionierst, aber du lebst nicht wirklich.</p>
+                </div>
+                <div class="problem-card reveal" style="--i: 1">
+                    <div class="problem-icon sage">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3d5165" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 12h.01M12 12h.01M16 12h.01"/>
+                        </svg>
+                    </div>
+                    <h3>Fehlende Klarheit</h3>
+                    <p>Im Lärm des Alltags verlierst du den Kontakt zu deiner inneren Stimme und triffst Entscheidungen aus Angst statt aus Klarheit.</p>
+                </div>
+                <div class="problem-card reveal" style="--i: 2">
+                    <div class="problem-icon earth">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7d6e5d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3>Emotionale Last</h3>
+                    <p>Erfolg im Außen, aber innerlich fehlt die Leichtigkeit und die tiefe Freude am Leben selbst. Du sehnst dich nach mehr.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section class="solution-section" id="solution">
+        <div class="divider-wave" style="position: absolute; top: -1px; left: 0; right: 0;">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,20 C360,80 720,0 1080,50 C1260,70 1380,30 1440,20 L1440,0 L0,0 Z" fill="var(--color-warm-white)"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="solution-layout">
+                <div class="solution-visual reveal-left">
+                    <div class="solution-glow"></div>
+                    <div class="solution-image-wrap">
+                        <img src="https://michael-geiregger.github.io/Homepage/images/studio-room.jpg" alt="Raum für Ruhe und Klarheit">
+                    </div>
+                </div>
+                <div class="reveal-right">
+                    <div class="section-label">Der Weg</div>
+                    <h2 class="section-title" style="color: white;">Es darf auch leicht gehen.</h2>
+                    <p class="section-text" style="color: rgba(255,255,255,0.7);">
+                        Die gute Nachricht: Du musst nicht härter arbeiten. Du musst nicht mehr leisten.
+                        Du musst nicht perfekter werden.
+                    </p>
+                    <p class="solution-emphasis">Du musst anders denken.</p>
+                    <ul class="solution-list">
+                        <li>Emotionale Freiheit entsteht nicht durch mehr Disziplin oder Kontrolle</li>
+                        <li>Sie entsteht, wenn du die unsichtbaren mentalen Muster erkennst, die dich gefangen halten</li>
+                        <li>Dann wird Erfolg leicht. Beziehungen liebevoll. Und das Leben wieder voller Freude.</li>
+                    </ul>
+                    <a href="leistungen.html" class="btn btn-primary">
+                        Meine Arbeit entdecken
+                        <span class="btn-arrow">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="divider-wave" style="position: absolute; bottom: -1px; left: 0; right: 0;">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,40 C360,0 720,80 1080,30 C1260,10 1380,50 1440,40 L1440,80 L0,80 Z" fill="var(--color-warm-white)"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- VISION SECTION -->
+    <section class="vision-section" id="vision">
+        <div class="container">
+            <div class="vision-content">
+                <div class="section-label reveal">Deine Zukunft</div>
+                <h2 class="section-title reveal">Stell dir vor...</h2>
+                <p class="section-text reveal" style="margin: 0 auto;">
+                    Was wäre, wenn morgen alles anders sein könnte? Nicht weil sich die Umstände ändern,
+                    sondern weil sich etwas in dir verändert hat.
+                </p>
+            </div>
+            <div class="vision-blocks">
+                <div class="vision-block reveal" style="--i: 0">
+                    <div class="vision-number">01</div>
+                    <p>
+                        <strong>Du wachst auf und fühlst dich ruhig</strong> &mdash; nicht weil weniger zu tun ist,
+                        sondern weil du innerlich frei bist. Die Gedanken, die dich früher getrieben haben,
+                        verlieren ihre Macht. Du triffst Entscheidungen aus Klarheit statt aus Angst.
+                    </p>
+                </div>
+                <div class="vision-block reveal" style="--i: 1">
+                    <div class="vision-number">02</div>
+                    <p>
+                        <strong>Du führst dein Business mit Leichtigkeit.</strong> Nicht weil du weniger leistest,
+                        sondern weil du nicht mehr gegen dich selbst kämpfst. Der Druck weicht einer
+                        tiefen inneren Stabilität.
+                    </p>
+                </div>
+                <div class="vision-block reveal" style="--i: 2">
+                    <div class="vision-number">03</div>
+                    <p>
+                        <strong>Deine Beziehungen werden liebevoller.</strong> Du bist präsent, offen, verbunden &mdash;
+                        mit dir selbst und mit anderen. Und das Beste? Du spürst wieder echte
+                        Lebensfreude. Nicht irgendwann. Jetzt.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METHODOLOGY SECTION -->
+    <section class="method-section" id="method">
+        <div class="container">
+            <div class="method-layout">
+                <div class="reveal-right">
+                    <div class="section-label">Mein Ansatz</div>
+                    <h2 class="section-title">Vom Opfer zum Erschaffer &mdash; Dein Weg in die Freiheit</h2>
+                    <p class="section-text">
+                        Ich arbeite nicht an Symptomen. Ich gehe mit dir an die Wurzel &mdash; an die unbewussten
+                        Überzeugungen, die dein Denken, Fühlen und Handeln bestimmen.
+                    </p>
+                    <div class="method-approaches">
+                        <span class="method-tag">NLP</span>
+                        <span class="method-tag">Hypnose</span>
+                        <span class="method-tag">Psychedelic Breath</span>
+                        <span class="method-tag">Gene Keys</span>
+                        <span class="method-tag">Mentale Arbeit</span>
+                    </div>
+                    <p class="section-text">
+                        Mit einer Kombination aus mentaler Arbeit, kraftvoller Atemarbeit und tiefer
+                        Selbsterkenntnis begleite ich dich dabei, alte Muster zu durchbrechen und
+                        dein Leben neu zu gestalten.
+                    </p>
+                    <div class="method-result">
+                        <p>Das Ergebnis? Emotionale Freiheit. Innere Klarheit. Echte Lebensfreude.</p>
+                    </div>
+                    <a href="kontakt.html" class="btn btn-dark" style="margin-top: 32px;">
+                        Lass uns sprechen
+                        <span class="btn-arrow">&rarr;</span>
+                    </a>
+                </div>
+                <div class="method-visual reveal-left">
+                    <div class="method-image-wrap">
+                        <img src="https://michael-geiregger.github.io/Homepage/images/michael-geiregger-thoughtful.jpg" alt="Michael Geiregger">
+                    </div>
+                    <div class="method-float-card">
+                        <p>Alte Muster durchbrechen, neues Leben gestalten.</p>
+                        <span class="tag">Transformation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="testimonials-header">
+                <div class="section-label reveal">Erfahrungen</div>
+                <h2 class="section-title reveal">Was Klienten sagen</h2>
+                <p class="section-text reveal" style="margin: 0 auto;">
+                    Echte Veränderungen von Menschen, die den Weg gegangen sind.
+                </p>
+            </div>
+            <div class="testimonials-grid stagger-children">
+                <div class="testimonial-card reveal" style="--i: 0">
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>
+                        Michael, unsere Gespräche waren teilweise so fesselnd, dass ich Raum und Zeit vergaß.
+                        Du hast mir Methoden mitgegeben und Wege aufgezeigt, die mir geholfen haben,
+                        unangenehme Situationen in den Griff zu bekommen, wodurch ich meine Lebensqualität
+                        rasch steigern konnte.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div>
+                            <div class="testimonial-name">Stefan</div>
+                            <div class="testimonial-role">Abteilungsleiter</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal" style="--i: 1">
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>
+                        Was sich bei mir alles getan hat, seitdem ich bei dir war: Wahnsinn!
+                        Ich möchte dir auf diesem Weg nochmals Danke sagen, weil du definitiv
+                        dazu beigetragen hast, dass ich wieder mehr Lebensfreude spüre.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: var(--gradient-warm);">J</div>
+                        <div>
+                            <div class="testimonial-name">Johanna</div>
+                            <div class="testimonial-role">Selbstständige</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal" style="--i: 2">
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>
+                        Ich wäre ohne deine Hilfe nicht an diesem Punkt, wo ich jetzt gerade bin, Michael.
+                        Es ist so viel Positives passiert, dass ich es oft selbst nicht glauben kann.
+                        Und wie du sagst: Es ist noch nicht fertig so wie es ist. Ich darf weiter träumen!
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #3d5165, #7d6e5d);">M</div>
+                        <div>
+                            <div class="testimonial-name">Marina</div>
+                            <div class="testimonial-role">Unternehmerin</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER SECTION -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content reveal-scale">
+                <div class="section-label" style="justify-content: center; color: var(--color-golden);">Newsletter</div>
+                <h2 class="section-title" style="color: white;">Inspiration für dein Postfach</h2>
+                <p class="section-text" style="color: rgba(255,255,255,0.6); margin: 0 auto 36px;">
+                    Erhalte regelmäßig Impulse zu Bewusstsein, Business und innerer Freiheit.
+                    Kein Spam, nur echte Inhalte.
+                </p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <input type="email" class="newsletter-input" placeholder="Deine E-Mail-Adresse" required>
+                    <button type="submit" class="newsletter-btn">Ja, will ich!</button>
+                </form>
+                <p class="newsletter-note">Kein Spam. Jederzeit abbestellbar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" id="cta">
+        <div class="cta-visual"></div>
+        <div class="container">
+            <div class="cta-content">
+                <div class="section-label reveal">Dein erster Schritt</div>
+                <h2 class="section-title reveal">Bereit für den nächsten Schritt?</h2>
+                <p class="section-text reveal">
+                    Lass uns in einem unverbindlichen Klarheitsgespräch herausfinden,
+                    wo du stehst und was möglich ist. Keine Verpflichtung. Nur Klarheit.
+                </p>
+                <a href="kontakt.html" class="btn btn-primary reveal" style="margin-top: 8px;">
+                    Gespräch vereinbaren
+                    <span class="btn-arrow">&rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">Michael Geiregger</div>
+                    <p class="footer-brand-tagline">
+                        Coach & Mentor für Unternehmer, die Freiheit und Klarheit suchen.
+                        Weil du mehr verdienst als nur zu funktionieren.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="https://www.facebook.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="https://www.youtube.com/@ZwischenAlltagundUniversum" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.4c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Menü</h4>
+                    <ul>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="ueber-mich.html">Über mich</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Angebote</h4>
+                    <ul>
+                        <li><a href="kontakt.html">Klarheitsgespräch</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Michael Geiregger. Alle Rechte vorbehalten.</span>
+                <span>Mit Leidenschaft gebaut.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

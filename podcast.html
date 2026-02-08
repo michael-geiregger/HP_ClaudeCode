@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast | Zwischen Alltag und Universum</title>
+    <meta name="description" content="Zwischen Alltag und Universum – Der Podcast von Jessi und Michi. Gespräche über Heilung, Spiritualität, Energiearbeit und persönliche Transformation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-text"><span class="highlight">Impulse</span> für dich.</div>
+    </div>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">Michael Geiregger<span>Coach & Mentor</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="ueber-mich.html">Über mich</a></li>
+                <li><a href="leistungen.html">Leistungen</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="podcast.html" style="color: var(--color-primary);">Podcast</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="kontakt.html" class="nav-cta">Klarheitsgespräch</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="subpage-hero">
+        <div class="hero-bg-gradient"></div>
+        <div class="container">
+            <div class="subpage-hero-content">
+                <div class="section-label reveal">Podcast</div>
+                <h1 class="reveal">Zwischen Alltag<br>und Universum</h1>
+                <p class="reveal">Der Podcast von Jessi &amp; Michi &mdash; ehrliche Gespräche über Heilung, Spiritualität, Energiearbeit und den Mut, das eigene Leben neu zu gestalten.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AKTUELLE FOLGE - Alle Player auf einen Blick -->
+    <section class="content-section" style="padding-bottom: 0;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <div class="section-label reveal" style="justify-content: center;">Aktuelle Folge</div>
+                <h2 class="section-title reveal">Jetzt reinhören</h2>
+                <p class="section-text reveal" style="margin: 0 auto 40px;">
+                    Hier findest du immer die neueste Episode &mdash; direkt zum Abspielen auf deiner Lieblingsplattform.
+                    Die Player aktualisieren sich automatisch, wenn eine neue Folge erscheint.
+                </p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+                <!-- Spotify Player -->
+                <div class="reveal">
+                    <h3 style="font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--color-night); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381C8.64 5.801 15.6 6.06 20.04 8.82c.54.3.72 1.02.42 1.56-.3.42-1.02.6-1.56.3h.12z"/></svg>
+                        Spotify
+                    </h3>
+                    <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
+                        <iframe
+                            style="border-radius: 16px; border: none;"
+                            src="https://open.spotify.com/embed/show/5LsLHBzi25Sw2VMgOwK1fG?utm_source=generator&theme=0"
+                            width="100%"
+                            height="352"
+                            allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Apple Podcasts Player -->
+                <div class="reveal">
+                    <h3 style="font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--color-night); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="#9933CC"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        Apple Podcasts
+                    </h3>
+                    <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
+                        <iframe
+                            allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+                            frameborder="0"
+                            height="450"
+                            style="width: 100%; overflow: hidden; border-radius: 16px; border: none; background: transparent;"
+                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                            src="https://embed.podcasts.apple.com/jm/podcast/zwischen-alltag-und-universum-der-podcast-von-jessi/id1813643836?theme=light"
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- YouTube Kanal -->
+                <div class="reveal">
+                    <h3 style="font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--color-night); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF0000"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.4c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"/></svg>
+                        YouTube
+                    </h3>
+                    <a href="https://www.youtube.com/@ZwischenAlltagundUniversum" target="_blank" rel="noopener" style="display: block; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); background: var(--color-night); padding: 36px; text-align: center; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 40px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 24px rgba(0,0,0,0.08)';">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                            <div style="width: 64px; height: 64px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.4c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="var(--color-night)"/></svg>
+                            </div>
+                            <div style="text-align: left;">
+                                <div style="font-family: var(--font-display); font-size: 1.2rem; color: white; font-weight: 600;">Zwischen Alltag und Universum</div>
+                                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.5); margin-top: 4px;">Alle Folgen auch als Video &rarr;</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PODCAST INTRO -->
+    <section class="content-section" style="padding-top: 40px; padding-bottom: 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <div class="section-label reveal" style="justify-content: center;">Über den Podcast</div>
+                <h2 class="section-title reveal">Dein Begleiter auf dem Weg zu dir selbst</h2>
+                <p class="section-text reveal" style="margin: 0 auto;">
+                    Eine Reise zwischen den Welten: vom alltäglichen Chaos zu den unendlichen Möglichkeiten
+                    des Universums. Jede Episode ist ein Impuls, der dich inspiriert, alte Muster zu
+                    hinterfragen und neue Perspektiven einzunehmen.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EPISODES -->
+    <section class="content-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <div class="section-label reveal" style="justify-content: center;">Aktuelle Episoden</div>
+                <h2 class="section-title reveal">Die neuesten Folgen</h2>
+            </div>
+            <div class="podcast-grid stagger-children">
+
+                <!-- Episode 34 -->
+                <div class="podcast-card reveal" style="--i: 0">
+                    <div class="podcast-card-image">
+                        <img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/41636447/41636447-1746990280104-4eb62b847da29.jpg" alt="Podcast Cover" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="podcast-card-body">
+                        <h3>Warum sich alles stressiger anfühlt &mdash; und was wir gerade wirklich brauchen</h3>
+                        <p>Ist das Leben wirklich schneller geworden oder überlasten wir uns selbst? Über bewusstes Atmen und kosmische Verschiebungen.</p>
+                        <div class="podcast-card-meta">Episode 34 &middot; 15 Min. &middot; 5. Feb 2026</div>
+                    </div>
+                </div>
+
+                <!-- Episode 33 -->
+                <div class="podcast-card reveal" style="--i: 1">
+                    <div class="podcast-card-image">
+                        <img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/41636447/41636447-1746990280104-4eb62b847da29.jpg" alt="Podcast Cover" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="podcast-card-body">
+                        <h3>Vergiss deine Ziele für 2026 &mdash; wähl stattdessen ein Wort</h3>
+                        <p>Jahresrückblick: Warum ein einziges Wort mehr bewirken kann als eine ganze Liste von Vorsätzen.</p>
+                        <div class="podcast-card-meta">Episode 33 &middot; 23 Min. &middot; 31. Dez 2025</div>
+                    </div>
+                </div>
+
+                <!-- Episode 32 -->
+                <div class="podcast-card reveal" style="--i: 2">
+                    <div class="podcast-card-image">
+                        <img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/41636447/41636447-1746990280104-4eb62b847da29.jpg" alt="Podcast Cover" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="podcast-card-body">
+                        <h3>Affirmations-Reime: Wie Kinder automatisch Selbstwert lernen</h3>
+                        <p>Interview mit dem &bdquo;Affirmationsvater&ldquo; Dima über die Kraft von Rhythmus und positiver Sprache für Kinder.</p>
+                        <div class="podcast-card-meta">Episode 32 &middot; 40 Min. &middot; 16. Dez 2025</div>
+                    </div>
+                </div>
+
+                <!-- Episode 31 -->
+                <div class="podcast-card reveal" style="--i: 3">
+                    <div class="podcast-card-image">
+                        <img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/41636447/41636447-1746990280104-4eb62b847da29.jpg" alt="Podcast Cover" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="podcast-card-body">
+                        <h3>Mut verändert alles</h3>
+                        <p>Persönliche Geschichten über echten Mut &mdash; vom Eisbaden bis zu kleinen täglichen Entscheidungen.</p>
+                        <div class="podcast-card-meta">Episode 31 &middot; 13 Min. &middot; 9. Dez 2025</div>
+                    </div>
+                </div>
+
+                <!-- Episode 30 -->
+                <div class="podcast-card reveal" style="--i: 4">
+                    <div class="podcast-card-image">
+                        <img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/41636447/41636447-1746990280104-4eb62b847da29.jpg" alt="Podcast Cover" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="podcast-card-body">
+                        <h3>Zwischen Bühne und Seele &mdash; Authentizität und die Kraft des Echten</h3>
+                        <p>Interview mit TV-Moderatorin Barbara Fleißner über Charisma, Authentizität und das Vertrauen ins Unbekannte.</p>
+                        <div class="podcast-card-meta">Episode 30 &middot; 41 Min. &middot; 2. Dez 2025</div>
+                    </div>
+                </div>
+
+                <!-- Episode 29 -->
+                <div class="podcast-card reveal" style="--i: 5">
+                    <div class="podcast-card-image">
+                        <img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/41636447/41636447-1746990280104-4eb62b847da29.jpg" alt="Podcast Cover" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="podcast-card-body">
+                        <h3>Bleib ein Schüler: Das Leben hört nie auf zu lehren</h3>
+                        <p>Warum Offenheit für Neues wichtiger ist als Ego-getriebene Gewissheit &mdash; und wie Weisheit durch Demut entsteht.</p>
+                        <div class="podcast-card-meta">Episode 29 &middot; 14 Min. &middot; 25. Nov 2025</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Alle Episoden Link -->
+            <div style="text-align: center; margin-top: 48px;" class="reveal">
+                <p style="font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: 16px;">
+                    Insgesamt 34 Episoden verfügbar
+                </p>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://open.spotify.com/show/zwischen-alltag-und-universum" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 12px 28px;">
+                        Alle Episoden auf Spotify
+                        <span class="btn-arrow">&rarr;</span>
+                    </a>
+                    <a href="https://www.youtube.com/@ZwischenAlltagundUniversum" target="_blank" rel="noopener" class="btn btn-outline-dark" style="padding: 12px 28px;">
+                        Auf YouTube ansehen
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUBSCRIBE CTA -->
+    <section class="content-section alt-bg">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <div class="section-label reveal" style="justify-content: center;">Jetzt abonnieren</div>
+                <h2 class="section-title reveal">Verpasse keine Episode</h2>
+                <p class="section-text reveal" style="margin: 0 auto 32px;">
+                    Abonniere den Podcast auf deiner Lieblingsplattform und erhalte jede neue Folge
+                    direkt in dein Ohr.
+                </p>
+                <div class="reveal" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://podcasts.apple.com/jm/podcast/zwischen-alltag-und-universum-der-podcast-von-jessi/id1813643836" target="_blank" rel="noopener" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px;"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        Apple Podcasts
+                    </a>
+                    <a href="https://open.spotify.com/show/zwischen-alltag-und-universum" target="_blank" rel="noopener" class="btn btn-outline-dark">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px;"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381C8.64 5.801 15.6 6.06 20.04 8.82c.54.3.72 1.02.42 1.56-.3.42-1.02.6-1.56.3h.12z"/></svg>
+                        Spotify
+                    </a>
+                    <a href="https://www.youtube.com/@ZwischenAlltagundUniversum" target="_blank" rel="noopener" class="btn btn-outline-dark">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px;"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.4c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"/></svg>
+                        YouTube
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content reveal-scale">
+                <div class="section-label" style="justify-content: center; color: var(--color-golden);">Newsletter</div>
+                <h2 class="section-title" style="color: white;">Inspiration für dein Postfach</h2>
+                <p class="section-text" style="color: rgba(255,255,255,0.6); margin: 0 auto 36px;">
+                    Erhalte regelmäßig Impulse zu Bewusstsein, Business und innerer Freiheit. Kein Spam, nur echte Inhalte.
+                </p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <input type="email" class="newsletter-input" placeholder="Deine E-Mail-Adresse" required>
+                    <button type="submit" class="newsletter-btn">Ja, will ich!</button>
+                </form>
+                <p class="newsletter-note">Kein Spam. Jederzeit abbestellbar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">Michael Geiregger</div>
+                    <p class="footer-brand-tagline">Coach & Mentor für Unternehmer, die Freiheit und Klarheit suchen. Weil du mehr verdienst als nur zu funktionieren.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="https://www.facebook.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="https://www.youtube.com/@ZwischenAlltagundUniversum" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.4c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-column"><h4>Menü</h4><ul><li><a href="index.html">Startseite</a></li><li><a href="ueber-mich.html">Über mich</a></li><li><a href="leistungen.html">Leistungen</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+                <div class="footer-column"><h4>Angebote</h4><ul><li><a href="kontakt.html">Klarheitsgespräch</a></li><li><a href="events.html">Events</a></li><li><a href="podcast.html">Podcast</a></li></ul></div>
+                <div class="footer-column"><h4>Rechtliches</h4><ul><li><a href="#">Impressum</a></li><li><a href="#">Datenschutz</a></li><li><a href="#">AGB</a></li></ul></div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Michael Geiregger. Alle Rechte vorbehalten.</span>
+                <span>Mit Leidenschaft gebaut.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

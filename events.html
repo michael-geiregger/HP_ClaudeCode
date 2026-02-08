@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | Michael Geiregger - Coach & Mentor</title>
+    <meta name="description" content="Erlebe Transformation live. Breathwork Sessions, Workshops und Retreats mit Michael Geiregger. Finde dein naechstes Event.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-text">
+            <span class="highlight">Transformation</span> erleben.
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                Michael Geiregger
+                <span>Coach & Mentor</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="ueber-mich.html">Über mich</a></li>
+                <li><a href="leistungen.html">Leistungen</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="podcast.html">Podcast</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="kontakt.html" class="nav-cta">Klarheitsgespräch</a></li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============ SUBPAGE HERO ============ -->
+    <section class="subpage-hero">
+        <div class="hero-bg-gradient"></div>
+        <div class="container">
+            <div class="subpage-hero-content">
+                <div class="section-label reveal">Events</div>
+                <h1 class="reveal">Erlebe Transformation live</h1>
+                <p class="reveal">
+                    In meinen Events verbinden sich tiefe innere Arbeit mit kraftvollen Erlebnissen.
+                    Ob Breathwork, Workshop oder Retreat &mdash; jede Veranstaltung ist eine Einladung,
+                    dich selbst neu zu erfahren.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="divider-wave" style="position: relative; background: var(--color-warm-white);">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="var(--color-warm-white)"/>
+        </svg>
+    </div>
+
+    <!-- ============ UPCOMING EVENTS ============ -->
+    <section class="content-section" id="kommende-events">
+        <div class="container">
+            <div class="section-label reveal">Kommende Termine</div>
+            <h2 class="section-title reveal">Nächste Veranstaltungen</h2>
+            <p class="section-text reveal">
+                Sichere dir deinen Platz bei einem meiner nächsten Events. Jede Veranstaltung
+                ist bewusst klein gehalten, damit echte Tiefe möglich wird.
+            </p>
+
+            <div class="events-grid stagger-children">
+                <!-- Event 1: Breathwork -->
+                <div class="event-card reveal" style="--i: 0">
+                    <div class="event-date">
+                        <div class="day">14</div>
+                        <div class="month">März 2026</div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Psychedelic Breath Session</h3>
+                        <p>
+                            Eine kraftvolle Atemsession, die dich in tiefe Bewusstseinsebenen führt.
+                            Löse emotionale Blockaden, erfahre innere Klarheit und spüre eine Leichtigkeit,
+                            die weit über den Abend hinaus wirkt.
+                        </p>
+                        <div class="event-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Graz, Steiermark
+                        </div>
+                    </div>
+                    <a href="kontakt.html" class="btn btn-primary">
+                        Platz sichern
+                        <span class="btn-arrow">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Event 2: Workshop -->
+                <div class="event-card reveal" style="--i: 1">
+                    <div class="event-date">
+                        <div class="day">25</div>
+                        <div class="month">Apr 2026</div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Workshop: Vom Druck zur Freiheit</h3>
+                        <p>
+                            Ein ganztägiger Workshop für Unternehmer, die den ständigen inneren Druck
+                            hinter sich lassen wollen. Lerne die Mechanismen hinter deinen Mustern kennen
+                            und entwickle konkrete Wege in die emotionale Freiheit.
+                        </p>
+                        <div class="event-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Wien, Österreich
+                        </div>
+                    </div>
+                    <a href="kontakt.html" class="btn btn-primary">
+                        Platz sichern
+                        <span class="btn-arrow">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Event 3: Retreat -->
+                <div class="event-card reveal" style="--i: 2">
+                    <div class="event-date">
+                        <div class="day">16</div>
+                        <div class="month">Mai 2026</div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Retreat: Innere Klarheit</h3>
+                        <p>
+                            Drei Tage Rückzug vom Alltag in einer wunderschönen Umgebung. Durch Atemarbeit,
+                            tiefes Coaching und stille Reflexion findest du zurück zu deiner inneren Mitte
+                            und gewinnst Klarheit über deinen weiteren Weg.
+                        </p>
+                        <div class="event-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Südsteiermark, Österreich &mdash; 3 Tage
+                        </div>
+                    </div>
+                    <a href="kontakt.html" class="btn btn-primary">
+                        Platz sichern
+                        <span class="btn-arrow">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WHAT TO EXPECT ============ -->
+    <section class="content-section alt-bg" id="was-dich-erwartet">
+        <div class="container">
+            <div class="vision-content">
+                <div class="section-label reveal">Was dich erwartet</div>
+                <h2 class="section-title reveal">Mehr als nur ein Event</h2>
+                <p class="section-text reveal" style="margin: 0 auto;">
+                    Meine Veranstaltungen sind keine gewöhnlichen Seminare. Sie sind geschützte Räume,
+                    in denen echte Transformation stattfinden darf. Hier ist, was dich erwartet.
+                </p>
+            </div>
+
+            <div class="vision-blocks">
+                <div class="vision-block reveal" style="--i: 0">
+                    <div class="vision-number">01</div>
+                    <p>
+                        <strong>Ein sicherer Raum für Tiefe.</strong> Jedes Event bietet dir einen geschützten
+                        Rahmen, in dem du dich öffnen darfst. Ohne Bewertung, ohne Druck &mdash; nur Raum
+                        für das, was wirklich in dir lebt.
+                    </p>
+                </div>
+
+                <div class="vision-block reveal" style="--i: 1">
+                    <div class="vision-number">02</div>
+                    <p>
+                        <strong>Erfahrungen, die wirken.</strong> Ob durch kraftvolle Atemarbeit,
+                        transformative Übungen oder tiefe Gespräche &mdash; du wirst nicht nur Wissen mitnehmen,
+                        sondern echte Veränderung spüren. Im Körper, im Geist, im Herzen.
+                    </p>
+                </div>
+
+                <div class="vision-block reveal" style="--i: 2">
+                    <div class="vision-number">03</div>
+                    <p>
+                        <strong>Gemeinschaft, die trägt.</strong> In kleinen Gruppen entsteht eine besondere
+                        Verbindung. Du triffst auf Menschen, die wie du den Mut haben, genauer hinzuschauen.
+                        Diese Begegnungen bleiben weit über das Event hinaus bestehen.
+                    </p>
+                </div>
+
+                <div class="vision-block reveal" style="--i: 3">
+                    <div class="vision-number">04</div>
+                    <p>
+                        <strong>Nachhaltige Integration.</strong> Transformation endet nicht, wenn das Event vorbei ist.
+                        Du erhältst konkrete Werkzeuge und Impulse, die du in deinen Alltag mitnehmen kannst &mdash;
+                        damit das, was du erlebst, langfristig wirkt.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ NEWSLETTER SECTION ============ -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content reveal-scale">
+                <div class="section-label" style="justify-content: center; color: var(--color-golden);">Newsletter</div>
+                <h2 class="section-title" style="color: white;">Kein Event verpassen</h2>
+                <p class="section-text" style="color: rgba(255,255,255,0.6); margin: 0 auto 36px;">
+                    Erhalte als Erster Bescheid über neue Termine, exklusive Events und
+                    Impulse zu Bewusstsein, Business und innerer Freiheit.
+                </p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <input type="email" class="newsletter-input" placeholder="Deine E-Mail-Adresse" required>
+                    <button type="submit" class="newsletter-btn">Ja, will ich!</button>
+                </form>
+                <p class="newsletter-note">Kein Spam. Jederzeit abbestellbar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA SECTION ============ -->
+    <section class="cta-section">
+        <div class="cta-visual"></div>
+        <div class="container">
+            <div class="cta-content">
+                <div class="section-label reveal">Dein nächster Schritt</div>
+                <h2 class="section-title reveal">Du hast Fragen zu einem Event?</h2>
+                <p class="section-text reveal">
+                    Schreib mir gerne eine Nachricht oder buche ein unverbindliches
+                    Klarheitsgespräch. Ich freue mich darauf, dich kennenzulernen.
+                </p>
+                <a href="kontakt.html" class="btn btn-primary reveal" style="margin-top: 8px;">
+                    Gespräch vereinbaren
+                    <span class="btn-arrow">&rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">Michael Geiregger</div>
+                    <p class="footer-brand-tagline">
+                        Coach & Mentor für Unternehmer, die Freiheit und Klarheit suchen.
+                        Weil du mehr verdienst als nur zu funktionieren.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="https://www.facebook.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="https://www.youtube.com/@ZwischenAlltagundUniversum" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.4c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Menü</h4>
+                    <ul>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="ueber-mich.html">Über mich</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Angebote</h4>
+                    <ul>
+                        <li><a href="kontakt.html">Klarheitsgespräch</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Michael Geiregger. Alle Rechte vorbehalten.</span>
+                <span>Mit Leidenschaft gebaut.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ JAVASCRIPT ============ -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

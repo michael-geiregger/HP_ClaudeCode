@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leistungen | Michael Geiregger - Coach & Mentor</title>
+    <meta name="description" content="Entdecke meine Leistungen: 1:1 Coaching, Atemarbeit, Gene Keys Reading und kostenloses Klarheitsgespräch. Dein Weg zu emotionaler Freiheit und innerer Klarheit.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-text">
+            <span class="highlight">Dein</span> Weg.
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                Michael Geiregger
+                <span>Coach & Mentor</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="ueber-mich.html">Über mich</a></li>
+                <li><a href="leistungen.html">Leistungen</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="podcast.html">Podcast</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="kontakt.html" class="nav-cta">Klarheitsgespräch</a></li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============ SUBPAGE HERO ============ -->
+    <section class="subpage-hero">
+        <div class="hero-bg-gradient"></div>
+        <div class="container">
+            <div class="subpage-hero-content">
+                <div class="section-label reveal">Leistungen</div>
+                <h1 class="reveal">Wie ich dich begleite</h1>
+                <p class="reveal">
+                    Jeder Mensch ist einzigartig. Deshalb arbeite ich mit verschiedenen Methoden,
+                    die genau dort ansetzen, wo du gerade stehst. Kein Schema F, sondern echte,
+                    individuelle Begleitung.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div style="position: relative;">
+        <div class="divider-wave" style="position: absolute; top: -80px; left: 0; right: 0; z-index: 3;">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="var(--color-warm-white)"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- ============ SERVICES SECTION ============ -->
+    <section class="content-section" id="angebote">
+        <div class="container">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <div class="section-label reveal" style="justify-content: center;">
+                    Meine Angebote
+                </div>
+                <h2 class="section-title reveal">Finde den Weg, der zu dir passt</h2>
+                <p class="section-text reveal" style="margin: 0 auto;">
+                    Ob tiefgehende Einzelarbeit, kraftvolle Atemreisen oder ein erstes unverbindliches
+                    Gespräch &mdash; hier findest du den passenden Einstieg für deine Transformation.
+                </p>
+            </div>
+
+            <div class="services-grid stagger-children" style="margin-top: 64px;">
+
+                <!-- Service 1: 1:1 Coaching -->
+                <div class="service-card reveal" style="--i: 0">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8963E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h3>1:1 Coaching</h3>
+                    <p>
+                        In individuellen Coaching-Sessions arbeiten wir gemeinsam an deinen tiefsten
+                        Themen. Mit Methoden aus NLP, Hypnose und mentaler Arbeit lösen wir unbewusste
+                        Blockaden, die dich bisher zurückgehalten haben. Du erhältst Werkzeuge, die
+                        sofort wirken &mdash; für mehr Klarheit, Gelassenheit und emotionale Freiheit
+                        in deinem Alltag.
+                    </p>
+                    <div class="method-approaches" style="margin: 20px 0 0;">
+                        <span class="method-tag">NLP</span>
+                        <span class="method-tag">Hypnose</span>
+                        <span class="method-tag">Mentale Arbeit</span>
+                    </div>
+                </div>
+
+                <!-- Service 2: Atemarbeit -->
+                <div class="service-card reveal" style="--i: 1">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8963E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
+                        </svg>
+                    </div>
+                    <h3>Atemarbeit / Psychedelic Breath</h3>
+                    <p>
+                        Durch kraftvolle Atemtechniken erreichst du veränderte Bewusstseinszustände,
+                        die tiefgreifende Erkenntnisse und emotionale Befreiung ermöglichen. Psychedelic
+                        Breath ist eine der intensivsten Erfahrungen, die du machen kannst &mdash; ganz
+                        ohne externe Substanzen. Lass los, was dich belastet, und spüre die Kraft
+                        deines eigenen Atems.
+                    </p>
+                    <div class="method-approaches" style="margin: 20px 0 0;">
+                        <span class="method-tag">Psychedelic Breath</span>
+                        <span class="method-tag">Breathwork</span>
+                    </div>
+                </div>
+
+                <!-- Service 3: Gene Keys Reading -->
+                <div class="service-card reveal" style="--i: 2">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8963E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                            <path d="M2 12h20"/>
+                        </svg>
+                    </div>
+                    <h3>Gene Keys Reading</h3>
+                    <p>
+                        Dein Gene Keys Profil ist wie eine Landkarte deiner Seele. In einem
+                        personalisierten Reading entdecken wir gemeinsam deine einzigartigen Gaben,
+                        Schatten und höchsten Potenziale. Du verstehst, warum du bist, wie du bist
+                        &mdash; und wie du dein volles Potenzial entfalten kannst. Eine tiefe Reise
+                        der Selbsterkenntnis.
+                    </p>
+                    <div class="method-approaches" style="margin: 20px 0 0;">
+                        <span class="method-tag">Gene Keys</span>
+                        <span class="method-tag">Selbsterkenntnis</span>
+                    </div>
+                </div>
+
+                <!-- Service 4: Klarheitsgespräch -->
+                <div class="service-card reveal" style="--i: 3; border: 2px solid var(--color-primary); background: linear-gradient(135deg, rgba(200, 150, 62, 0.03) 0%, rgba(61, 81, 101, 0.03) 100%);">
+                    <div class="service-icon" style="background: var(--gradient-warm);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Klarheitsgespräch</h3>
+                    <p>
+                        Dein kostenloser Einstieg. In einem unverbindlichen Gespräch lernen wir uns
+                        kennen, schauen gemeinsam auf deine aktuelle Situation und finden heraus,
+                        welcher Weg für dich der richtige ist. Keine Verpflichtung, kein Druck &mdash;
+                        nur Klarheit. Dieser erste Schritt kann alles verändern.
+                    </p>
+                    <div style="margin-top: 24px;">
+                        <a href="kontakt.html" class="btn btn-primary">
+                            Jetzt Gespräch buchen
+                            <span class="btn-arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ APPROACH / METHODOLOGY SECTION ============ -->
+    <section class="content-section alt-bg" id="ansatz">
+        <div class="container">
+            <div class="content-grid">
+                <div class="reveal-left">
+                    <div class="method-image-wrap" style="aspect-ratio: 4/5;">
+                        <div style="display: flex; align-items: center; justify-content: center; height: 100%; padding: 40px;">
+                            <p style="font-family: var(--font-display); font-size: 1.2rem; color: rgba(0,0,0,0.15); text-align: center;">
+                                Michael in Aktion
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-right">
+                    <div class="section-label">Mein Ansatz</div>
+                    <h2 class="section-title">Nicht an Symptomen arbeiten, sondern an der Wurzel</h2>
+                    <p class="section-text">
+                        Viele Coaching-Ansätze kratzen nur an der Oberfläche. Sie geben dir Strategien
+                        für den Kopf, aber erreichen nicht das, was dich wirklich antreibt: deine
+                        unbewussten Überzeugungen und emotionalen Muster.
+                    </p>
+                    <p class="section-text" style="margin-top: 20px;">
+                        Ich arbeite anders. Gemeinsam gehen wir dorthin, wo echte Veränderung entsteht
+                        &mdash; unter die Oberfläche. Mit einer einzigartigen Kombination aus mentaler
+                        Arbeit, kraftvoller Atemarbeit und tiefer Selbsterkenntnis lösen wir die
+                        Muster auf, die dich unbewusst gefangen halten.
+                    </p>
+
+                    <div class="method-result" style="margin-top: 32px;">
+                        <p>Das Ergebnis? Du denkst nicht mehr nur anders &mdash; du fühlst anders. Du lebst anders. Frei.</p>
+                    </div>
+
+                    <div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span style="font-size: 0.95rem; font-weight: 500; color: var(--color-text);">Tiefgehend</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span style="font-size: 0.95rem; font-weight: 500; color: var(--color-text);">Individuell</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span style="font-size: 0.95rem; font-weight: 500; color: var(--color-text);">Nachhaltig</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span style="font-size: 0.95rem; font-weight: 500; color: var(--color-text);">Erfahrungsbasiert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS SECTION ============ -->
+    <section class="content-section white-bg">
+        <div class="container">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <div class="section-label reveal" style="justify-content: center;">
+                    Der Prozess
+                </div>
+                <h2 class="section-title reveal">So läuft die Zusammenarbeit ab</h2>
+                <p class="section-text reveal" style="margin: 0 auto;">
+                    Vom ersten Gespräch bis zur nachhaltigen Veränderung &mdash;
+                    ein klarer, persönlicher Weg.
+                </p>
+            </div>
+
+            <div class="vision-blocks" style="margin-top: 56px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <div class="vision-block reveal" style="--i: 0">
+                    <div class="vision-number">01</div>
+                    <p>
+                        <strong>Klarheitsgespräch</strong> &mdash; In einem kostenlosen Erstgespräch lernen wir
+                        uns kennen. Wir schauen gemeinsam auf deine Situation, deine Herausforderungen und
+                        deine Ziele. Du spürst sofort, ob die Chemie stimmt.
+                    </p>
+                </div>
+
+                <div class="vision-block reveal" style="--i: 1">
+                    <div class="vision-number">02</div>
+                    <p>
+                        <strong>Individueller Plan</strong> &mdash; Basierend auf deinen Bedürfnissen erstellen
+                        wir gemeinsam einen maßgeschneiderten Begleitungsplan. Ob Coaching, Atemarbeit oder
+                        Gene Keys &mdash; wir finden die Methoden, die für dich am wirkungsvollsten sind.
+                    </p>
+                </div>
+
+                <div class="vision-block reveal" style="--i: 2">
+                    <div class="vision-number">03</div>
+                    <p>
+                        <strong>Tiefe Arbeit</strong> &mdash; In den Sessions gehen wir an die Wurzel.
+                        Du erlebst echte Durchbrüche, erkennst alte Muster und löst emotionale Blockaden.
+                        Zwischen den Sessions hast du konkrete Übungen für deinen Alltag.
+                    </p>
+                </div>
+
+                <div class="vision-block reveal" style="--i: 3">
+                    <div class="vision-number">04</div>
+                    <p>
+                        <strong>Nachhaltige Veränderung</strong> &mdash; Die Transformation zeigt sich
+                        in deinem Alltag: mehr Gelassenheit, klarere Entscheidungen, tiefere Beziehungen
+                        und echte Lebensfreude. Du lebst nicht mehr im Autopilot &mdash; du gestaltest bewusst.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS SECTION ============ -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <div class="section-label reveal">Erfahrungen</div>
+                <h2 class="section-title reveal">Was Klienten sagen</h2>
+                <p class="section-text reveal" style="margin: 0 auto;">
+                    Echte Veränderungen von Menschen, die den Weg gegangen sind.
+                </p>
+            </div>
+
+            <div class="testimonials-grid stagger-children">
+                <div class="testimonial-card reveal" style="--i: 0">
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>
+                        Michael, unsere Gespräche waren teilweise so fesselnd, dass ich Raum und Zeit vergaß.
+                        Du hast mir Methoden mitgegeben und Wege aufgezeigt, die mir geholfen haben,
+                        unangenehme Situationen in den Griff zu bekommen, wodurch ich meine Lebensqualität
+                        rasch steigern konnte.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div>
+                            <div class="testimonial-name">Stefan</div>
+                            <div class="testimonial-role">Abteilungsleiter</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal" style="--i: 1">
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>
+                        Was sich bei mir alles getan hat, seitdem ich bei dir war: Wahnsinn!
+                        Ich möchte dir auf diesem Weg nochmals Danke sagen, weil du definitiv
+                        dazu beigetragen hast, dass ich wieder mehr Lebensfreude spüre.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: var(--gradient-warm);">J</div>
+                        <div>
+                            <div class="testimonial-name">Johanna</div>
+                            <div class="testimonial-role">Selbstständige</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal" style="--i: 2">
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>
+                        Ich wäre ohne deine Hilfe nicht an diesem Punkt, wo ich jetzt gerade bin, Michael.
+                        Es ist so viel Positives passiert, dass ich es oft selbst nicht glauben kann.
+                        Und wie du sagst: Es ist noch nicht fertig so wie es ist. Ich darf weiter träumen!
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #3d5165, #7d6e5d);">M</div>
+                        <div>
+                            <div class="testimonial-name">Marina</div>
+                            <div class="testimonial-role">Unternehmerin</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA SECTION ============ -->
+    <section class="cta-section" id="gespraech">
+        <div class="cta-visual"></div>
+        <div class="container">
+            <div class="cta-content">
+                <div class="section-label reveal">Dein erster Schritt</div>
+                <h2 class="section-title reveal">Bereit für den nächsten Schritt?</h2>
+                <p class="section-text reveal">
+                    Lass uns in einem unverbindlichen Klarheitsgespräch herausfinden,
+                    wo du stehst und was möglich ist. Keine Verpflichtung. Nur Klarheit.
+                </p>
+                <div class="reveal" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 8px;">
+                    <a href="kontakt.html" class="btn btn-primary">
+                        Gespräch vereinbaren
+                        <span class="btn-arrow">&rarr;</span>
+                    </a>
+                    <a href="ueber-mich.html" class="btn btn-outline-dark">
+                        Mehr über mich
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">Michael Geiregger</div>
+                    <p class="footer-brand-tagline">
+                        Coach & Mentor für Unternehmer, die Freiheit und Klarheit suchen.
+                        Weil du mehr verdienst als nur zu funktionieren.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="https://www.facebook.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="https://www.youtube.com/@ZwischenAlltagundUniversum" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.4c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Menü</h4>
+                    <ul>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="ueber-mich.html">Über mich</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Angebote</h4>
+                    <ul>
+                        <li><a href="kontakt.html">Klarheitsgespräch</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Michael Geiregger. Alle Rechte vorbehalten.</span>
+                <span>Mit Leidenschaft gebaut.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ JAVASCRIPT ============ -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

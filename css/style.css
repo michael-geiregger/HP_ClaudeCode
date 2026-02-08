@@ -12,7 +12,7 @@
     --color-sage-light: #9d9183;    /* Hellstes Taupe */
     --color-earth: #5a4f43;         /* Tiefes Braun */
     --color-deep: #3d5165;          /* Tiefes Stahlblau */
-    --color-night: #2b3a4a;         /* Dunkelstes Blau */
+    --color-night: #3d5165;         /* Tiefes Stahlblau */
     --color-warm-white: #fdfbec;    /* Cremeweiß (dein Original) */
     --color-cream: #f5f0e0;         /* Warmes Creme */
     --color-sand: #e8e0d0;          /* Sand */
@@ -25,7 +25,7 @@
     --gradient-warm: linear-gradient(135deg, #C8963E 0%, #D4A853 100%);
     --gradient-golden: linear-gradient(135deg, #A67B2E 0%, #C8963E 50%, #D4A853 100%);
     --gradient-earth: linear-gradient(135deg, #7d6e5d 0%, #9d9183 100%);
-    --gradient-deep: linear-gradient(135deg, #3d5165 0%, #4a6178 100%);
+    --gradient-deep: linear-gradient(135deg, #3d5165 0%, #506d82 100%);
 
     /* Typography - Modern headers */
     --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -1226,22 +1226,33 @@ a {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.06);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
 }
 
+.footer-social a[aria-label="Instagram"] {
+    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.footer-social a[aria-label="Facebook"] {
+    background: #1877F2;
+}
+
+.footer-social a[aria-label="YouTube"] {
+    background: #FF0000;
+}
+
 .footer-social a:hover {
-    background: var(--color-primary);
     transform: translateY(-3px);
+    filter: brightness(1.15);
 }
 
 .footer-social svg {
     width: 18px;
     height: 18px;
-    fill: rgba(255, 255, 255, 0.6);
+    fill: white;
 }
 
 .footer-social a:hover svg {

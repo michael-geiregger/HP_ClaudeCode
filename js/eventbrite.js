@@ -58,32 +58,26 @@ function renderEvents(events) {
         });
 
         const imageUrl = event.logo ? event.logo.original.url : '';
+        const venueName = event.venue ? event.venue.name : '';
+        const venueCity = event.venue && event.venue.address ? event.venue.address.city : '';
+        const locationStr = [venueName, venueCity].filter(Boolean).join(', ');
 
         return `
-            <div class="event-card reveal" style="--i: ${index}">
-                ${imageUrl ? `<div class="event-image" style="margin-bottom: 20px; border-radius: 16px; overflow: hidden;"><img src="${imageUrl}" alt="${event.name.text}" style="width: 100%; height: 220px; object-fit: cover; display: block;"></div>` : ''}
-                <div class="event-date">
-                    <div class="day">${startDate.getDate()}</div>
-                    <div class="month">${startDate.toLocaleDateString('de-DE', { month: 'short', year: 'numeric' })}</div>
-                </div>
-                <div class="event-info">
+            <div class="vision-block reveal" style="--i: ${index}">
+                <div class="vision-number">${(index + 1).toString().padStart(2, '0')}</div>
+                <div class="event-block-content">
+                    ${imageUrl ? `<img src="${imageUrl}" alt="${event.name.text}" class="event-block-image">` : ''}
                     <h3>${event.name.text}</h3>
-                    <p>${event.description.text ? truncateText(event.description.text, 180) : ''}</p>
-                    <div class="event-meta" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 0.85rem; color: var(--color-text-muted);">
-                        <span style="display: flex; align-items: center; gap: 5px;">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                            ${timeString} Uhr
-                        </span>
-                        ${event.venue ? `<span style="display: flex; align-items: center; gap: 5px;">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            ${event.venue.name}
-                        </span>` : ''}
+                    <div class="event-meta">
+                        <span>📅 ${dateString}</span>
+                        <span>⏰ ${timeString} Uhr</span>
+                        ${locationStr ? `<span>📍 ${locationStr}</span>` : ''}
                     </div>
+                    <p>${event.description.text ? truncateText(event.description.text, 200) : ''}</p>
+                    <a href="${event.url}" target="_blank" rel="noopener" class="btn btn-outline">
+                        Platz sichern <span class="btn-arrow">&rarr;</span>
+                    </a>
                 </div>
-                <a href="${event.url}" target="_blank" rel="noopener" class="btn btn-primary">
-                    Platz sichern
-                    <span class="btn-arrow">&rarr;</span>
-                </a>
             </div>
         `;
     }).join('');

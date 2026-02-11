@@ -85,86 +85,9 @@
                 ist bewusst klein gehalten, damit echte Tiefe möglich wird.
             </p>
 
-            <div class="events-grid stagger-children">
-                <!-- Event 1: Breathwork -->
-                <div class="event-card reveal" style="--i: 0">
-                    <div class="event-date">
-                        <div class="day">14</div>
-                        <div class="month">März 2026</div>
-                    </div>
-                    <div class="event-info">
-                        <h3>Psychedelic Breath Session</h3>
-                        <p>
-                            Eine kraftvolle Atemsession, die dich in tiefe Bewusstseinsebenen führt.
-                            Löse emotionale Blockaden, erfahre innere Klarheit und spüre eine Leichtigkeit,
-                            die weit über den Abend hinaus wirkt.
-                        </p>
-                        <div class="event-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                            Graz, Steiermark
-                        </div>
-                    </div>
-                    <a href="kontakt.html" class="btn btn-primary">
-                        Platz sichern
-                        <span class="btn-arrow">&rarr;</span>
-                    </a>
-                </div>
-
-                <!-- Event 2: Workshop -->
-                <div class="event-card reveal" style="--i: 1">
-                    <div class="event-date">
-                        <div class="day">25</div>
-                        <div class="month">Apr 2026</div>
-                    </div>
-                    <div class="event-info">
-                        <h3>Workshop: Vom Druck zur Freiheit</h3>
-                        <p>
-                            Ein ganztägiger Workshop für Unternehmer, die den ständigen inneren Druck
-                            hinter sich lassen wollen. Lerne die Mechanismen hinter deinen Mustern kennen
-                            und entwickle konkrete Wege in die emotionale Freiheit.
-                        </p>
-                        <div class="event-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                            Wien, Österreich
-                        </div>
-                    </div>
-                    <a href="kontakt.html" class="btn btn-primary">
-                        Platz sichern
-                        <span class="btn-arrow">&rarr;</span>
-                    </a>
-                </div>
-
-                <!-- Event 3: Retreat -->
-                <div class="event-card reveal" style="--i: 2">
-                    <div class="event-date">
-                        <div class="day">16</div>
-                        <div class="month">Mai 2026</div>
-                    </div>
-                    <div class="event-info">
-                        <h3>Retreat: Innere Klarheit</h3>
-                        <p>
-                            Drei Tage Rückzug vom Alltag in einer wunderschönen Umgebung. Durch Atemarbeit,
-                            tiefes Coaching und stille Reflexion findest du zurück zu deiner inneren Mitte
-                            und gewinnst Klarheit über deinen weiteren Weg.
-                        </p>
-                        <div class="event-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                            Südsteiermark, Österreich &mdash; 3 Tage
-                        </div>
-                    </div>
-                    <a href="kontakt.html" class="btn btn-primary">
-                        Platz sichern
-                        <span class="btn-arrow">&rarr;</span>
-                    </a>
+            <div class="events-grid stagger-children" id="event-container">
+                <div style="grid-column: 1/-1; text-align: center; padding: 3rem;">
+                    <p style="color: var(--color-text-muted);">Lade Veranstaltungen...</p>
                 </div>
             </div>
         </div>
@@ -316,6 +239,7 @@
 
     <!-- ============ JAVASCRIPT ============ -->
     <script src="js/main.js"></script>
+    <script src="js/eventbrite.js"></script>
 
 </body>
 </html>

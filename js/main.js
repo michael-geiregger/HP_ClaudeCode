@@ -103,7 +103,7 @@ if (canvas) {
                 vy: (Math.random() - 0.5) * 0.4,
                 radius: Math.random() * 2 + 0.5,
                 opacity: Math.random() * 0.3 + 0.05,
-                color: ['180,140,60', '160,145,120', '140,130,110'][Math.floor(Math.random() * 3)]
+                color: ['200,150,62', '180,160,130', '220,200,170'][Math.floor(Math.random() * 3)]
             });
         }
     }

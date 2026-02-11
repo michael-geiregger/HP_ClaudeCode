@@ -103,10 +103,22 @@ function truncateText(text, length) {
     return (lastSpace > 0 ? truncated.substring(0, lastSpace) : truncated).trim() + '...';
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
+// Run immediately if DOM is already ready, otherwise wait
+async function initEvents() {
     const container = document.getElementById('event-container');
     if (container) {
-        const events = await fetchEvents();
-        renderEvents(events);
+        try {
+            const events = await fetchEvents();
+            renderEvents(events);
+        } catch (err) {
+            console.error('Eventbrite init error:', err);
+            container.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:2rem;"><p>Events konnten nicht geladen werden.</p></div>';
+        }
     }
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEvents);
+} else {
+    initEvents();
+}

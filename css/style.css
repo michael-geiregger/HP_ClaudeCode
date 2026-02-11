@@ -309,6 +309,7 @@ a {
 
 /* Floating orbs */
 .hero-orb {
+    display: none;
     position: absolute;
     border-radius: 50%;
     filter: blur(60px);
@@ -365,7 +366,7 @@ a {
     height: 100%;
     object-fit: cover;
     object-position: 65% 20%;
-    opacity: 0.3;
+    opacity: 0.5;
     filter: grayscale(10%) contrast(1.05) sepia(5%);
 }
 

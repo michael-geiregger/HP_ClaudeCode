@@ -501,9 +501,12 @@ a {
 }
 
 .btn-deep {
-    background: var(--gradient-deep);
-    color: white;
+    background: #3d5165 !important;
+    background-image: linear-gradient(135deg, #3d5165 0%, #506d82 100%) !important;
+    color: white !important;
     box-shadow: 0 8px 30px rgba(61, 81, 101, 0.3);
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .btn-deep:hover {
@@ -1835,12 +1838,17 @@ a {
 
     .hero-buttons {
         flex-direction: column;
-        padding: 0 24px;
+        align-items: center;
+        padding: 0 16px;
     }
 
     .hero-buttons .btn {
         text-align: center;
         justify-content: center;
+        max-width: 280px;
+        width: 100%;
+        padding: 14px 24px;
+        font-size: 0.9rem;
     }
 
     .newsletter-form {

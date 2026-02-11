@@ -58,9 +58,8 @@
                     <p class="section-text" style="margin-bottom: 32px;">
                         Egal ob du eine Frage hast oder einfach Hallo sagen willst &mdash; ich freue mich auf deine Nachricht.
                     </p>
-                    <form class="contact-form" action="https://formspree.io/f/xbdadqwp" method="POST">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xbdadqwp" method="POST">
                         <input type="hidden" name="_subject" value="Neue Nachricht von deiner Website">
-                        <input type="hidden" name="_next" value="https://michael-geiregger.com/kontakt.html?success=1">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Dein vollständiger Name" required>
@@ -88,11 +87,16 @@
                             <label for="message">Nachricht</label>
                             <textarea id="message" name="message" placeholder="Erzähl mir, was dich bewegt..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="align-self: flex-start;">
+                        <button type="submit" class="btn btn-primary" id="submitBtn" style="align-self: flex-start;">
                             Nachricht senden
                             <span class="btn-arrow">&rarr;</span>
                         </button>
                     </form>
+                    <div id="formSuccess" style="display: none; text-align: center; padding: 48px 24px; background: rgba(200, 150, 62, 0.06); border-radius: 16px; border: 1px solid rgba(200, 150, 62, 0.15);">
+                        <div style="font-size: 2.5rem; margin-bottom: 16px;">&#10003;</div>
+                        <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; color: var(--color-night); margin-bottom: 12px;">Nachricht gesendet!</h3>
+                        <p style="font-size: 0.95rem; color: var(--color-text-light); line-height: 1.7;">Danke für deine Nachricht. Ich melde mich so schnell wie möglich bei dir.</p>
+                    </div>
                 </div>
 
                 <!-- Contact Info -->
@@ -225,5 +229,38 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        const form = document.getElementById('contactForm');
+        const successMsg = document.getElementById('formSuccess');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            submitBtn.innerHTML = 'Wird gesendet...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    form.style.display = 'none';
+                    successMsg.style.display = 'block';
+                    form.reset();
+                } else {
+                    submitBtn.innerHTML = 'Nachricht senden <span class="btn-arrow">&rarr;</span>';
+                    submitBtn.disabled = false;
+                    alert('Es gab ein Problem. Bitte versuche es erneut.');
+                }
+            } catch (error) {
+                submitBtn.innerHTML = 'Nachricht senden <span class="btn-arrow">&rarr;</span>';
+                submitBtn.disabled = false;
+                alert('Es gab ein Problem. Bitte versuche es erneut.');
+            }
+        });
+    </script>
 </body>
 </html>

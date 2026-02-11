@@ -283,7 +283,7 @@ a {
     display: flex;
     align-items: center;
     overflow: hidden;
-    background: #1a1a1a;
+    background: #f5f0e6;
 }
 
 .hero-bg {
@@ -296,9 +296,9 @@ a {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(200, 150, 62, 0.08) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 30% 70%, rgba(26, 26, 26, 0.3) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 50% at 80% 20%, rgba(200, 150, 62, 0.04) 0%, transparent 60%);
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(200, 150, 62, 0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 30% 70%, rgba(232, 224, 208, 0.5) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 80% 20%, rgba(200, 150, 62, 0.06) 0%, transparent 60%);
     animation: heroGlow 8s ease-in-out infinite alternate;
 }
 
@@ -318,7 +318,7 @@ a {
 .hero-orb:nth-child(1) {
     width: 400px;
     height: 400px;
-    background: rgba(200, 150, 62, 0.06);
+    background: rgba(200, 150, 62, 0.08);
     top: 10%;
     right: -5%;
     animation-delay: 0s;
@@ -327,7 +327,7 @@ a {
 .hero-orb:nth-child(2) {
     width: 350px;
     height: 350px;
-    background: rgba(200, 150, 62, 0.04);
+    background: rgba(232, 224, 208, 0.4);
     top: 60%;
     right: 15%;
     animation-delay: -7s;
@@ -336,7 +336,7 @@ a {
 .hero-orb:nth-child(3) {
     width: 250px;
     height: 250px;
-    background: rgba(200, 150, 62, 0.03);
+    background: rgba(200, 150, 62, 0.06);
     bottom: 10%;
     left: 40%;
     animation-delay: -14s;
@@ -365,16 +365,8 @@ a {
     height: 100%;
     object-fit: cover;
     object-position: 65% 20%;
-    opacity: 0.45;
-    filter: grayscale(15%) contrast(1.1) brightness(0.85);
-}
-
-.hero-portrait::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(26,26,26,0.3) 0%, rgba(26,26,26,0.6) 100%);
-    z-index: 1;
+    opacity: 0.3;
+    filter: grayscale(10%) contrast(1.05) sepia(5%);
 }
 
 /* Particle canvas */
@@ -398,12 +390,12 @@ a {
     align-items: center;
     gap: 8px;
     padding: 8px 20px;
-    background: rgba(200, 150, 62, 0.12);
-    border: 1px solid rgba(200, 150, 62, 0.3);
+    background: rgba(200, 150, 62, 0.08);
+    border: 1px solid rgba(200, 150, 62, 0.2);
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--color-text-light);
     margin-bottom: 32px;
     backdrop-filter: blur(10px);
 }
@@ -426,7 +418,7 @@ a {
     font-size: clamp(2.8rem, 6vw, 5rem);
     font-weight: 700;
     line-height: 1.1;
-    color: #ffffff;
+    color: var(--color-night);
     margin-bottom: 28px;
     letter-spacing: -0.03em;
 }
@@ -440,7 +432,7 @@ a {
 
 .hero p {
     font-size: clamp(1.1rem, 2vw, 1.3rem);
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--color-text-light);
     max-width: 560px;
     margin: 0 auto 44px;
     line-height: 1.8;
@@ -498,8 +490,8 @@ a {
 
 .btn-outline {
     background: transparent;
-    color: #ffffff;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: var(--color-night);
+    border: 2px solid var(--color-sand);
 }
 
 .btn-outline:hover {

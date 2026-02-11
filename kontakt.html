@@ -58,33 +58,35 @@
                     <p class="section-text" style="margin-bottom: 32px;">
                         Egal ob du eine Frage hast oder einfach Hallo sagen willst &mdash; ich freue mich auf deine Nachricht.
                     </p>
-                    <form class="contact-form" onsubmit="event.preventDefault();">
+                    <form class="contact-form" action="https://formspree.io/f/xbdadqwp" method="POST">
+                        <input type="hidden" name="_subject" value="Neue Nachricht von deiner Website">
+                        <input type="hidden" name="_next" value="https://michael-geiregger.com/kontakt.html?success=1">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" placeholder="Dein vollständiger Name" required>
+                            <input type="text" id="name" name="name" placeholder="Dein vollständiger Name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">E-Mail</label>
-                            <input type="email" id="email" placeholder="deine@email.com" required>
+                            <input type="email" id="email" name="email" placeholder="deine@email.com" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Telefon (optional)</label>
-                            <input type="tel" id="phone" placeholder="+39 XXX XXXXXXX">
+                            <input type="tel" id="phone" name="phone" placeholder="+39 XXX XXXXXXX">
                         </div>
                         <div class="form-group">
                             <label for="subject">Betreff</label>
-                            <select id="subject">
+                            <select id="subject" name="subject">
                                 <option value="">Bitte wählen...</option>
-                                <option value="coaching">1:1 Coaching Anfrage</option>
-                                <option value="atemarbeit">Atemarbeit / Psychedelic Breath</option>
-                                <option value="gene-keys">Gene Keys Reading</option>
-                                <option value="event">Event-Anfrage</option>
-                                <option value="sonstiges">Sonstiges</option>
+                                <option value="1:1 Coaching Anfrage">1:1 Coaching Anfrage</option>
+                                <option value="Atemarbeit / Psychedelic Breath">Atemarbeit / Psychedelic Breath</option>
+                                <option value="Gene Keys Reading">Gene Keys Reading</option>
+                                <option value="Event-Anfrage">Event-Anfrage</option>
+                                <option value="Sonstiges">Sonstiges</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="message">Nachricht</label>
-                            <textarea id="message" placeholder="Erzähl mir, was dich bewegt..." required></textarea>
+                            <textarea id="message" name="message" placeholder="Erzähl mir, was dich bewegt..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="align-self: flex-start;">
                             Nachricht senden

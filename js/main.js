@@ -199,3 +199,40 @@ if (heroOrbs.length) {
         });
     });
 }
+
+// ==============================
+// NEWSLETTER — ActiveCampaign
+// ==============================
+const newsletterForm = document.getElementById('newsletter-form');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const btn = this.querySelector('.newsletter-btn');
+        const fields = this.querySelector('.newsletter-fields');
+        const note = this.closest('.newsletter-content').querySelector('.newsletter-note');
+        const successDiv = this.querySelector('.newsletter-success');
+
+        btn.disabled = true;
+        btn.textContent = 'Wird gesendet...';
+
+        const formData = new FormData(this);
+        const serialized = new URLSearchParams(formData).toString();
+
+        const script = document.createElement('script');
+        script.src = 'https://michael-geiregger.activehosted.com/proc.php?' + serialized + '&jsonp=true';
+        script.onerror = function() {
+            btn.disabled = false;
+            btn.textContent = 'Ja, will ich haben!';
+        };
+        document.head.appendChild(script);
+
+        // Show success after short delay (JSONP doesn't give reliable callbacks)
+        setTimeout(function() {
+            fields.style.display = 'none';
+            btn.style.display = 'none';
+            if (note) note.style.display = 'none';
+            successDiv.style.display = 'block';
+        }, 1500);
+    });
+}

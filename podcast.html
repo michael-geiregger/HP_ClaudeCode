@@ -275,9 +275,23 @@
                 <p class="section-text" style="color: rgba(255,255,255,0.6); margin: 0 auto 36px;">
                     Erhalte regelmäßig Impulse zu Bewusstsein, Business und innerer Freiheit. Kein Spam, nur echte Inhalte.
                 </p>
-                <form class="newsletter-form" onsubmit="event.preventDefault();">
-                    <input type="email" class="newsletter-input" placeholder="Deine E-Mail-Adresse" required>
-                    <button type="submit" class="newsletter-btn">Ja, will ich!</button>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="hidden" name="u" value="43">
+                    <input type="hidden" name="f" value="43">
+                    <input type="hidden" name="s">
+                    <input type="hidden" name="c" value="0">
+                    <input type="hidden" name="m" value="0">
+                    <input type="hidden" name="act" value="sub">
+                    <input type="hidden" name="v" value="2">
+                    <input type="hidden" name="or" value="c14272df-92fd-4f06-9acf-22eaa0c190a4">
+                    <div class="newsletter-fields">
+                        <input type="text" name="fullname" class="newsletter-input" placeholder="Dein Vorname" required>
+                        <input type="email" name="email" class="newsletter-input" placeholder="Deine E-Mail-Adresse" required>
+                    </div>
+                    <button type="submit" class="newsletter-btn">Ja, will ich haben!</button>
+                    <div class="newsletter-success" style="display:none;">
+                        <p>Danke! Bitte überprüfe dein Postfach zur Bestätigung.</p>
+                    </div>
                 </form>
                 <p class="newsletter-note">Kein Spam. Jederzeit abbestellbar.</p>
             </div>

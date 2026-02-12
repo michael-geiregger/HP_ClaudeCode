@@ -1121,9 +1121,27 @@ a {
 
 .newsletter-form {
     display: flex;
-    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
     max-width: 480px;
     margin: 0 auto;
+}
+
+.newsletter-fields {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.newsletter-success {
+    text-align: center;
+}
+
+.newsletter-success p {
+    color: var(--color-golden);
+    font-size: 1.05rem;
+    font-weight: 500;
 }
 
 .newsletter-input {
@@ -1159,7 +1177,13 @@ a {
     font-weight: 600;
     cursor: pointer;
     white-space: nowrap;
+    width: 100%;
     transition: all 0.3s var(--ease-out-quart);
+}
+
+.newsletter-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 .newsletter-btn:hover {
@@ -1832,7 +1856,7 @@ a {
         font-size: 0.9rem;
     }
 
-    .newsletter-form {
+    .newsletter-fields {
         flex-direction: column;
     }
 

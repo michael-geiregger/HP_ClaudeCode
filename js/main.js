@@ -203,36 +203,92 @@ if (heroOrbs.length) {
 // ==============================
 // NEWSLETTER — ActiveCampaign
 // ==============================
-const newsletterForm = document.getElementById('newsletter-form');
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const btn = this.querySelector('.newsletter-btn');
-        const fields = this.querySelector('.newsletter-fields');
-        const note = this.closest('.newsletter-content').querySelector('.newsletter-note');
-        const successDiv = this.querySelector('.newsletter-success');
-
-        btn.disabled = true;
-        btn.textContent = 'Wird gesendet...';
-
-        const formData = new FormData(this);
-        const serialized = new URLSearchParams(formData).toString();
-
-        const script = document.createElement('script');
-        script.src = 'https://michael-geiregger.activehosted.com/proc.php?' + serialized + '&jsonp=true';
-        script.onerror = function() {
-            btn.disabled = false;
-            btn.textContent = 'Ja, will ich haben!';
+window.cfields = [];
+window._show_thank_you = function(id, message) {
+    var form = document.getElementById('_form_' + id + '_');
+    if (!form) return;
+    var thank_you = form.querySelector('._form-thank-you');
+    form.querySelector('._form-content').style.display = 'none';
+    var note = form.closest('.newsletter-content');
+    if (note) {
+        var noteEl = note.querySelector('.newsletter-note');
+        if (noteEl) noteEl.style.display = 'none';
+    }
+    thank_you.innerHTML = '<p style="color: var(--color-golden); font-size: 1.05rem; font-weight: 500;">Danke! Bitte überprüfe dein Postfach zur Bestätigung.</p>';
+    thank_you.style.display = 'block';
+};
+window._show_error = function(id, message) {
+    var form = document.getElementById('_form_' + id + '_');
+    if (!form) return;
+    var button = form.querySelector('button[type="submit"]');
+    var old_error = form.querySelector('._form_error');
+    if (old_error) old_error.parentNode.removeChild(old_error);
+    var err = document.createElement('div');
+    err.innerHTML = message;
+    err.className = '_form_error';
+    err.style.cssText = 'color: #ff6b6b; font-size: 0.9rem; margin-bottom: 12px; text-align: center;';
+    button.parentNode.insertBefore(err, button);
+    button.disabled = false;
+    button.classList.remove('processing');
+};
+window._load_script = function(url, callback, isSubmit) {
+    var script = document.createElement('script');
+    script.charset = 'utf-8';
+    script.src = url;
+    if (callback) {
+        script.onload = script.onreadystatechange = function() {
+            if (!this.readyState || this.readyState === 'complete') { callback(); }
         };
-        document.head.appendChild(script);
+    }
+    script.onerror = function() {
+        if (isSubmit) {
+            _show_error("43", "Übermittlung fehlgeschlagen. Bitte versuche es erneut.");
+        }
+    };
+    document.head.appendChild(script);
+};
+(function() {
+    var form_to_submit = document.getElementById('_form_43_');
+    if (!form_to_submit) return;
 
-        // Show success after short delay (JSONP doesn't give reliable callbacks)
-        setTimeout(function() {
-            fields.style.display = 'none';
-            btn.style.display = 'none';
-            if (note) note.style.display = 'none';
-            successDiv.style.display = 'block';
-        }, 1500);
+    var _form_serialize = function(form) {
+        if (!form || form.nodeName !== "FORM") return;
+        var i, q = [];
+        for (i = 0; i < form.elements.length; i++) {
+            if (form.elements[i].name === "") continue;
+            switch (form.elements[i].nodeName) {
+                case "INPUT":
+                    switch (form.elements[i].type) {
+                        case "text": case "hidden": case "password": case "button": case "reset": case "submit":
+                            q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                            break;
+                        case "checkbox": case "radio":
+                            if (form.elements[i].checked) q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                            break;
+                    }
+                    break;
+                case "TEXTAREA":
+                    q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                    break;
+                case "SELECT":
+                    q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                    break;
+            }
+        }
+        return q.join("&");
+    };
+
+    form_to_submit.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var emailInput = form_to_submit.querySelector('input[name="email"]');
+        if (!emailInput || !emailInput.value || !emailInput.value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)) {
+            _show_error("43", "Bitte gib eine gültige E-Mail-Adresse ein.");
+            return false;
+        }
+        var submitButton = form_to_submit.querySelector('#_form_43_submit');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Wird gesendet...';
+        var serialized = _form_serialize(form_to_submit).replace(/%0A/g, '\\n');
+        _load_script('https://michael-geiregger.activehosted.com/proc.php?' + serialized + '&jsonp=true', null, true);
     });
-}
+})();

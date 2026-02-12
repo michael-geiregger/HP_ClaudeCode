@@ -1119,29 +1119,50 @@ a {
     margin: 0 auto 36px;
 }
 
-.newsletter-form {
+/* AC form wrapper — reset ActiveCampaign defaults */
+.ac-form-wrapper {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.ac-form-wrapper #_form_43_ {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    max-width: 100% !important;
+    font-family: var(--font-body) !important;
+}
+
+.ac-form-wrapper ._form-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    max-width: 480px;
-    margin: 0 auto;
+}
+
+.ac-form-wrapper ._form_element {
+    margin-bottom: 0 !important;
+}
+
+.ac-form-wrapper ._button-wrapper {
+    width: 100%;
+    margin: 0 !important;
+}
+
+.ac-form-wrapper ._form-thank-you {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.ac-form-wrapper ._form-branding {
+    display: none !important;
 }
 
 .newsletter-fields {
     display: flex;
     gap: 12px;
     width: 100%;
-}
-
-.newsletter-success {
-    text-align: center;
-}
-
-.newsletter-success p {
-    color: var(--color-golden);
-    font-size: 1.05rem;
-    font-weight: 500;
 }
 
 .newsletter-input {

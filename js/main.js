@@ -247,6 +247,21 @@ window._load_script = function(url, callback, isSubmit) {
     };
     document.head.appendChild(script);
 };
+// reCAPTCHA init callback
+window.recaptcha_callback = function() {
+    var recaptchas = document.getElementsByClassName("g-recaptcha");
+    for (var i = 0; i < recaptchas.length; i++) {
+        var el = recaptchas[i];
+        if (!el.id) el.id = "recaptcha_" + i;
+        var sitekey = el.getAttribute("data-sitekey");
+        var theme = el.getAttribute("data-theme") || "light";
+        if (sitekey && !el.hasChildNodes()) {
+            grecaptcha.render(el.id, { sitekey: sitekey, theme: theme });
+        }
+    }
+};
+_load_script("https://www.google.com/recaptcha/api.js?onload=recaptcha_callback&render=explicit");
+
 (function() {
     var form_to_submit = document.getElementById('_form_43_');
     if (!form_to_submit) return;
@@ -283,6 +298,12 @@ window._load_script = function(url, callback, isSubmit) {
         var emailInput = form_to_submit.querySelector('input[name="email"]');
         if (!emailInput || !emailInput.value || !emailInput.value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)) {
             _show_error("43", "Bitte gib eine gültige E-Mail-Adresse ein.");
+            return false;
+        }
+        // Check reCAPTCHA
+        var recaptchaResponse = form_to_submit.querySelector('textarea[name="g-recaptcha-response"]');
+        if (recaptchaResponse && !recaptchaResponse.value) {
+            _show_error("43", "Bitte bestätige, dass du kein Roboter bist.");
             return false;
         }
         var submitButton = form_to_submit.querySelector('#_form_43_submit');

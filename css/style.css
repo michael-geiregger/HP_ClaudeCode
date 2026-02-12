@@ -1266,13 +1266,18 @@ a {
 }
 
 .footer-social svg {
-    width: 36px;
-    height: 36px;
-    fill: white;
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: white;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .footer-social a:hover svg {
-    fill: white;
+    fill: none;
+    stroke: white;
 }
 
 .footer-column h4 {

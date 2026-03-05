@@ -367,9 +367,19 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 15%;
-    opacity: 0.5;
+    object-position: 75% 15%;
+    opacity: 0.55;
     filter: grayscale(10%) contrast(1.05) sepia(5%);
+}
+
+/* Dark overlay for text readability */
+.hero-portrait::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(42, 52, 65, 0.15) 0%, rgba(42, 52, 65, 0.4) 40%, rgba(42, 52, 65, 0.35) 70%, rgba(42, 52, 65, 0.1) 100%);
+    z-index: 1;
 }
 
 /* Particle canvas */
@@ -421,9 +431,10 @@ a {
     font-size: clamp(2.8rem, 6vw, 5rem);
     font-weight: 700;
     line-height: 1.1;
-    color: var(--color-night);
+    color: #ffffff;
     margin-bottom: 28px;
     letter-spacing: -0.03em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
 
 .hero h1 .highlight {
@@ -431,14 +442,16 @@ a {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
 }
 
 .hero p {
     font-size: clamp(1.1rem, 2vw, 1.3rem);
-    color: var(--color-text-light);
+    color: rgba(255, 255, 255, 0.85);
     max-width: 560px;
     margin: 0 auto 44px;
     line-height: 1.8;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .hero-buttons {
@@ -1851,7 +1864,7 @@ a {
 
     .hero-portrait img {
         opacity: 0.5;
-        object-position: 35% 15%;
+        object-position: 25% 15%;
     }
 
     .hero-content {

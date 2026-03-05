@@ -367,7 +367,7 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 65% 20%;
+    object-position: center 15%;
     opacity: 0.5;
     filter: grayscale(10%) contrast(1.05) sepia(5%);
 }
@@ -1851,7 +1851,7 @@ a {
 
     .hero-portrait img {
         opacity: 0.5;
-        object-position: 65% 20%;
+        object-position: 35% 15%;
     }
 
     .hero-content {

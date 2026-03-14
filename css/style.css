@@ -352,6 +352,26 @@ a {
     75% { transform: translate(40px, 30px) scale(1.02); }
 }
 
+/* Hero portrait photo */
+.hero-portrait {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hero-portrait img {
+    position: absolute;
+    inset: 0;
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    object-position: 65% 0%;
+    top: -15%;
+    opacity: 0.3;
+    filter: grayscale(20%) brightness(0.95);
+}
 
 /* Particle canvas */
 .hero-particles {
@@ -363,7 +383,7 @@ a {
 .hero-content {
     position: relative;
     z-index: 3;
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 120px 40px;
     text-align: center;

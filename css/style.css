@@ -352,35 +352,6 @@ a {
     75% { transform: translate(40px, 30px) scale(1.02); }
 }
 
-/* Hero portrait photo - full background */
-.hero-portrait {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.hero-portrait img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 75% 15%;
-    opacity: 0.45;
-    filter: grayscale(10%) contrast(0.95) sepia(5%) brightness(1.3);
-}
-
-/* Dark overlay for text readability */
-.hero-portrait::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(180deg, rgba(245, 240, 230, 0.3) 0%, rgba(245, 240, 230, 0.15) 40%, rgba(245, 240, 230, 0.2) 70%, rgba(245, 240, 230, 0.35) 100%);
-    z-index: 1;
-}
 
 /* Particle canvas */
 .hero-particles {
@@ -441,10 +412,7 @@ a {
 }
 
 .hero h1 .highlight {
-    background: var(--gradient-golden);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #C8963E;
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
 }
 
@@ -1863,11 +1831,6 @@ a {
 
     .nav-toggle {
         display: flex;
-    }
-
-    .hero-portrait img {
-        opacity: 0.5;
-        object-position: 25% 15%;
     }
 
     .hero-content {

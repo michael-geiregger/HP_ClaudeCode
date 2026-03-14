@@ -1851,8 +1851,8 @@ a {
     }
 
     .hero-portrait img {
-        object-position: 55% 0%;
-        opacity: 0.25;
+        object-position: 60% 0%;
+        opacity: 0.35;
     }
 
     .hero-content {

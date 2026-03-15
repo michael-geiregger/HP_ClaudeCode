@@ -419,7 +419,7 @@ a {
 
 .hero h1 {
     font-family: var(--font-display);
-    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-size: clamp(3.2rem, 7vw, 5.5rem);
     font-weight: 700;
     line-height: 1.1;
     color: var(--color-night);

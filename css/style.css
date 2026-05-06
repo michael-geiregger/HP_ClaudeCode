@@ -1851,8 +1851,8 @@ a {
     }
 
     .hero-portrait img {
-        object-position: 65% 0%;
-        opacity: 0.45;
+        object-position: center 15%;
+        opacity: 0.18;
     }
 
     .hero-content {
@@ -1916,6 +1916,31 @@ a {
     .testimonial-card,
     .service-card {
         padding: 28px 24px;
+    }
+}
+
+/* ========================================
+   PHOTO BREAK
+   ======================================== */
+.photo-break {
+    width: 100%;
+    max-height: 480px;
+    overflow: hidden;
+    position: relative;
+}
+
+.photo-break img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .photo-break img {
+        height: 320px;
+        object-position: center 20%;
     }
 }
 

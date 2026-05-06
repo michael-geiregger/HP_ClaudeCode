@@ -309,25 +309,25 @@ a {
     100% { opacity: 1; transform: scale(1.05); }
 }
 
-/* Foto rechts – echter positionierter Block, kein Hintergrundbild */
-.hero-portrait-right {
+/* Vollflächiges Hintergrundbild */
+.hero-portrait {
     position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 58%;
+    inset: 0;
     z-index: 1;
     pointer-events: none;
     overflow: hidden;
 }
 
-.hero-portrait-right img {
-    width: 100%;
-    height: 100%;
+.hero-portrait img {
+    position: absolute;
+    inset: 0;
+    width: 120%;
+    height: 120%;
     object-fit: cover;
-    object-position: 35% top;
-    display: block;
-    filter: grayscale(15%) brightness(0.97);
+    object-position: 68% 0%;
+    top: -10%;
+    opacity: 0.65;
+    filter: grayscale(20%) brightness(0.95);
 }
 
 /* Particle canvas */
@@ -344,14 +344,13 @@ a {
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 120px 40px;
-    /* Text links, Foto rechts – kein Overlap */
     display: flex;
     align-items: center;
     min-height: 100vh;
 }
 
 .hero-text {
-    max-width: 460px;
+    max-width: 420px;
     text-align: left;
     flex-shrink: 0;
 }
@@ -1817,10 +1816,9 @@ a {
         display: flex;
     }
 
-    .hero-portrait-right {
-        width: 100%;
-        top: 0;
-        opacity: 0.35;
+    .hero-portrait img {
+        object-position: center 10%;
+        opacity: 0.45;
     }
 
     .hero-content {

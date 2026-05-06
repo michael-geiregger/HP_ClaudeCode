@@ -355,10 +355,7 @@ a {
 /* Hero portrait photo */
 .hero-portrait {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 35%;
+    inset: 0;
     z-index: 1;
     pointer-events: none;
     overflow: hidden;
@@ -367,10 +364,10 @@ a {
 .hero-portrait img {
     position: absolute;
     inset: 0;
-    width: 100%;
+    width: 120%;
     height: 120%;
     object-fit: cover;
-    object-position: center 5%;
+    object-position: 72% 5%;
     top: -15%;
     opacity: 0.65;
     filter: grayscale(20%) brightness(0.95);
@@ -1856,10 +1853,6 @@ a {
 
     .nav-toggle {
         display: flex;
-    }
-
-    .hero-portrait {
-        left: 0;
     }
 
     .hero-portrait img {

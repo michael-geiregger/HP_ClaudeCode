@@ -367,7 +367,7 @@ a {
     width: 120%;
     height: 120%;
     object-fit: cover;
-    object-position: 20% 5%;
+    object-position: 65% 5%;
     top: -15%;
     opacity: 0.55;
     filter: grayscale(20%) brightness(0.95);
@@ -390,8 +390,8 @@ a {
 }
 
 .hero-text {
-    max-width: 520px;
-    margin-left: auto;
+    max-width: 400px;
+    margin-left: 0;
 }
 
 .hero-badge {

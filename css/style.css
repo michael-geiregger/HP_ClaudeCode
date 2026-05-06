@@ -367,10 +367,36 @@ a {
     width: 120%;
     height: 120%;
     object-fit: cover;
-    object-position: 72% 5%;
+    object-position: 68% 5%;
     top: -15%;
     opacity: 0.65;
     filter: grayscale(20%) brightness(0.95);
+}
+
+/* Gradient overlay: links cremig → rechts transparent → Text-Zone klar, Gesicht rechts sichtbar */
+.hero-portrait::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(245, 240, 230, 0.96) 22%,
+        rgba(245, 240, 230, 0.65) 40%,
+        rgba(245, 240, 230, 0.15) 58%,
+        transparent 72%
+    );
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .hero-portrait::after {
+        background: linear-gradient(
+            to bottom,
+            rgba(245, 240, 230, 0.15) 0%,
+            rgba(245, 240, 230, 0.05) 50%,
+            transparent 100%
+        );
+    }
 }
 
 /* Particle canvas */

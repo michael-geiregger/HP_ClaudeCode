@@ -288,6 +288,23 @@ a {
     background: #f5f0e6;
 }
 
+/* Sanfter Übergang zum nächsten Abschnitt */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 160px;
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(253, 251, 236, 0.6) 50%,
+        #fdfbec 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
 .hero-bg {
     position: absolute;
     inset: 0;
@@ -1822,7 +1839,7 @@ a {
     }
 
     .hero-content {
-        padding: 370px 20px 80px;
+        padding: 320px 20px 80px;
         min-height: 100vh;
         align-items: flex-start;
     }
@@ -1838,7 +1855,9 @@ a {
     }
 
     .hero h1 {
-        font-size: clamp(2.2rem, 8vw, 3.2rem);
+        font-size: clamp(2.8rem, 10vw, 3.6rem);
+        font-weight: 800;
+        letter-spacing: -0.04em;
     }
 
     .hero-buttons {

@@ -1855,7 +1855,7 @@ a {
     }
 
     .hero h1 {
-        font-size: clamp(3.2rem, 12vw, 4.2rem);
+        font-size: 4rem;
         font-weight: 800;
         letter-spacing: -0.04em;
     }
@@ -1903,7 +1903,7 @@ a {
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 3.2rem;
+        font-size: 4rem;
         font-weight: 800;
         letter-spacing: -0.04em;
     }

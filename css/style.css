@@ -395,7 +395,7 @@ a {
 }
 
 .hero h1 .highlight {
-    color: #C8963E;
+    color: #7d6e5d;
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
 }
 
@@ -1822,7 +1822,7 @@ a {
     }
 
     .hero-content {
-        padding: 270px 20px 80px;
+        padding: 370px 20px 80px;
         min-height: 100vh;
         align-items: flex-start;
     }

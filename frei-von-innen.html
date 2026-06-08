@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Frei von innen – Online-Videoprogramm | Michael Geiregger</title>
+    <meta name="description" content="Frei von innen: In 6 Schritten zu mehr Leichtigkeit, Selbstvertrauen und Freude. Das Online-Videoprogramm von Michael Geiregger.">
+    <meta name="author" content="Michael Geiregger">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://michael-geiregger.com/frei-von-innen.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="Frei von innen – Online-Videoprogramm | Michael Geiregger">
+    <meta property="og:description" content="In 6 Schritten zu mehr Leichtigkeit, Selbstvertrauen und Freude. 30 Video-Lektionen, Workbook & lebenslanger Zugang.">
+    <meta property="og:url" content="https://michael-geiregger.com/frei-von-innen.html">
+    <meta property="og:image" content="https://michael-geiregger.com/images/frei-von-innen.jpg">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer data-domain="michael-geiregger.com" src="https://plausible.io/js/plausible.js"></script>
+
+    <style>
+        /* ========================================
+           SALES PAGE SPECIFIC STYLES
+           ======================================== */
+
+        /* Sales Hero */
+        .sales-hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f5f0e6 0%, #ebe4d4 50%, #ddd5c3 100%);
+        }
+
+        .sales-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to bottom, transparent, var(--color-warm-white));
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .sales-hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .sales-hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 60% at 70% 50%, rgba(200, 150, 62, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse 80% 80% at 30% 60%, rgba(245, 240, 230, 0.6) 0%, transparent 60%);
+        }
+
+        .sales-hero-image {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 58%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .sales-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            filter: sepia(25%) brightness(1.0) contrast(0.95);
+            mix-blend-mode: multiply;
+        }
+
+        .sales-hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to right, #f5f0e6 0%, rgba(245, 240, 230, 0.85) 20%, rgba(245, 240, 230, 0.3) 45%, transparent 70%),
+                linear-gradient(to bottom, transparent 60%, rgba(245, 240, 230, 0.7) 85%, #f5f0e6 100%),
+                linear-gradient(to top, transparent 70%, rgba(245, 240, 230, 0.4) 90%, rgba(245, 240, 230, 0.6) 100%);
+            z-index: 1;
+        }
+
+        .sales-hero-content {
+            position: relative;
+            z-index: 4;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 160px var(--container-padding) 100px;
+            width: 100%;
+        }
+
+        .sales-hero-text {
+            max-width: 520px;
+        }
+
+        .sales-hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(200, 150, 62, 0.1);
+            border: 1px solid rgba(200, 150, 62, 0.2);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            margin-bottom: 28px;
+        }
+
+        .sales-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.08;
+            color: var(--color-night);
+            margin-bottom: 8px;
+            letter-spacing: -0.03em;
+        }
+
+        .sales-hero h1 em {
+            font-style: italic;
+            color: var(--color-primary);
+        }
+
+        .sales-hero-subtitle {
+            font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 36px;
+            max-width: 460px;
+        }
+
+        .sales-hero-meta {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .sales-hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+
+        .sales-hero-meta-item svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--color-primary);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Pain Points */
+        .pain-section {
+            padding: var(--section-padding) 0;
+            background: var(--color-warm-white);
+        }
+
+        .pain-intro {
+            max-width: 720px;
+            margin: 0 auto 56px;
+            text-align: center;
+        }
+
+        .pain-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .pain-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 24px 28px;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s var(--ease-out-quart);
+        }
+
+        .pain-item:hover {
+            transform: translateX(4px);
+        }
+
+        .pain-item-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(61, 81, 101, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .pain-item p {
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        .pain-item strong {
+            color: var(--color-night);
+        }
+
+        /* Promise / Transformation */
+        .transform-section {
+            position: relative;
+            padding: var(--section-padding) 0;
+            background: var(--color-night);
+            overflow: hidden;
+        }
+
+        .transform-section .section-label {
+            color: var(--color-golden);
+        }
+
+        .transform-content {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .transform-content .section-label {
+            justify-content: center;
+        }
+
+        .transform-content .section-label::before {
+            display: none;
+        }
+
+        .transform-content .section-title {
+            color: white;
+        }
+
+        .transform-content .section-text {
+            color: rgba(255, 255, 255, 0.65);
+            margin: 0 auto 48px;
+        }
+
+        .transform-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            text-align: left;
+        }
+
+        .transform-card {
+            padding: 32px 28px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            transition: transform 0.3s var(--ease-out-quart), background 0.3s ease;
+        }
+
+        .transform-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .transform-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(200, 150, 62, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .transform-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .transform-card p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.7;
+        }
+
+        /* Module Section */
+        .module-section {
+            padding: var(--section-padding) 0;
+            background: linear-gradient(180deg, var(--color-warm-white) 0%, var(--color-cream) 100%);
+        }
+
+        .module-header {
+            max-width: 680px;
+            margin: 0 auto 56px;
+            text-align: center;
+        }
+
+        .module-header .section-label {
+            justify-content: center;
+        }
+
+        .module-header .section-label::before {
+            display: none;
+        }
+
+        .module-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .module-item {
+            display: grid;
+            grid-template-columns: 64px 1fr;
+            gap: 24px;
+            align-items: center;
+            padding: 28px 32px;
+            background: white;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: transform 0.4s var(--ease-out-quart), box-shadow 0.4s ease;
+        }
+
+        .module-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.07);
+        }
+
+        .module-number {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--gradient-golden);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            line-height: 1;
+        }
+
+        .module-number span {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            -webkit-text-fill-color: var(--color-text-muted);
+            margin-top: 4px;
+        }
+
+        .module-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-night);
+        }
+
+        /* What's Included */
+        .included-section {
+            padding: var(--section-padding) 0;
+            background: white;
+        }
+
+        .included-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .included-visual {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, rgba(200, 150, 62, 0.06) 0%, rgba(61, 81, 101, 0.06) 100%);
+        }
+
+        .included-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .included-list {
+            list-style: none;
+            margin: 32px 0;
+        }
+
+        .included-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--color-sand);
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        .included-list li:last-child {
+            border-bottom: none;
+        }
+
+        .included-check {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(200, 150, 62, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .included-check svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--color-primary);
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            position: relative;
+            padding: var(--section-padding) 0;
+            background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-warm-white) 100%);
+            overflow: hidden;
+        }
+
+        .pricing-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(200, 150, 62, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .pricing-header {
+            max-width: 640px;
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        .pricing-header .section-label {
+            justify-content: center;
+        }
+
+        .pricing-header .section-label::before {
+            display: none;
+        }
+
+        .pricing-card {
+            position: relative;
+            max-width: 560px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            padding: 56px 48px;
+            text-align: center;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(200, 150, 62, 0.15);
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-golden);
+            border-radius: 32px 32px 0 0;
+        }
+
+        .pricing-name {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-night);
+            margin-bottom: 8px;
+        }
+
+        .pricing-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            margin-bottom: 32px;
+        }
+
+        .pricing-price {
+            margin-bottom: 12px;
+        }
+
+        .pricing-amount {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--color-night);
+            letter-spacing: -0.03em;
+        }
+
+        .pricing-currency {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-text-muted);
+            vertical-align: super;
+        }
+
+        .pricing-note {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-bottom: 36px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--color-light-sage);
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--color-primary);
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        .pricing-card .btn {
+            width: 100%;
+            justify-content: center;
+            font-size: 1.1rem;
+            padding: 18px 36px;
+        }
+
+        .pricing-guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+
+        .pricing-guarantee svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--color-text-muted);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* About / Trainer */
+        .trainer-section {
+            padding: var(--section-padding) 0;
+            background: var(--color-warm-white);
+        }
+
+        .trainer-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .trainer-image {
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+        }
+
+        .trainer-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: var(--section-padding) 0;
+            background: white;
+        }
+
+        .faq-header {
+            max-width: 600px;
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        .faq-header .section-label {
+            justify-content: center;
+        }
+
+        .faq-header .section-label::before {
+            display: none;
+        }
+
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--color-sand);
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-night);
+            text-align: left;
+            gap: 16px;
+        }
+
+        .faq-question:hover {
+            color: var(--color-primary);
+        }
+
+        .faq-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--color-light-sage);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            background: rgba(200, 150, 62, 0.15);
+        }
+
+        .faq-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--color-text);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s var(--ease-out-quart), padding 0.4s var(--ease-out-quart);
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            padding-bottom: 24px;
+        }
+
+        .faq-answer p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            position: relative;
+            padding: var(--section-padding) 0;
+            background: var(--color-night);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 50% 50% at 30% 50%, rgba(200, 150, 62, 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 50% at 70% 50%, rgba(61, 81, 101, 0.06) 0%, transparent 70%);
+        }
+
+        .final-cta-content {
+            position: relative;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .final-cta .section-label {
+            color: var(--color-golden);
+            justify-content: center;
+        }
+
+        .final-cta .section-label::before {
+            display: none;
+        }
+
+        .final-cta .section-title {
+            color: white;
+        }
+
+        .final-cta .section-text {
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0 auto 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .included-layout,
+            .trainer-layout {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .included-visual,
+            .trainer-image {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .transform-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sales-hero {
+                min-height: auto;
+            }
+
+            .sales-hero-image {
+                position: relative;
+                width: 100%;
+                height: 50vh;
+                min-height: 320px;
+            }
+
+            .sales-hero-image::before {
+                background: linear-gradient(to bottom, transparent 50%, #f5f0e6 100%);
+            }
+
+            .sales-hero-content {
+                padding: 40px var(--container-padding) 60px;
+            }
+
+            .sales-hero-text {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .sales-hero-subtitle {
+                margin: 0 auto 36px;
+            }
+
+            .sales-hero-meta {
+                justify-content: center;
+            }
+
+            .sales-hero .hero-buttons {
+                justify-content: center;
+            }
+
+            .sales-hero {
+                flex-direction: column;
+            }
+
+            .module-item {
+                grid-template-columns: 48px 1fr;
+                gap: 16px;
+                padding: 20px 24px;
+            }
+
+            .pricing-card {
+                padding: 40px 28px;
+            }
+
+            .pricing-amount {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-text">
+            <span class="highlight">Frei</span> von innen.
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                Michael Geiregger
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="ueber-mich.html">Über mich</a></li>
+                <li><a href="leistungen.html">Leistungen</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="podcast.html">Podcast</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="klarheitsgespraech.html" class="nav-cta">Klarheitsgespräch</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- SALES HERO -->
+    <section class="sales-hero">
+        <div class="sales-hero-bg"></div>
+        <div class="sales-hero-image">
+            <img src="images/frei-von-innen.jpg" alt="Frei von innen – Michael Geiregger">
+        </div>
+        <div class="sales-hero-content">
+            <div class="sales-hero-text">
+                <div class="sales-hero-label">Video-Kurs &middot; 6 Module</div>
+                <h1 class="reveal">Frei<br><em>von</em><br>innen</h1>
+                <p class="sales-hero-subtitle reveal">
+                    In 6 Schritten zu mehr Leichtigkeit, Selbstvertrauen und Freude.
+                </p>
+                <div class="sales-hero-meta reveal">
+                    <div class="sales-hero-meta-item">
+                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        30 Video-Lektionen
+                    </div>
+                    <div class="sales-hero-meta-item">
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        Workbook
+                    </div>
+                    <div class="sales-hero-meta-item">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        In deinem Tempo
+                    </div>
+                </div>
+                <div class="hero-buttons reveal">
+                    <a href="mailto:info@michael-geiregger.com?subject=Ich%20will%20dein%20Online-Programm%20kaufen" class="btn btn-primary">
+                        Jetzt für 247&nbsp;€ sichern
+                        <span class="btn-arrow">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAIN POINTS -->
+    <section class="pain-section">
+        <div class="container">
+            <div class="pain-intro">
+                <div class="section-label reveal">Kommt dir das bekannt vor?</div>
+                <h2 class="section-title reveal">Du funktionierst &mdash; aber du lebst nicht wirklich.</h2>
+                <p class="section-text reveal" style="margin: 0 auto;">
+                    Du gibst alles, du leistest viel &mdash; doch innerlich fehlt etwas.
+                    Ein diffuses Gefühl, das dir die Leichtigkeit nimmt.
+                </p>
+            </div>
+            <div class="pain-list stagger-children">
+                <div class="pain-item reveal" style="--i: 0">
+                    <div class="pain-item-icon">&#128566;</div>
+                    <p><strong>Dein Kopf kommt nicht zur Ruhe.</strong> Ständiges Grübeln, Zweifel und das Gefühl, nicht gut genug zu sein, begleiten dich durch den Tag.</p>
+                </div>
+                <div class="pain-item reveal" style="--i: 1">
+                    <div class="pain-item-icon">&#128556;</div>
+                    <p><strong>Stress bestimmt deinen Alltag.</strong> Du reagierst auf alles, was kommt &mdash; statt bewusst zu gestalten. Die innere Anspannung lässt nicht nach.</p>
+                </div>
+                <div class="pain-item reveal" style="--i: 2">
+                    <div class="pain-item-icon">&#128548;</div>
+                    <p><strong>Emotionen kontrollieren dich.</strong> Ärger, Angst oder Frustration übernehmen das Steuer &mdash; und du weißt nicht, wie du da rauskommst.</p>
+                </div>
+                <div class="pain-item reveal" style="--i: 3">
+                    <div class="pain-item-icon">&#128532;</div>
+                    <p><strong>Freude und Leichtigkeit fehlen.</strong> Du erinnerst dich kaum noch daran, wie es sich anfühlt, einfach glücklich zu sein &mdash; ohne Grund.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSFORMATION -->
+    <section class="transform-section">
+        <div class="divider-wave" style="position: absolute; top: -1px; left: 0; right: 0;">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,20 C360,80 720,0 1080,50 C1260,70 1380,30 1440,20 L1440,0 L0,0 Z" fill="var(--color-warm-white)"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="transform-content">
+                <div class="section-label reveal">Deine Transformation</div>
+                <h2 class="section-title reveal">Stell dir vor, du könntest&hellip;</h2>
+                <p class="section-text reveal">
+                    Nicht weil sich dein Leben im Außen verändert &mdash; sondern weil sich etwas in dir verändert hat.
+                </p>
+            </div>
+            <div class="transform-grid stagger-children">
+                <div class="transform-card reveal" style="--i: 0">
+                    <div class="transform-card-icon">&#127793;</div>
+                    <h3>Frei entscheiden</h3>
+                    <p>Triff Entscheidungen aus Klarheit und innerem Vertrauen &mdash; nicht mehr aus Angst oder Gewohnheit.</p>
+                </div>
+                <div class="transform-card reveal" style="--i: 1">
+                    <div class="transform-card-icon">&#9968;&#65039;</div>
+                    <h3>Gelassen bleiben</h3>
+                    <p>Stressige Situationen verlieren ihre Macht über dich. Du bleibst ruhig, klar und bei dir.</p>
+                </div>
+                <div class="transform-card reveal" style="--i: 2">
+                    <div class="transform-card-icon">&#9728;&#65039;</div>
+                    <h3>Freude spüren</h3>
+                    <p>Erlebe wieder echte Leichtigkeit und Lebensfreude &mdash; nicht irgendwann, sondern jetzt.</p>
+                </div>
+            </div>
+        </div>
+        <div class="divider-wave" style="position: absolute; bottom: -1px; left: 0; right: 0;">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,40 C360,0 720,80 1080,30 C1260,10 1380,50 1440,40 L1440,80 L0,80 Z" fill="var(--color-cream)"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 6 MODULE -->
+    <section class="module-section">
+        <div class="container">
+            <div class="module-header">
+                <div class="section-label reveal">Die 6 Schritte</div>
+                <h2 class="section-title reveal">Dein Weg zur inneren Freiheit</h2>
+                <p class="section-text reveal" style="margin: 0 auto;">
+                    Jedes Modul baut auf dem vorherigen auf und führt dich Schritt für Schritt in ein freieres, leichteres Leben.
+                </p>
+            </div>
+            <div class="module-list stagger-children">
+                <div class="module-item reveal" style="--i: 0">
+                    <div class="module-number">01<span>Modul</span></div>
+                    <div class="module-info">
+                        <h3>Dein Leben selbst gestalten</h3>
+                    </div>
+                </div>
+                <div class="module-item reveal" style="--i: 1">
+                    <div class="module-number">02<span>Modul</span></div>
+                    <div class="module-info">
+                        <h3>Stress besser meistern</h3>
+                    </div>
+                </div>
+                <div class="module-item reveal" style="--i: 2">
+                    <div class="module-number">03<span>Modul</span></div>
+                    <div class="module-info">
+                        <h3>Emotionale Freiheit</h3>
+                    </div>
+                </div>
+                <div class="module-item reveal" style="--i: 3">
+                    <div class="module-number">04<span>Modul</span></div>
+                    <div class="module-info">
+                        <h3>Vom Zweifel zum Selbstvertrauen</h3>
+                    </div>
+                </div>
+                <div class="module-item reveal" style="--i: 4">
+                    <div class="module-number">05<span>Modul</span></div>
+                    <div class="module-info">
+                        <h3>Vertrauen und Zuversicht</h3>
+                    </div>
+                </div>
+                <div class="module-item reveal" style="--i: 5">
+                    <div class="module-number">06<span>Modul</span></div>
+                    <div class="module-info">
+                        <h3>Mehr Freude erlauben</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WAS IST ENTHALTEN -->
+    <section class="included-section">
+        <div class="container">
+            <div class="included-layout">
+                <div class="included-visual reveal-left">
+                    <img src="images/DSCF0581.jpeg" alt="Michael Geiregger Coaching" loading="lazy">
+                </div>
+                <div class="reveal-right">
+                    <div class="section-label">Das bekommst du</div>
+                    <h2 class="section-title">Alles, was du für deine Transformation brauchst.</h2>
+                    <p class="section-text">
+                        Dieses Programm ist kein theoretischer Kurs &mdash; es ist eine begleitete Reise zu dir selbst.
+                    </p>
+                    <ul class="included-list">
+                        <li>
+                            <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span><strong>6 ausführliche Module</strong> mit klarer Struktur und aufeinander aufbauenden Inhalten</span>
+                        </li>
+                        <li>
+                            <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span><strong>30 Video-Lektionen</strong> &mdash; praxisnah, verständlich und direkt umsetzbar</span>
+                        </li>
+                        <li>
+                            <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span><strong>42-seitiges Workbook</strong> mit Übungen und Reflexionsfragen zum Vertiefen</span>
+                        </li>
+                        <li>
+                            <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span><strong>Zugang für mindestens 2 Jahre</strong> &mdash; lerne in deinem eigenen Tempo</span>
+                        </li>
+                        <li>
+                            <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span><strong>Praktische Übungen</strong> für den sofortigen Einsatz in deinem Alltag</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <div class="section-label reveal">Erfahrungen</div>
+                <h2 class="section-title reveal">Was Klienten über die Arbeit mit Michael sagen</h2>
+            </div>
+            <div class="testimonials-grid stagger-children">
+                <div class="testimonial-card reveal" style="--i: 0">
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>
+                        Michael, unsere Gespräche waren teilweise so fesselnd, dass ich Raum und Zeit vergaß.
+                        Du hast mir Methoden mitgegeben und Wege aufgezeigt, die mir geholfen haben,
+                        unangenehme Situationen in den Griff zu bekommen, wodurch ich meine Lebensqualität
+                        rasch steigern konnte.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div>
+                            <div class="testimonial-name">Stefan</div>
+                            <div class="testimonial-role">Abteilungsleiter</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal" style="--i: 1">
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>
+                        Was sich bei mir alles getan hat, seitdem ich bei dir war: Wahnsinn!
+                        Ich möchte dir auf diesem Weg nochmals Danke sagen, weil du definitiv
+                        dazu beigetragen hast, dass ich wieder mehr Lebensfreude spüre.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: var(--gradient-warm);">J</div>
+                        <div>
+                            <div class="testimonial-name">Johanna</div>
+                            <div class="testimonial-role">Selbstständige</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal" style="--i: 2">
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>
+                        Ich wäre ohne deine Hilfe nicht an diesem Punkt, wo ich jetzt gerade bin, Michael.
+                        Es ist so viel Positives passiert, dass ich es oft selbst nicht glauben kann.
+                        Und wie du sagst: Es ist noch nicht fertig so wie es ist. Ich darf weiter träumen!
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #3d5165, #7d6e5d);">M</div>
+                        <div>
+                            <div class="testimonial-name">Marina</div>
+                            <div class="testimonial-role">Unternehmerin</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing-section" id="kaufen">
+        <div class="container">
+            <div class="pricing-header">
+                <div class="section-label reveal">Deine Investition</div>
+                <h2 class="section-title reveal">Bereit für deine innere Freiheit?</h2>
+            </div>
+            <div class="pricing-card reveal-scale">
+                <div class="pricing-name">Frei von innen</div>
+                <div class="pricing-desc">Dein komplettes Online-Videoprogramm</div>
+                <div class="pricing-price">
+                    <span class="pricing-currency">&euro;</span>
+                    <span class="pricing-amount">247</span>
+                </div>
+                <div class="pricing-note">Einmalzahlung &middot; Kein Abo</div>
+                <ul class="pricing-features">
+                    <li>
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        6 Module mit 30 Video-Lektionen
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        42-seitiges Workbook zum Download
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        Praktische Übungen für den Alltag
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        Mindestens 2 Jahre Zugang
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        Lerne in deinem eigenen Tempo
+                    </li>
+                </ul>
+                <a href="mailto:info@michael-geiregger.com?subject=Ich%20will%20dein%20Online-Programm%20kaufen" class="btn btn-primary">
+                    Jetzt Zugang sichern
+                    <span class="btn-arrow">&rarr;</span>
+                </a>
+                <div class="pricing-guarantee">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Sichere Bezahlung &middot; Sofortiger Zugang
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÜBER MICHAEL -->
+    <section class="trainer-section">
+        <div class="container">
+            <div class="trainer-layout">
+                <div class="trainer-image reveal-left">
+                    <img src="images/DSCF0378.jpeg" alt="Michael Geiregger" loading="lazy">
+                </div>
+                <div class="reveal-right">
+                    <div class="section-label">Dein Begleiter</div>
+                    <h2 class="section-title">Hi, ich bin Michael.</h2>
+                    <p class="section-text">
+                        Als Coach und Mentor begleite ich Menschen dabei, aus dem Gedankenkarussell
+                        auszusteigen und echte Lebensfreude zurückzugewinnen.
+                    </p>
+                    <p class="section-text" style="margin-top: 20px;">
+                        Mit über 10 Jahren Erfahrung in NLP, Hypnose, Atemarbeit und mentaler Arbeit
+                        habe ich dieses Programm entwickelt &mdash; als Essenz meiner wirksamsten Methoden.
+                        Kompakt, praxisnah und sofort umsetzbar.
+                    </p>
+                    <div class="method-result" style="margin-top: 32px;">
+                        <p>Dieses Programm enthält die Werkzeuge, die in meinen 1:1-Coachings die größte Wirkung gezeigt haben.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-header">
+                <div class="section-label reveal">Häufige Fragen</div>
+                <h2 class="section-title reveal">Noch Fragen?</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Für wen ist dieses Programm geeignet?
+                        <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Für jeden, der das Gefühl hat, ständig zu funktionieren, aber innerlich nicht frei zu sein. Ob Stress, Selbstzweifel, Ängste oder fehlende Lebensfreude &mdash; dieses Programm gibt dir konkrete Werkzeuge für echte Veränderung.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Wie lange habe ich Zugang zu den Inhalten?
+                        <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Du hast mindestens 2 Jahre Zugang zu allen Inhalten. So kannst du in deinem eigenen Tempo lernen und Module jederzeit wiederholen.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Wie viel Zeit muss ich einplanen?
+                        <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Der Kurs ist so aufgebaut, dass du ihn flexibel in deinen Alltag integrieren kannst. Plane pro Modul etwa 1&ndash;2 Stunden für die Videos und Übungen ein. Du bestimmst das Tempo.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Brauche ich Vorkenntnisse?
+                        <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nein, keinerlei Vorkenntnisse nötig. Die Inhalte sind verständlich erklärt und die Übungen sofort umsetzbar &mdash; egal wo du gerade stehst.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Wie läuft der Kauf ab?
+                        <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Klicke auf den Button &bdquo;Jetzt Zugang sichern&ldquo; und schreibe mir eine kurze E-Mail. Ich melde mich persönlich bei dir mit allen Details zur Bezahlung und zum Zugang.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <div class="section-label reveal">Dein nächster Schritt</div>
+                <h2 class="section-title reveal">Dein Leben darf sich leicht anfühlen.</h2>
+                <p class="section-text reveal">
+                    Du hast die Wahl: Weitermachen wie bisher &mdash; oder heute den ersten Schritt
+                    in ein freieres, leichteres Leben gehen.
+                </p>
+                <a href="mailto:info@michael-geiregger.com?subject=Ich%20will%20dein%20Online-Programm%20kaufen" class="btn btn-primary reveal">
+                    Jetzt für 247&nbsp;€ starten
+                    <span class="btn-arrow">&rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">Michael Geiregger</div>
+                    <p class="footer-brand-tagline">
+                        Coach & Mentor für Unternehmer, die Freiheit und Klarheit suchen.
+                        Weil du mehr verdienst als nur zu funktionieren.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+                        <a href="https://www.facebook.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="https://www.linkedin.com/in/michael-geiregger/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                        <a href="https://www.youtube.com/@ZwischenAlltagundUniversum" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="4" ry="4"/><polygon points="10 8.5 16 12 10 15.5" fill="currentColor" stroke="none"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Menü</h4>
+                    <ul>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="ueber-mich.html">Über mich</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Angebote</h4>
+                    <ul>
+                        <li><a href="klarheitsgespraech.html">Klarheitsgespräch</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Michael Geiregger. Alle Rechte vorbehalten.</span>
+                <span>Mit Leidenschaft gebaut.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

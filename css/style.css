@@ -347,6 +347,10 @@ a {
     filter: grayscale(20%) brightness(0.95);
 }
 
+.hero-img-mobile {
+    display: none;
+}
+
 /* Particle canvas */
 .hero-particles {
     position: absolute;
@@ -1833,13 +1837,31 @@ a {
         display: flex;
     }
 
-    .hero-portrait img {
-        object-position: center 10%;
-        opacity: 0.45;
+    .hero-img-desktop {
+        display: none;
+    }
+
+    .hero-img-mobile {
+        display: block !important;
+        object-position: 40% 10%;
+        opacity: 0.4;
+    }
+
+    .hero-portrait::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(to bottom,
+            rgba(245, 240, 230, 0.1) 0%,
+            rgba(245, 240, 230, 0.4) 45%,
+            rgba(245, 240, 230, 0.7) 70%,
+            rgba(245, 240, 230, 0.85) 100%
+        );
     }
 
     .hero-content {
-        padding: 320px 20px 80px;
+        padding: 180px 20px 60px;
         min-height: 100vh;
         align-items: flex-start;
     }

@@ -1844,7 +1844,7 @@ a {
 
     .hero-img-mobile {
         display: block !important;
-        object-position: 40% 10%;
+        object-position: 40% 0%;
         opacity: 0.4;
     }
 
@@ -1862,7 +1862,7 @@ a {
     }
 
     .hero-content {
-        padding: 180px 20px 60px;
+        padding: 300px 20px 40px;
         min-height: 100vh;
         align-items: flex-start;
     }
@@ -1873,14 +1873,15 @@ a {
     }
 
     .hero p {
-        margin: 0 auto 44px;
+        margin: 0 auto 28px;
         padding: 0 32px;
     }
 
     .hero h1 {
-        font-size: 4rem;
+        font-size: 3.2rem;
         font-weight: 800;
         letter-spacing: -0.04em;
+        margin-bottom: 20px;
     }
 
     .hero-buttons {

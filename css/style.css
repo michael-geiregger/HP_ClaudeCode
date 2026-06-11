@@ -1846,6 +1846,7 @@ a {
         display: block !important;
         object-position: 40% 0%;
         opacity: 0.4;
+        top: -18% !important;
     }
 
     .hero-portrait::after {
@@ -1862,7 +1863,7 @@ a {
     }
 
     .hero-content {
-        padding: 300px 20px 40px;
+        padding: 220px 20px 40px;
         min-height: 100vh;
         align-items: flex-start;
     }

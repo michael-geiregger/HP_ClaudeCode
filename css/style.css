@@ -1844,9 +1844,9 @@ a {
 
     .hero-img-mobile {
         display: block !important;
-        object-position: 40% 0%;
+        object-position: 40% 25%;
         opacity: 0.4;
-        top: -18% !important;
+        top: 0 !important;
     }
 
     .hero-portrait::after {

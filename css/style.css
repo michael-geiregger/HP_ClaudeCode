@@ -1980,3 +1980,47 @@ section[id] {
     background: rgba(200, 150, 62, 0.2);
     color: var(--color-night);
 }
+
+/* ========================================
+   WHATSAPP FLOATING BUTTON
+   ======================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+    z-index: 9999;
+    transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    .whatsapp-float svg {
+        width: 26px;
+        height: 26px;
+    }
+}

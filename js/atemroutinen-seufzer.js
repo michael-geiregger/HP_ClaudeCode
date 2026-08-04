@@ -2,10 +2,13 @@
 // PHYSIOLOGISCHER SEUFZER — Atemroutine
 // ==============================
 (function () {
+    // Zeiten orientiert an Balban et al. 2023 (Stanford, Cell Reports Medicine) &
+    // Huberman Labs Protokoll: 1:2-Verhältnis Einatmen:Ausatmen (dort z.B. 4s:8s).
+    // Erste Einatmung ~3s, kurzes Nachziehen ~1,2s, Ausatmung ~doppelt so lang wie beide Einatmungen zusammen.
     const PHASES = [
-        { key: 'inhale1', label: 'Einatmen', instruction: 'Tief durch die Nase einatmen', duration: 1900, scale: 0.78, filter: 1500, gain: 0.13 },
-        { key: 'inhale2', label: 'Nachziehen', instruction: 'Noch einmal kurz durch die Nase nachziehen', duration: 900, scale: 1.0, filter: 1900, gain: 0.16 },
-        { key: 'exhale', label: 'Ausatmen', instruction: 'Lang & entspannt durch den Mund ausatmen', duration: 6200, scale: 0.5, filter: 420, gain: 0.05 }
+        { key: 'inhale1', label: 'Einatmen', instruction: 'Tief durch die Nase einatmen', duration: 3000, scale: 0.78, filter: 1500, gain: 0.13, pitch: 1.07 },
+        { key: 'inhale2', label: 'Nachziehen', instruction: 'Noch einmal kurz durch die Nase nachziehen', duration: 1200, scale: 1.0, filter: 1900, gain: 0.16, pitch: 1.125 },
+        { key: 'exhale', label: 'Ausatmen', instruction: 'Lang & entspannt durch den Mund ausatmen', duration: 8400, scale: 0.5, filter: 420, gain: 0.05, pitch: 1.0 }
     ];
     const REST_SCALE = 0.5;
     const CYCLE_MS = PHASES.reduce((sum, p) => sum + p.duration, 0);
@@ -93,43 +96,97 @@
 
     // ------------------------------
     // Generative Klangbegleitung (Web Audio API)
-    // Kein externer Musik-Track — ein weicher Ambient-Pad,
-    // dessen Lautstärke & Klangfarbe dem Atemrhythmus folgt.
+    // Kein externer Musik-Track. Zwei Schichten:
+    //  1) Ein warmer Ambient-Pad-Ton, der beim Einatmen sanft nach oben gleitet
+    //     und beim Ausatmen wieder absinkt — so klingt Ein- und Ausatmen spürbar anders.
+    //  2) Ein leises, atemähnliches Rauschen ("Whoosh"), das nur beim Ausatmen
+    //     kurz anschwillt und wieder verklingt.
+    // Ein synthetischer Hall (Impulsantwort aus Rauschen) gibt dem Pad Wärme und Raum.
     // ------------------------------
     const BreathAudio = (function () {
         let ctx = null, masterGain = null, filter = null, oscillators = [];
+        let noiseSource = null, noiseFilter = null, noiseGain = null;
+        const baseFreq = 130.81; // C3
+        const partials = [
+            { ratio: 1, type: 'sine', gain: 0.5, detune: 0 },
+            { ratio: 1, type: 'sine', gain: 0.2, detune: -7 },   // leichte Schwebung für Wärme
+            { ratio: 1.5, type: 'sine', gain: 0.22, detune: 0 }, // Quinte
+            { ratio: 2.25, type: 'triangle', gain: 0.09, detune: 0 } // None, luftige Oberstimme
+        ];
+
+        function createReverbImpulse(duration, decay) {
+            const rate = ctx.sampleRate;
+            const length = Math.floor(rate * duration);
+            const impulse = ctx.createBuffer(2, length, rate);
+            for (let ch = 0; ch < 2; ch++) {
+                const data = impulse.getChannelData(ch);
+                for (let i = 0; i < length; i++) {
+                    data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / length, decay);
+                }
+            }
+            return impulse;
+        }
+
+        function createBreathNoiseBuffer() {
+            const length = ctx.sampleRate * 2;
+            const buffer = ctx.createBuffer(1, length, ctx.sampleRate);
+            const data = buffer.getChannelData(0);
+            let lastOut = 0;
+            for (let i = 0; i < length; i++) {
+                const white = Math.random() * 2 - 1;
+                lastOut = (lastOut + 0.02 * white) / 1.02;
+                data[i] = lastOut * 3.2;
+            }
+            return buffer;
+        }
 
         function build() {
             ctx = new (window.AudioContext || window.webkitAudioContext)();
+
             filter = ctx.createBiquadFilter();
             filter.type = 'lowpass';
             filter.frequency.value = 420;
-            filter.Q.value = 0.6;
+            filter.Q.value = 0.5;
+
+            const dryGain = ctx.createGain();
+            dryGain.gain.value = 0.8;
+            const wetGain = ctx.createGain();
+            wetGain.gain.value = 0.35;
+            const reverb = ctx.createConvolver();
+            reverb.buffer = createReverbImpulse(1.8, 2.4);
 
             masterGain = ctx.createGain();
             masterGain.gain.value = 0.0001;
 
-            filter.connect(masterGain);
+            filter.connect(dryGain).connect(masterGain);
+            filter.connect(reverb).connect(wetGain).connect(masterGain);
             masterGain.connect(ctx.destination);
-
-            const partials = [
-                { ratio: 1, type: 'sine', gain: 0.6 },
-                { ratio: 1.5, type: 'sine', gain: 0.28 },
-                { ratio: 2, type: 'triangle', gain: 0.12 }
-            ];
-            const baseFreq = 130.81; // C3
 
             oscillators = partials.map(p => {
                 const osc = ctx.createOscillator();
                 osc.type = p.type;
                 osc.frequency.value = baseFreq * p.ratio;
+                osc.detune.value = p.detune;
                 const g = ctx.createGain();
                 g.gain.value = p.gain;
                 osc.connect(g);
                 g.connect(filter);
                 osc.start();
-                return osc;
+                return { osc, ratio: p.ratio };
             });
+
+            // Atemähnliches Rauschen — nur während des Ausatmens hörbar.
+            noiseSource = ctx.createBufferSource();
+            noiseSource.buffer = createBreathNoiseBuffer();
+            noiseSource.loop = true;
+            noiseFilter = ctx.createBiquadFilter();
+            noiseFilter.type = 'bandpass';
+            noiseFilter.frequency.value = 700;
+            noiseFilter.Q.value = 0.6;
+            noiseGain = ctx.createGain();
+            noiseGain.gain.value = 0.0001;
+            noiseSource.connect(noiseFilter).connect(noiseGain).connect(ctx.destination);
+            noiseSource.start();
         }
 
         return {
@@ -143,17 +200,38 @@
             setPhase(phase) {
                 if (!ctx) return;
                 const now = ctx.currentTime;
-                const timeConstant = Math.max(phase.duration / 1000 / 3, 0.15);
+                const durationSec = phase.duration / 1000;
+                const timeConstant = Math.max(durationSec / 3, 0.15);
+
                 filter.frequency.cancelScheduledValues(now);
                 filter.frequency.setTargetAtTime(phase.filter, now, timeConstant);
                 masterGain.gain.cancelScheduledValues(now);
                 masterGain.gain.setTargetAtTime(phase.gain, now, timeConstant);
+
+                oscillators.forEach(({ osc, ratio }) => {
+                    osc.frequency.cancelScheduledValues(now);
+                    osc.frequency.setTargetAtTime(baseFreq * phase.pitch * ratio, now, timeConstant);
+                });
+
+                noiseGain.gain.cancelScheduledValues(now);
+                if (phase.key === 'exhale') {
+                    const swellTime = Math.min(1.4, durationSec * 0.35);
+                    noiseGain.gain.setValueAtTime(0.0001, now);
+                    noiseGain.gain.linearRampToValueAtTime(0.045, now + swellTime);
+                    noiseGain.gain.linearRampToValueAtTime(0.0001, now + durationSec);
+                    noiseFilter.frequency.setTargetAtTime(600, now, timeConstant);
+                } else {
+                    noiseGain.gain.setTargetAtTime(0.0001, now, 0.2);
+                    noiseFilter.frequency.setTargetAtTime(900, now, timeConstant);
+                }
             },
             pause() {
                 if (!ctx) return;
                 const now = ctx.currentTime;
                 masterGain.gain.cancelScheduledValues(now);
                 masterGain.gain.setTargetAtTime(0.0001, now, 0.2);
+                noiseGain.gain.cancelScheduledValues(now);
+                noiseGain.gain.setTargetAtTime(0.0001, now, 0.2);
             },
             resume(phase) {
                 if (!ctx) return;
@@ -164,16 +242,23 @@
                 const now = ctx.currentTime;
                 masterGain.gain.cancelScheduledValues(now);
                 masterGain.gain.setTargetAtTime(0.0001, now, 0.3);
+                noiseGain.gain.cancelScheduledValues(now);
+                noiseGain.gain.setTargetAtTime(0.0001, now, 0.2);
                 const closingCtx = ctx;
                 const closingOscs = oscillators;
+                const closingNoise = noiseSource;
                 setTimeout(() => {
-                    closingOscs.forEach(o => { try { o.stop(); } catch (e) {} });
+                    closingOscs.forEach(({ osc }) => { try { osc.stop(); } catch (e) {} });
+                    try { closingNoise.stop(); } catch (e) {}
                     closingCtx.close();
                 }, 600);
                 ctx = null;
                 masterGain = null;
                 filter = null;
                 oscillators = [];
+                noiseSource = null;
+                noiseFilter = null;
+                noiseGain = null;
             }
         };
     })();

@@ -1,16 +1,16 @@
 // ==============================
-// PHYSIOLOGISCHER SEUFZER — Atemroutine
+// ATEM-ENGINE — gemeinsame Logik für alle Atemroutinen
+// Erwartet ein vorab definiertes window.BREATH_ROUTINE = {
+//   restScale: Number,
+//   phases: [{ key, label, instruction, duration, scale, filter, gain, pitch, breathOut }]
+// }
 // ==============================
 (function () {
-    // Zeiten orientiert an Balban et al. 2023 (Stanford, Cell Reports Medicine) &
-    // Huberman Labs Protokoll: 1:2-Verhältnis Einatmen:Ausatmen (dort z.B. 4s:8s).
-    // Erste Einatmung ~3s, kurzes Nachziehen ~1,2s, Ausatmung ~doppelt so lang wie beide Einatmungen zusammen.
-    const PHASES = [
-        { key: 'inhale1', label: 'Einatmen', instruction: 'Tief durch die Nase einatmen', duration: 3000, scale: 0.78, filter: 1500, gain: 0.13, pitch: 1.07 },
-        { key: 'inhale2', label: 'Nachziehen', instruction: 'Noch einmal kurz durch die Nase nachziehen', duration: 1200, scale: 1.0, filter: 1900, gain: 0.16, pitch: 1.125 },
-        { key: 'exhale', label: 'Ausatmen', instruction: 'Lang & entspannt durch den Mund ausatmen', duration: 8400, scale: 0.5, filter: 420, gain: 0.05, pitch: 1.0 }
-    ];
-    const REST_SCALE = 0.5;
+    const routine = window.BREATH_ROUTINE;
+    if (!routine || !routine.phases || !routine.phases.length) return;
+
+    const PHASES = routine.phases;
+    const REST_SCALE = routine.restScale != null ? routine.restScale : PHASES[PHASES.length - 1].scale;
     const CYCLE_MS = PHASES.reduce((sum, p) => sum + p.duration, 0);
 
     const els = {
@@ -99,8 +99,8 @@
     // Kein externer Musik-Track. Zwei Schichten:
     //  1) Ein warmer Ambient-Pad-Ton, der beim Einatmen sanft nach oben gleitet
     //     und beim Ausatmen wieder absinkt — so klingt Ein- und Ausatmen spürbar anders.
-    //  2) Ein leises, atemähnliches Rauschen ("Whoosh"), das nur beim Ausatmen
-    //     kurz anschwillt und wieder verklingt.
+    //  2) Ein leises, atemähnliches Rauschen ("Whoosh"), das nur bei Phasen mit
+    //     breathOut:true (Ausatmen) kurz anschwillt und wieder verklingt.
     // Ein synthetischer Hall (Impulsantwort aus Rauschen) gibt dem Pad Wärme und Raum.
     // ------------------------------
     const BreathAudio = (function () {
@@ -175,7 +175,7 @@
                 return { osc, ratio: p.ratio };
             });
 
-            // Atemähnliches Rauschen — nur während des Ausatmens hörbar.
+            // Atemähnliches Rauschen — nur während Ausatem-Phasen hörbar.
             noiseSource = ctx.createBufferSource();
             noiseSource.buffer = createBreathNoiseBuffer();
             noiseSource.loop = true;
@@ -214,7 +214,7 @@
                 });
 
                 noiseGain.gain.cancelScheduledValues(now);
-                if (phase.key === 'exhale') {
+                if (phase.breathOut) {
                     const swellTime = Math.min(1.4, durationSec * 0.35);
                     noiseGain.gain.setValueAtTime(0.0001, now);
                     noiseGain.gain.linearRampToValueAtTime(0.045, now + swellTime);

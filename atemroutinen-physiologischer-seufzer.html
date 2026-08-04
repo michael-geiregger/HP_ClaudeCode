@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q32GSGRR7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8Q32GSGRR7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Physiologischer Seufzer – Atemübung | Michael Geiregger</title>
+    <meta name="description" content="Der physiologische Seufzer in 2-5 Minuten: geführte Atemübung mit animiertem Atem-Kreis, wählbarer Zyklenanzahl oder Dauer und optionaler Klangbegleitung.">
+    <meta name="author" content="Michael Geiregger">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://michael-geiregger.com/atemroutinen-physiologischer-seufzer.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Physiologischer Seufzer – Atemübung | Michael Geiregger">
+    <meta property="og:description" content="Geführte Atemübung mit animiertem Atem-Kreis: doppelt einatmen, lang ausatmen. Wähle Zyklen oder Dauer, mit oder ohne Klangbegleitung.">
+    <meta property="og:url" content="https://michael-geiregger.com/atemroutinen-physiologischer-seufzer.html">
+    <meta property="og:image" content="https://michael-geiregger.com/images/atemarbeit.jpg">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Michael Geiregger">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Physiologischer Seufzer – Atemübung | Michael Geiregger">
+    <meta name="twitter:description" content="Geführte Atemübung mit animiertem Atem-Kreis: doppelt einatmen, lang ausatmen.">
+    <meta name="twitter:image" content="https://michael-geiregger.com/images/atemarbeit.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer data-domain="michael-geiregger.com" src="https://plausible.io/js/plausible.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Physiologischer Seufzer",
+        "description": "Zwei kurze Atemzüge durch die Nase, gefolgt von einem langen Ausatmen durch den Mund. Wiederholen für mehrere Zyklen.",
+        "totalTime": "PT3M",
+        "step": [
+            { "@type": "HowToStep", "name": "Einatmen", "text": "Tief durch die Nase einatmen." },
+            { "@type": "HowToStep", "name": "Nachziehen", "text": "Noch einmal kurz durch die Nase nachziehen, bis die Lunge voll ist." },
+            { "@type": "HowToStep", "name": "Ausatmen", "text": "Lang und entspannt durch den Mund ausatmen." }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-text"><span class="highlight">Atme</span> ein. Atme aus.</div>
+    </div>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">Michael Geiregger</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="ueber-mich.html">Über mich</a></li>
+                <li><a href="leistungen.html">Leistungen</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="podcast.html">Podcast</a></li>
+                <li><a href="atemroutinen.html">Atemroutinen</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="klarheitsgespraech.html" class="nav-cta">Klarheitsgespräch</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="subpage-hero">
+        <div class="hero-bg-gradient"></div>
+        <div class="container">
+            <div class="subpage-hero-content">
+                <div class="section-label reveal"><a href="atemroutinen.html" style="color: inherit;">&larr; Alle Atemroutinen</a></div>
+                <h1 class="reveal">Der physiologische Seufzer</h1>
+                <p class="reveal">Doppelt einatmen durch die Nase, lang ausatmen durch den Mund. Eine der schnellsten Methoden, um dein Nervensystem in wenigen Atemzügen zu beruhigen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BREATH TOOL -->
+    <section class="content-section white-bg">
+        <div class="container">
+            <div class="breath-app">
+                <!-- SETTINGS PANEL -->
+                <div class="breath-panel" id="breathPanel">
+                    <div class="breath-panel-title">Deine Einstellungen</div>
+
+                    <div class="breath-toggle-group" role="group" aria-label="Steuerung wählen">
+                        <button type="button" class="breath-toggle-btn" id="modeCycles" aria-pressed="true">Nach Zyklen</button>
+                        <button type="button" class="breath-toggle-btn" id="modeDuration" aria-pressed="false">Nach Dauer</button>
+                    </div>
+
+                    <div class="breath-field" id="fieldCycles">
+                        <label for="inputCycles">Anzahl der Zyklen</label>
+                        <input type="number" id="inputCycles" min="1" max="60" value="8" inputmode="numeric">
+                        <div class="breath-hint" id="hintCycles"></div>
+                    </div>
+
+                    <div class="breath-field" id="fieldDuration" style="display: none;">
+                        <label for="inputDuration">Dauer (Minuten)</label>
+                        <input type="number" id="inputDuration" min="1" max="20" step="0.5" value="3" inputmode="decimal">
+                        <div class="breath-hint" id="hintDuration"></div>
+                    </div>
+
+                    <div class="breath-field">
+                        <label>Klangbegleitung</label>
+                        <div class="breath-toggle-group" role="group" aria-label="Musik wählen">
+                            <button type="button" class="breath-toggle-btn" id="musicOff" aria-pressed="true">Ohne Musik</button>
+                            <button type="button" class="breath-toggle-btn" id="musicOn" aria-pressed="false">Mit Musik</button>
+                        </div>
+                        <div class="breath-hint">Ein sanfter, generativer Klang, der dem Atemrhythmus folgt &mdash; kein externer Musik-Track.</div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary breath-start-btn" id="breathStartBtn">
+                        Atemübung starten
+                        <span class="btn-arrow">&rarr;</span>
+                    </button>
+                </div>
+
+                <!-- SESSION VIEW -->
+                <div class="breath-session" id="breathSession" style="display: none;">
+                    <div class="breath-stage">
+                        <div class="breath-ripple"></div>
+                        <div class="breath-circle" id="breathCircle">
+                            <div class="breath-circle-inner">
+                                <span class="breath-phase-label" id="breathPhaseLabel">Bereit?</span>
+                                <span class="breath-phase-instruction" id="breathPhaseInstruction"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="breath-progress">Zyklus <strong id="breathCycleCurrent">0</strong> / <span id="breathCycleTotal">8</span></div>
+                    <div class="breath-controls">
+                        <button type="button" class="btn breath-ghost-btn" id="breathPauseBtn">Pause</button>
+                        <button type="button" class="btn breath-ghost-btn" id="breathStopBtn">Beenden</button>
+                    </div>
+                </div>
+
+                <!-- COMPLETE VIEW -->
+                <div class="breath-complete" id="breathComplete" style="display: none;">
+                    <div class="breath-complete-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>Geschafft!</h3>
+                    <p><strong id="completeCycles">8</strong> Atemzyklen in <span id="completeDuration">2 Min.</span> &mdash; nimm dir einen Moment, um nachzuspüren.</p>
+                    <div class="breath-complete-actions">
+                        <button type="button" class="btn btn-primary" id="breathRestartBtn">Nochmal atmen</button>
+                        <button type="button" class="btn breath-ghost-btn" id="breathBackBtn">Zu den Einstellungen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANLEITUNG -->
+    <section class="content-section alt-bg">
+        <div class="container">
+            <div class="section-label reveal">So funktioniert's</div>
+            <h2 class="section-title reveal">Drei Schritte, ein Zyklus</h2>
+            <p class="section-text reveal">
+                Der physiologische Seufzer besteht aus einem einfachen Muster, das du überall und jederzeit
+                anwenden kannst &mdash; im Auto, vor einem wichtigen Gespräch oder mitten im Arbeitstag.
+            </p>
+
+            <div class="breath-steps stagger-children">
+                <div class="breath-step reveal" style="--i: 0">
+                    <div class="breath-step-number">1</div>
+                    <h4>Einatmen</h4>
+                    <p>Tief durch die Nase einatmen, bis die Lunge sich füllt.</p>
+                </div>
+                <div class="breath-step reveal" style="--i: 1">
+                    <div class="breath-step-number">2</div>
+                    <h4>Nachziehen</h4>
+                    <p>Noch einmal kurz durch die Nase nachziehen &mdash; das öffnet die Lungenbläschen zusätzlich.</p>
+                </div>
+                <div class="breath-step reveal" style="--i: 2">
+                    <div class="breath-step-number">3</div>
+                    <h4>Ausatmen</h4>
+                    <p>Lang und entspannt durch den Mund ausatmen, doppelt so lange wie das Einatmen.</p>
+                </div>
+            </div>
+
+            <p class="section-text reveal" style="margin-top: 8px;">
+                Dieses Muster stammt aus der Atemphysiologie: Der doppelte Atemzug öffnet kollabierte
+                Lungenbläschen, das lange Ausatmen aktiviert den Parasympathikus &mdash; den Teil deines
+                Nervensystems, der für Ruhe und Erholung zuständig ist. Schon wenige Zyklen können reichen,
+                um spürbar ruhiger zu werden.
+            </p>
+            <p class="section-text reveal">
+                <em>Hinweis: Diese Übung dient dem allgemeinen Wohlbefinden und ersetzt keine medizinische
+                Behandlung. Höre bei Schwindel oder Unwohlsein jederzeit auf.</em>
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" id="cta">
+        <div class="cta-visual"></div>
+        <div class="container">
+            <div class="cta-content">
+                <div class="section-label reveal">Tiefer gehen</div>
+                <h2 class="section-title reveal">Bereit für mehr als einen Reset?</h2>
+                <p class="section-text reveal">
+                    In meinen Psychedelic Breath Sessions nutzen wir die Kraft des Atems, um alte Muster
+                    aufzulösen &mdash; für echte, tiefgreifende Veränderung.
+                </p>
+                <a href="leistungen.html#atemarbeit" class="btn btn-primary reveal" style="margin-top: 8px;">
+                    Atemarbeit entdecken
+                    <span class="btn-arrow">&rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">Michael Geiregger</div>
+                    <p class="footer-brand-tagline">Coach & Mentor für Unternehmer, die Freiheit und Klarheit suchen. Weil du mehr verdienst als nur zu funktionieren.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+                        <a href="https://www.facebook.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="https://www.linkedin.com/in/michael-geiregger/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                        <a href="https://www.youtube.com/@ZwischenAlltagundUniversum" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="4" ry="4"/><polygon points="10 8.5 16 12 10 15.5" fill="currentColor" stroke="none"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-column"><h4>Menü</h4><ul><li><a href="index.html">Startseite</a></li><li><a href="ueber-mich.html">Über mich</a></li><li><a href="leistungen.html">Leistungen</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+                <div class="footer-column"><h4>Angebote</h4><ul><li><a href="klarheitsgespraech.html">Klarheitsgespräch</a></li><li><a href="events.html">Events</a></li><li><a href="podcast.html">Podcast</a></li><li><a href="atemroutinen.html">Atemroutinen</a></li></ul></div>
+                <div class="footer-column"><h4>Rechtliches</h4><ul><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Michael Geiregger. Alle Rechte vorbehalten.</span>
+                <span>Mit Leidenschaft gebaut.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/atemroutinen-seufzer.js"></script>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/393483953550?text=Hallo%20Michael%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20Klarheitsgespr%C3%A4ch%20und%20h%C3%A4tte%20eine%20kurze%20Frage." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Nachricht senden">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+</body>
+</html>

@@ -656,7 +656,7 @@
         }
 
         .nsr-signup-inner {
-            max-width: 520px;
+            max-width: 620px;
             margin: 0 auto;
             padding: 0 var(--container-padding);
         }
@@ -693,6 +693,113 @@
             font-weight: 700;
             color: var(--color-night);
             margin-bottom: 28px;
+        }
+
+        /* Anmeldeformular */
+        .nsr-form {
+            text-align: left;
+            margin-top: 8px;
+        }
+
+        .nsr-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .nsr-field {
+            margin-bottom: 16px;
+        }
+
+        .nsr-field label {
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .field-required {
+            color: var(--color-primary);
+        }
+
+        .nsr-field .optional-tag {
+            text-transform: none;
+            letter-spacing: 0;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--color-text-muted);
+        }
+
+        .nsr-field input {
+            width: 100%;
+            padding: 14px 18px;
+            background: white;
+            border: 1px solid var(--color-sand);
+            border-radius: 12px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--color-text);
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .nsr-field input:focus {
+            border-color: var(--color-primary);
+        }
+
+        .nsr-field input::placeholder {
+            color: var(--color-text-muted);
+        }
+
+        .nsr-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 24px 0;
+            padding: 18px 20px;
+            background: white;
+            border: 1px solid var(--color-sand);
+            border-radius: 12px;
+        }
+
+        .nsr-consent input[type="checkbox"] {
+            margin-top: 3px;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            accent-color: var(--color-primary);
+        }
+
+        .nsr-consent label {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        .nsr-consent a {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+
+        .nsr-form .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .nsr-form-status {
+            margin-top: 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nsr-form-status.success { color: #2e7d32; }
+        .nsr-form-status.error { color: #c62828; }
+
+        @media (max-width: 600px) {
+            .nsr-form-row { grid-template-columns: 1fr; gap: 0; }
         }
 
         /* Responsive */
@@ -987,22 +1094,163 @@
         </div>
     </section>
 
-    <!-- ANMELDUNG / KAUF -->
+    <!-- ANMELDUNG -->
     <section class="nsr-signup" id="anmeldung">
         <div class="nsr-signup-inner">
             <div class="section-label reveal"><span>Anmeldung</span></div>
             <h2 class="section-title reveal">Sei ab 21. September<br><em>dabei.</em></h2>
-            <p class="section-text reveal" style="margin-bottom: 16px;">Die Anmeldung für die Herbstrunde von Nervensystem Reset ist jetzt offen. Sichere dir jetzt deinen Platz – nur 10 Plätze verfügbar.</p>
-            <div class="nsr-signup-benefit reveal">✨ Start: 21. September 2026 &middot; 4 Wochen &middot; Max. 10 Plätze</div>
+            <p class="section-text reveal" style="margin-bottom: 16px;">Die Anmeldung für die Herbstrunde von Nervensystem Reset ist jetzt offen. Melde dich verbindlich an – nur 10 Plätze verfügbar. Du erhältst im Anschluss die Rechnung (697 €) sowie alle Infos zum Programmstart per E-Mail.</p>
+            <div class="nsr-signup-benefit reveal">✨ Start: 21. September 2026 &middot; 4 Wochen &middot; Max. 10 Plätze &middot; 697 €</div>
 
-            <div class="nsr-price reveal">697 €</div>
+            <form class="nsr-form reveal" id="nsrAnmeldungForm" novalidate>
+                <!-- Honeypot gegen Spam-Bots, für Menschen unsichtbar -->
+                <div style="position: absolute; left: -9999px;" aria-hidden="true">
+                    <input type="text" name="website" tabindex="-1" autocomplete="off">
+                </div>
 
-            <a href="https://buy.stripe.com/8x25kD2SK5vx4js2eBbjW00" class="btn btn-primary reveal" target="_blank" rel="noopener">
-                Jetzt anmelden & sichern
-                <span class="btn-arrow">&rarr;</span>
-            </a>
+                <div class="nsr-form-row">
+                    <div class="nsr-field">
+                        <label for="nsr-firstname">Vorname<span class="field-required"> *</span></label>
+                        <input type="text" id="nsr-firstname" name="firstname" placeholder="Dein Vorname" required>
+                    </div>
+                    <div class="nsr-field">
+                        <label for="nsr-lastname">Nachname<span class="field-required"> *</span></label>
+                        <input type="text" id="nsr-lastname" name="lastname" placeholder="Dein Nachname" required>
+                    </div>
+                </div>
 
-            <p class="nsr-form-note">Sichere Zahlung über Stripe. Nach dem Kauf erhältst du sofort eine Bestätigung mit allen Infos zum Programmstart.</p>
+                <div class="nsr-form-row">
+                    <div class="nsr-field">
+                        <label for="nsr-email">E-Mail<span class="field-required"> *</span></label>
+                        <input type="email" id="nsr-email" name="email" placeholder="deine@email.at" required>
+                    </div>
+                    <div class="nsr-field">
+                        <label for="nsr-phone">Telefonnummer<span class="field-required"> *</span></label>
+                        <input type="tel" id="nsr-phone" name="field[6,0]" placeholder="+43 ..." required>
+                    </div>
+                </div>
+
+                <div class="nsr-field">
+                    <label for="nsr-address">Adresse (Straße &amp; Hausnummer)<span class="field-required"> *</span></label>
+                    <input type="text" id="nsr-address" name="field[2,0]" placeholder="Musterstraße 1" required>
+                </div>
+
+                <div class="nsr-form-row">
+                    <div class="nsr-field">
+                        <label for="nsr-zip">PLZ<span class="field-required"> *</span></label>
+                        <input type="text" id="nsr-zip" name="field[3,0]" placeholder="39030" required>
+                    </div>
+                    <div class="nsr-field">
+                        <label for="nsr-city">Ort<span class="field-required"> *</span></label>
+                        <input type="text" id="nsr-city" name="field[4,0]" placeholder="Percha" required>
+                    </div>
+                </div>
+
+                <div class="nsr-field">
+                    <label for="nsr-country">Land<span class="field-required"> *</span></label>
+                    <input type="text" id="nsr-country" name="field[5,0]" placeholder="Italien" required>
+                </div>
+
+                <div class="nsr-field">
+                    <label for="nsr-tax">Steuer-Nummer / Codice Fiscale <span class="optional-tag">(optional)</span></label>
+                    <input type="text" id="nsr-tax" name="field[7,0]" placeholder="Nur für die Rechnungsstellung nötig">
+                </div>
+
+                <div class="nsr-consent">
+                    <input type="checkbox" id="nsr-agb" name="field[8,0]" value="||akzeptiert||" required>
+                    <label for="nsr-agb">Ich akzeptiere die <a href="agb.html" target="_blank" rel="noopener">AGB</a> und wurde über mein <a href="widerrufsrecht.html" target="_blank" rel="noopener">Widerrufsrecht</a> informiert.<span class="field-required"> *</span></label>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="nsrSubmitBtn">
+                    Verbindlich anmelden
+                    <span class="btn-arrow">&rarr;</span>
+                </button>
+
+                <div class="nsr-form-status" id="nsrFormStatus" role="alert" aria-live="polite"></div>
+            </form>
+
+            <p class="nsr-form-note">Mit dem Absenden meldest du dich verbindlich für die Herbstrunde an. Du erhältst danach per E-Mail die Rechnung über 697 € sowie alle weiteren Infos zum Programmstart.</p>
+
+            <script>
+            (function() {
+                // TODO: sobald das zugehörige Formular in ActiveCampaign
+                // (Kontakte -> Formulare) angelegt ist, hier die echten
+                // Werte aus dem generierten Formular-Code eintragen.
+                var AC_CONFIG = { u: 'TODO', f: 'TODO', or: 'TODO' };
+
+                var form = document.getElementById('nsrAnmeldungForm');
+                var statusEl = document.getElementById('nsrFormStatus');
+                var submitBtn = document.getElementById('nsrSubmitBtn');
+
+                var showStatus = function(message, type) {
+                    statusEl.textContent = message;
+                    statusEl.className = 'nsr-form-status ' + type;
+                };
+
+                var loadScript = function(url, onError) {
+                    var script = document.createElement('script');
+                    script.src = url;
+                    script.onerror = onError;
+                    document.head.appendChild(script);
+                };
+
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    // Honeypot: Bots füllen dieses versteckte Feld aus, Menschen nicht.
+                    if (form.website.value !== '') { return; }
+
+                    if (!form.checkValidity()) {
+                        form.reportValidity();
+                        return;
+                    }
+
+                    if (AC_CONFIG.u === 'TODO') {
+                        showStatus('Das Formular ist noch nicht final verbunden. Bitte wende dich direkt per E-Mail an michael@michael-geiregger.com.', 'error');
+                        return;
+                    }
+
+                    submitBtn.disabled = true;
+                    showStatus('Wird gesendet ...', '');
+
+                    var params = new URLSearchParams();
+                    params.set('u', AC_CONFIG.u);
+                    params.set('f', AC_CONFIG.f);
+                    params.set('s', '');
+                    params.set('c', '0');
+                    params.set('m', '0');
+                    params.set('act', 'sub');
+                    params.set('v', '2');
+                    params.set('or', AC_CONFIG.or);
+                    params.set('jsonp', 'true');
+
+                    Array.prototype.forEach.call(form.elements, function(el) {
+                        if (!el.name || el.name === 'website') { return; }
+                        if (el.type === 'checkbox') {
+                            if (el.checked) { params.set(el.name, el.value); }
+                        } else {
+                            params.set(el.name, el.value);
+                        }
+                    });
+
+                    window._nsrFormSuccess = function() {
+                        form.style.display = 'none';
+                        showStatus('Danke für deine verbindliche Anmeldung! Du bekommst in Kürze eine E-Mail mit der Rechnung und allen weiteren Infos.', 'success');
+                    };
+
+                    loadScript('https://michael-geiregger.activehosted.com/proc.php?' + params.toString(), function() {
+                        submitBtn.disabled = false;
+                        showStatus('Die Übermittlung ist fehlgeschlagen. Bitte versuch es erneut oder schreib mir direkt an michael@michael-geiregger.com.', 'error');
+                    });
+
+                    // ActiveCampaign ruft bei Erfolg eine globale Callback-Funktion auf;
+                    // als Fallback zeigen wir nach kurzer Zeit ohnehin die Erfolgsmeldung.
+                    setTimeout(function() {
+                        if (submitBtn.disabled) { window._nsrFormSuccess(); }
+                    }, 2500);
+                });
+            })();
+            </script>
         </div>
     </section>
 
@@ -1046,6 +1294,8 @@
                     <ul>
                         <li><a href="impressum.html">Impressum</a></li>
                         <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="agb.html">AGB</a></li>
+                        <li><a href="widerrufsrecht.html">Widerrufsrecht</a></li>
                     </ul>
                 </div>
             </div>

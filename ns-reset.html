@@ -76,10 +76,10 @@
 
         .nsr-hero-image {
             position: absolute;
-            right: 0;
             top: 0;
-            bottom: 0;
-            width: 55%;
+            left: 0;
+            right: 0;
+            height: 100vh;
             z-index: 1;
             overflow: hidden;
         }
@@ -88,10 +88,8 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: 60% 35%;
-            filter: sepia(10%) brightness(1.05) contrast(1.02);
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 14%, #000 38%, #000 100%);
-                    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 14%, #000 38%, #000 100%);
+            object-position: 68% 32%;
+            filter: sepia(12%) brightness(0.98) contrast(1.03);
         }
 
         .nsr-hero-image::before {
@@ -99,8 +97,8 @@
             position: absolute;
             inset: 0;
             background:
-                linear-gradient(to bottom, transparent 60%, rgba(245, 240, 230, 0.55) 88%, rgba(245, 240, 230, 0.75) 100%),
-                linear-gradient(to top, transparent 75%, rgba(245, 240, 230, 0.35) 92%, rgba(245, 240, 230, 0.5) 100%);
+                linear-gradient(105deg, rgba(18, 22, 28, 0.86) 0%, rgba(18, 22, 28, 0.6) 30%, rgba(18, 22, 28, 0.22) 52%, rgba(18, 22, 28, 0) 72%),
+                linear-gradient(to top, rgba(18, 22, 28, 0.5) 0%, rgba(18, 22, 28, 0.1) 28%, rgba(18, 22, 28, 0) 50%);
             z-index: 1;
         }
 
@@ -122,14 +120,14 @@
             align-items: center;
             gap: 8px;
             padding: 8px 20px;
-            background: rgba(200, 150, 62, 0.1);
-            border: 1px solid rgba(200, 150, 62, 0.2);
+            background: rgba(200, 150, 62, 0.18);
+            border: 1px solid rgba(200, 150, 62, 0.4);
             border-radius: 50px;
             font-size: 0.8rem;
             font-weight: 600;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--color-primary);
+            color: var(--color-primary-light);
             margin-bottom: 28px;
         }
 
@@ -138,19 +136,20 @@
             font-size: clamp(2.8rem, 5.5vw, 4.5rem);
             font-weight: 800;
             line-height: 1.08;
-            color: var(--color-night);
+            color: white;
             margin-bottom: 8px;
             letter-spacing: -0.03em;
+            text-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
         }
 
         .nsr-hero h1 em {
             font-style: italic;
-            color: var(--color-primary);
+            color: var(--color-primary-light);
         }
 
         .nsr-hero-subtitle {
             font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-            color: var(--color-text-light);
+            color: rgba(255, 255, 255, 0.85);
             line-height: 1.7;
             margin-bottom: 36px;
             max-width: 460px;
@@ -168,13 +167,13 @@
             align-items: center;
             gap: 8px;
             font-size: 0.9rem;
-            color: var(--color-text-light);
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .nsr-hero-meta-item svg {
             width: 18px;
             height: 18px;
-            stroke: var(--color-primary);
+            stroke: var(--color-primary-light);
             fill: none;
             stroke-width: 2;
             stroke-linecap: round;
@@ -753,26 +752,11 @@
 
         /* Responsive */
         @media (max-width: 900px) {
-            .nsr-hero { flex-direction: column; align-items: stretch; min-height: auto; padding-top: 76px; }
-            .nsr-hero-image {
-                position: relative;
-                inset: auto;
-                right: auto;
-                top: auto;
-                bottom: auto;
-                width: 100%;
-                height: 46vh;
-                min-height: 300px;
-            }
-            .nsr-hero-image img {
-                object-position: 55% 30%;
-                -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, rgba(0,0,0,0.45) 82%, transparent 100%);
-                        mask-image: linear-gradient(to bottom, #000 0%, #000 55%, rgba(0,0,0,0.45) 82%, transparent 100%);
-            }
+            .nsr-hero-image img { object-position: 42% 50%; }
             .nsr-hero-image::before {
-                background: linear-gradient(to bottom, transparent 55%, rgba(245, 240, 230, 0.6) 85%, var(--color-warm-white) 100%);
+                background: linear-gradient(to bottom, rgba(18, 22, 28, 0.62) 0%, rgba(18, 22, 28, 0.74) 55%, rgba(18, 22, 28, 0.82) 100%);
             }
-            .nsr-hero-content { padding: 32px var(--container-padding) 80px; }
+            .nsr-hero-content { padding: 100px var(--container-padding) 56px; }
             .nsr-pain-layout, .nsr-format-layout, .nsr-about-layout { grid-template-columns: 1fr; gap: 48px; }
             .nsr-weeks { grid-template-columns: 1fr 1fr; }
             .nsr-testimonials-grid { grid-template-columns: 1fr; }

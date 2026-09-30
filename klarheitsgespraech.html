@@ -234,6 +234,13 @@
         }
         handleCalendlyDisplay();
         window.addEventListener('resize', handleCalendlyDisplay);
+
+        // Abgeschlossene Buchung im eingebetteten Calendly-Kalender als Ziel-Aktion an Google Analytics melden
+        window.addEventListener('message', function (e) {
+            if (e.origin === 'https://calendly.com' && e.data && e.data.event === 'calendly.event_scheduled' && typeof gtag === 'function') {
+                gtag('event', 'klarheitsgespraech_gebucht');
+            }
+        });
     </script>
 
     <!-- WhatsApp Floating Button -->

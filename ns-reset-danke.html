@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q32GSGRR7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8Q32GSGRR7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Anmeldung bestätigt – Nervensystem Reset | Michael Geiregger</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .conf-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 160px 32px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--color-warm-white) 0%, var(--color-cream) 100%);
+        }
+
+        .conf-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 50% 40%, rgba(200, 150, 62, 0.06) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .check-circle {
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 40px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.2s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .check-circle svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--color-primary);
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 50;
+            stroke-dashoffset: 50;
+            animation: drawCheck 0.6s ease forwards 0.8s;
+        }
+
+        .conf-tag {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.4s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .conf-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: var(--color-night);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.5s;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.03em;
+        }
+
+        .conf-title em {
+            font-style: italic;
+            color: var(--color-primary);
+        }
+
+        .conf-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            max-width: 520px;
+            line-height: 1.7;
+            margin-bottom: 56px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.6s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .conf-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            max-width: 480px;
+            width: 100%;
+            margin-bottom: 56px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.8s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .conf-step {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            padding: 24px 32px;
+            background: white;
+            border-left: 3px solid var(--color-primary);
+            margin-bottom: 2px;
+            text-align: left;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .conf-step-number {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            color: var(--color-primary);
+            opacity: 0.5;
+            font-weight: 700;
+            line-height: 1;
+            flex-shrink: 0;
+            min-width: 24px;
+        }
+
+        .conf-step-title {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-night);
+            margin-bottom: 4px;
+        }
+
+        .conf-step-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        .conf-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gradient-golden);
+            border-radius: 2px;
+            margin: 0 auto 48px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.9s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .conf-closing {
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 600;
+            font-style: italic;
+            color: var(--color-night);
+            max-width: 500px;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 1s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .conf-closing em {
+            color: var(--color-primary);
+            font-style: normal;
+        }
+
+        .conf-signature {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            letter-spacing: 1px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 1.1s;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes drawCheck {
+            to { stroke-dashoffset: 0; }
+        }
+
+        @media (max-width: 600px) {
+            .conf-section { padding: 140px 24px 60px; }
+            .conf-step { padding: 20px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-text">
+            Nervensystem <span class="highlight">Reset</span>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                Michael Geiregger
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="ueber-mich.html">Über mich</a></li>
+                <li><a href="leistungen.html">Leistungen</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="podcast.html">Podcast</a></li>
+                <li><a href="atemroutinen.html">Atemroutinen</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="klarheitsgespraech.html" class="nav-cta">Klarheitsgespräch</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- CONFIRMATION -->
+    <section class="conf-section">
+
+        <div class="check-circle">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+
+        <span class="conf-tag">Nervensystem Reset · Anmeldung bestätigt</span>
+
+        <h1 class="conf-title">Du bist<br><em>dabei.</em></h1>
+
+        <p class="conf-subtitle">Schön, dass du dich entschieden hast. Deine Zahlung war erfolgreich – du erhältst in Kürze eine Bestätigung per E-Mail.</p>
+
+        <div class="conf-steps">
+            <div class="conf-step">
+                <div class="conf-step-number">1</div>
+                <div>
+                    <div class="conf-step-title">Zahlung erfolgreich</div>
+                    <div class="conf-step-desc">Deine Anmeldung für Nervensystem Reset ist bestätigt und dein Platz gesichert.</div>
+                </div>
+            </div>
+            <div class="conf-step">
+                <div class="conf-step-number">2</div>
+                <div>
+                    <div class="conf-step-title">Bestätigung per E-Mail</div>
+                    <div class="conf-step-desc">Du bekommst in Kürze eine E-Mail mit deiner Zahlungsbestätigung von Stripe.</div>
+                </div>
+            </div>
+            <div class="conf-step">
+                <div class="conf-step-number">3</div>
+                <div>
+                    <div class="conf-step-title">Start: 2. November 2026</div>
+                    <div class="conf-step-desc">Vor dem Programmstart melde ich mich persönlich bei dir mit allen Details zu den Live-Calls.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="conf-divider"></div>
+
+        <p class="conf-closing">Der erste Schritt ist gemacht –<br>ich freue mich <em>auf dich.</em></p>
+        <p class="conf-signature">— Michael</p>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">Michael Geiregger</div>
+                    <p class="footer-brand-tagline">
+                        Coach & Mentor für Unternehmer, die Freiheit und Klarheit suchen.
+                        Weil du mehr verdienst als nur zu funktionieren.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+                        <a href="https://www.facebook.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="https://www.linkedin.com/in/michael-geiregger/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                        <a href="https://www.youtube.com/@ZwischenAlltagundUniversum" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="4" ry="4"/><polygon points="10 8.5 16 12 10 15.5" fill="currentColor" stroke="none"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Menü</h4>
+                    <ul>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="ueber-mich.html">Über mich</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Angebote</h4>
+                    <ul>
+                        <li><a href="klarheitsgespraech.html">Klarheitsgespräch</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="atemroutinen.html">Atemroutinen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Michael Geiregger. Alle Rechte vorbehalten.</span>
+                <span>Mit Leidenschaft gebaut.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        (function() {
+            if (sessionStorage.getItem('nsResetPurchaseTracked') === '1') return;
+            gtag('event', 'purchase', {
+                transaction_id: 'ns-reset-' + Date.now(),
+                currency: 'EUR',
+                value: 697,
+                items: [{ item_name: 'Nervensystem Reset', price: 697, quantity: 1 }]
+            });
+            sessionStorage.setItem('nsResetPurchaseTracked', '1');
+        })();
+    </script>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/393483953550?text=Hallo%20Michael%2C%20ich%20habe%20mich%20gerade%20f%C3%BCr%20Nervensystem%20Reset%20angemeldet%20und%20h%C3%A4tte%20eine%20Frage." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Nachricht senden">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+</body>
+</html>

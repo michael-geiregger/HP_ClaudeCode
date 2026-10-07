@@ -86,7 +86,18 @@
     }
     </script>
 </head>
-<body>
+<body class="has-announcement">
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" id="announcementBar">
+        <div class="announcement-bar-inner">
+            <a href="ns-reset.html" class="announcement-link">
+                ✨ Nervensystem Reset: Nächste Runde startet 2. November – jetzt anmelden
+                <span class="btn-arrow">&rarr;</span>
+            </a>
+            <button class="announcement-close" id="announcementClose" aria-label="Hinweis schließen">&times;</button>
+        </div>
+    </div>
 
     <!-- Page Loader -->
     <div class="page-loader" id="pageLoader">
@@ -529,6 +540,23 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        (function() {
+            var bar = document.getElementById('announcementBar');
+            var closeBtn = document.getElementById('announcementClose');
+            if (!bar || !closeBtn) return;
+            if (sessionStorage.getItem('nsResetAnnouncementDismissed') === '1') {
+                bar.style.display = 'none';
+                document.body.classList.remove('has-announcement');
+                return;
+            }
+            closeBtn.addEventListener('click', function() {
+                bar.style.display = 'none';
+                document.body.classList.remove('has-announcement');
+                sessionStorage.setItem('nsResetAnnouncementDismissed', '1');
+            });
+        })();
+    </script>
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/393483953550?text=Hallo%20Michael%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20Klarheitsgespr%C3%A4ch%20und%20h%C3%A4tte%20eine%20kurze%20Frage." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Nachricht senden">

@@ -178,6 +178,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(href);
         if (target) {
             e.preventDefault();
+            target.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+                el.classList.add('visible');
+                if (window.revealObserver) revealObserver.unobserve(el);
+            });
             target.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'

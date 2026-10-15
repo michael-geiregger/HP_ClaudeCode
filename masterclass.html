@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q32GSGRR7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8Q32GSGRR7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Kostenlose Masterclass: Endlich wieder zur Ruhe kommen | Michael Geiregger</title>
+    <meta name="description" content="Kostenlose Live-Masterclass am 27. Oktober 2026 auf Zoom: Warum dein Körper nicht einfach auf Entspannung umschaltet – und wie du wieder mehr innere Ruhe findest. Mit Übung zum Mitmachen.">
+    <meta name="author" content="Michael Geiregger">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://michael-geiregger.com/masterclass.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Du liebst, was du tust. Aber kommst kaum noch zur Ruhe.">
+    <meta property="og:description" content="Kostenlose Live-Masterclass · Di, 27. Oktober 2026 · 19:00 Uhr · Zoom. Mit einer kurzen Übung zum Mitmachen.">
+    <meta property="og:url" content="https://michael-geiregger.com/masterclass.html">
+    <meta property="og:image" content="https://michael-geiregger.com/images/DSCF0317.jpeg">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer data-domain="michael-geiregger.com" src="https://plausible.io/js/plausible.js"></script>
+
+    <style>
+        /* ========================================
+           MASTERCLASS PAGE SPECIFIC STYLES
+           Mobile first, einspaltig, ruhig
+           ======================================== */
+
+        .mc-wrap {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        /* Sichtbare Platzhalter für offene Punkte */
+        .mc-open {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #fff3cd;
+            border: 1px dashed #c9a227;
+            border-radius: 6px;
+            color: #7a5d00;
+            font-size: 0.85rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        /* Minimal-Navigation: nur Logo + CTA */
+        .mc-nav .nav-links { display: flex; }
+        .mc-nav .nav-cta { white-space: nowrap; }
+        .mc-nav:not(.scrolled) .nav-logo { color: white; }
+        .mc-nav:not(.scrolled) .nav-cta {
+            background: var(--color-primary) !important;
+            background-image: var(--gradient-warm) !important;
+        }
+
+        /* Hero */
+        .mc-hero {
+            position: relative;
+            padding: 130px 0 72px;
+            background: var(--color-night);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .mc-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 55% at 50% 0%, rgba(200, 150, 62, 0.22) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 50% at 50% 100%, rgba(253, 251, 236, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .mc-hero .mc-wrap { position: relative; z-index: 1; }
+
+        .mc-hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: rgba(200, 150, 62, 0.18);
+            border: 1px solid rgba(200, 150, 62, 0.4);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-primary-light);
+            margin-bottom: 28px;
+        }
+
+        .mc-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.1rem, 6.5vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.12;
+            color: white;
+            letter-spacing: -0.02em;
+            margin-bottom: 22px;
+        }
+
+        .mc-hero h1 em {
+            font-style: italic;
+            color: var(--color-primary-light);
+        }
+
+        .mc-subline {
+            font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.65;
+            margin: 0 auto 16px;
+            max-width: 560px;
+        }
+
+        .mc-addline {
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            margin: 0 auto 36px;
+            max-width: 520px;
+        }
+
+        /* Eckdaten */
+        .mc-facts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            max-width: 520px;
+            margin: 0 auto 12px;
+        }
+
+        .mc-fact {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: left;
+        }
+
+        .mc-fact svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--color-primary-light);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        .mc-recording-note {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            max-width: 520px;
+            margin: 16px auto 0;
+        }
+
+        /* Formular */
+        .mc-form-section {
+            padding: 0 0 72px;
+            background: linear-gradient(180deg, var(--color-night) 0%, var(--color-night) 90px, var(--color-warm-white) 90px);
+        }
+
+        .mc-form-card {
+            background: white;
+            border-radius: 24px;
+            padding: 36px 28px 28px;
+            box-shadow: 0 24px 64px rgba(30, 40, 52, 0.18);
+            max-width: 520px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .mc-form-title {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--color-night);
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .mc-form-sub {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .mc-field { margin-bottom: 14px; }
+
+        .mc-field label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--color-night);
+            margin-bottom: 6px;
+        }
+
+        .mc-field .mc-optional {
+            font-weight: 400;
+            color: var(--color-text-muted);
+        }
+
+        .mc-input {
+            width: 100%;
+            padding: 15px 18px;
+            border: 1.5px solid var(--color-sand);
+            border-radius: 12px;
+            background: var(--color-warm-white);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--color-text);
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+
+        textarea.mc-input { min-height: 88px; resize: vertical; }
+
+        .mc-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            background: white;
+        }
+
+        .mc-consent {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin: 18px 0 20px;
+            font-size: 0.82rem;
+            color: var(--color-text-light);
+            line-height: 1.55;
+        }
+
+        .mc-consent input {
+            width: 20px;
+            height: 20px;
+            margin-top: 1px;
+            accent-color: var(--color-primary);
+            flex-shrink: 0;
+        }
+
+        .mc-submit {
+            width: 100%;
+            justify-content: center;
+            font-size: 1.05rem;
+            padding: 18px 28px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mc-submit:disabled { opacity: 0.7; cursor: wait; }
+
+        .mc-form-note {
+            font-size: 0.82rem;
+            color: var(--color-text-muted);
+            text-align: center;
+            margin-top: 14px;
+            line-height: 1.6;
+        }
+
+        .mc-form-error {
+            color: #c0392b;
+            font-size: 0.88rem;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .mc-preview-banner {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Allgemeine Sektionen */
+        .mc-section {
+            padding: clamp(64px, 10vh, 112px) 0;
+        }
+
+        .mc-section.bg-warm { background: var(--color-warm-white); }
+        .mc-section.bg-cream { background: var(--color-cream); }
+        .mc-section.bg-white { background: white; }
+        .mc-section.bg-night { background: var(--color-night); }
+
+        .mc-section .section-title { margin-bottom: 28px; }
+
+        /* Für dich, wenn ... */
+        .mc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mc-list li {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 18px 20px;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            border-radius: 16px;
+            font-size: 1rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        .mc-list li::before {
+            content: '→';
+            color: var(--color-primary);
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        /* Was du mitnimmst */
+        .mc-takeaways {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .mc-takeaway {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            padding: 22px 22px;
+            background: var(--color-warm-white);
+            border-radius: 18px;
+            border-left: 3px solid var(--color-primary);
+        }
+
+        .mc-takeaway-num {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1.2;
+            min-width: 26px;
+        }
+
+        .mc-takeaway p {
+            font-size: 1rem;
+            color: var(--color-text);
+            line-height: 1.65;
+        }
+
+        /* So läuft der Abend */
+        .mc-evening-text {
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .mc-agenda {
+            list-style: none;
+            counter-reset: agenda;
+            position: relative;
+        }
+
+        .mc-agenda li {
+            counter-increment: agenda;
+            position: relative;
+            padding: 0 0 22px 52px;
+            font-size: 1rem;
+            color: var(--color-text);
+            line-height: 1.55;
+            min-height: 36px;
+        }
+
+        .mc-agenda li::before {
+            content: counter(agenda);
+            position: absolute;
+            left: 0;
+            top: -4px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: white;
+            border: 1.5px solid var(--color-primary);
+            color: var(--color-primary);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mc-agenda li::after {
+            content: '';
+            position: absolute;
+            left: 17px;
+            top: 32px;
+            bottom: 0;
+            width: 1px;
+            background: var(--color-sand);
+        }
+
+        .mc-agenda li:last-child::after { display: none; }
+        .mc-agenda li:last-child { padding-bottom: 0; }
+
+        /* Über Michi */
+        .mc-about .section-label { color: var(--color-golden); }
+        .mc-about .section-title { color: white; }
+        .mc-about .section-title em { color: var(--color-golden); }
+
+        .mc-about-image {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            max-width: 360px;
+            margin: 0 auto 36px;
+        }
+
+        .mc-about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+        }
+
+        .mc-about-image .mc-open {
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+        }
+
+        .mc-about-text {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.85;
+            margin-bottom: 18px;
+        }
+
+        .mc-credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .mc-credential {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-golden);
+            padding: 7px 14px;
+            border: 1px solid rgba(200, 150, 62, 0.3);
+            border-radius: 50px;
+        }
+
+        /* FAQ */
+        .mc-faq { border-top: 1px solid var(--color-sand); }
+
+        .mc-faq details { border-bottom: 1px solid var(--color-sand); }
+
+        .mc-faq summary {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            padding: 22px 0;
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-size: 1.08rem;
+            font-weight: 600;
+            color: var(--color-night);
+        }
+
+        .mc-faq summary::-webkit-details-marker { display: none; }
+
+        .mc-faq summary::after {
+            content: '+';
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--color-light-sage);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 400;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .mc-faq details[open] summary::after {
+            transform: rotate(45deg);
+            background: rgba(200, 150, 62, 0.15);
+        }
+
+        .mc-faq details p {
+            font-size: 0.97rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+            padding-bottom: 22px;
+        }
+
+        /* Abschluss-CTA */
+        .mc-final {
+            text-align: center;
+        }
+
+        .mc-final .section-title { margin-bottom: 14px; }
+
+        .mc-final-meta {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            margin-bottom: 32px;
+        }
+
+        /* Brücke zum Reset */
+        .mc-bridge {
+            padding: 0 0 clamp(64px, 10vh, 112px);
+            background: var(--color-cream);
+        }
+
+        .mc-bridge-card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px 24px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .mc-bridge-label {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .mc-bridge-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-night);
+            margin-bottom: 10px;
+        }
+
+        .mc-bridge-card p {
+            font-size: 0.92rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .mc-bridge-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .mc-bridge-link:hover { text-decoration: underline; }
+
+        @media (min-width: 760px) {
+            .mc-hero { padding: 170px 0 96px; }
+            .mc-facts { grid-template-columns: repeat(4, auto); justify-content: center; max-width: none; }
+            .mc-form-card { padding: 44px 40px 32px; }
+            .mc-bridge-card { padding: 36px 40px; }
+        }
+
+        @media (max-width: 768px) {
+            /* Minimal-Nav auch auf Mobile sichtbar halten (kein Burger-Menü) */
+            .mc-nav .nav-links {
+                position: static;
+                right: auto;
+                flex-direction: row;
+                align-items: center;
+                background: none;
+                padding: 0;
+                height: auto;
+                width: auto;
+                max-width: none;
+                box-shadow: none;
+            }
+            .mc-nav .nav-cta { padding: 9px 16px !important; font-size: 0.78rem !important; }
+        }
+
+        @media (max-width: 380px) {
+            .mc-facts { grid-template-columns: 1fr; }
+            .mc-nav .nav-logo { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-text">
+            Kostenlose <span class="highlight">Masterclass</span>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- NAVIGATION (bewusst minimal: eine Aktion pro Seite) -->
+    <nav class="nav mc-nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                Michael Geiregger
+            </a>
+            <ul class="nav-links">
+                <li><a href="#anmeldung" class="nav-cta" onclick="gtag('event', 'mc_cta_click', {cta_label: 'nav_anmelden'});">Kostenlos anmelden</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="mc-hero">
+        <div class="mc-wrap">
+            <div class="mc-hero-label reveal">Kostenlose Live-Masterclass</div>
+            <h1 class="reveal">Du liebst, was du tust.<br><em>Aber kommst kaum noch zur Ruhe.</em></h1>
+            <p class="mc-subline reveal">Warum dein Körper nicht einfach auf Entspannung umschaltet – und wie du wieder mehr innere Ruhe finden kannst.</p>
+            <p class="mc-addline reveal">Kostenlose Masterclass für alle, die funktionieren, aber nicht mehr abschalten können. Mit einer kurzen Übung zum Mitmachen.</p>
+
+            <!-- Eckdaten -->
+            <div class="mc-facts reveal">
+                <div class="mc-fact">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Di, 27. Oktober 2026
+                </div>
+                <div class="mc-fact">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    19:00–20:15 Uhr (MEZ)
+                </div>
+                <div class="mc-fact">
+                    <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                    Live auf Zoom
+                </div>
+                <div class="mc-fact">
+                    <svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+                    Kostenlos
+                </div>
+            </div>
+            <p class="mc-recording-note reveal">Du kannst nicht live dabei sein? Melde dich trotzdem an, du bekommst die Aufzeichnung bis Freitag, 30. Oktober.</p>
+        </div>
+    </section>
+
+    <!-- FORMULAR -->
+    <section class="mc-form-section" id="anmeldung">
+        <div class="mc-wrap">
+            <div class="mc-form-card reveal-scale">
+                <div class="mc-form-title">Sichere dir deinen Zugang</div>
+                <p class="mc-form-sub">Di, 27. Oktober · 19:00 Uhr · Zoom · kostenlos</p>
+
+                <!--
+                    ACTIVECAMPAIGN-FORMULAR
+                    =======================
+                    Tag in ActiveCampaign (existiert bereits): Michi_NS_Reset_Masterclass_Okt2026
+                    Im AC-Formular einstellen:
+                      - Aktion: zur Liste hinzufügen + Tag "Michi_NS_Reset_Masterclass_Okt2026" setzen
+                      - Nach dem Absenden: "Zu URL weiterleiten" -> https://michael-geiregger.com/masterclass-danke.html
+
+                    Sobald das Formular angelegt ist, nur diese Werte ersetzen:
+                      - FORM_ID (in id="_form_FORM_ID_", name="u"/"f" und im Script unten: MC_FORM_ID)
+                      - name="or"            -> Wert aus dem AC-Embed-Code (Form-Version)
+                      - Name der Einwilligungs-Checkbox (z. B. field[12]) aus dem AC-Embed-Code
+                      - ggf. Name des freiwilligen Textfelds (z. B. field[13])
+                    Alternativ kann hier der komplette AC-Embed-Code eingefügt werden.
+                -->
+                <div class="mc-preview-banner" id="mcPreviewBanner">
+                    <span class="mc-open">[Formular-Embed folgt] – Vorschau, noch nicht mit ActiveCampaign verbunden</span>
+                </div>
+
+                <form method="POST" action="https://michael-geiregger.activehosted.com/proc.php" id="_form_FORM_ID_" class="_form mc-form" novalidate>
+                    <input type="hidden" name="u" value="FORM_ID">
+                    <input type="hidden" name="f" value="FORM_ID">
+                    <input type="hidden" name="s">
+                    <input type="hidden" name="c" value="0">
+                    <input type="hidden" name="m" value="0">
+                    <input type="hidden" name="act" value="sub">
+                    <input type="hidden" name="v" value="2">
+                    <input type="hidden" name="or" value="FORM_VERSION">
+
+                    <div class="_form-content">
+                        <div class="mc-field">
+                            <label for="mc-firstname">Vorname</label>
+                            <input type="text" id="mc-firstname" name="firstname" class="mc-input" placeholder="Dein Vorname" autocomplete="given-name" required>
+                        </div>
+                        <div class="mc-field">
+                            <label for="mc-email">E-Mail</label>
+                            <input type="email" id="mc-email" name="email" class="mc-input" placeholder="Deine E-Mail-Adresse" autocomplete="email" required>
+                        </div>
+
+                        <!-- Freiwilliges Textfeld – ob es bleibt, entscheidet Michi -->
+                        <div class="mc-field">
+                            <label for="mc-burden">Was belastet dich gerade am meisten? <span class="mc-optional">(freiwillig)</span></label>
+                            <textarea id="mc-burden" name="field[FIELD_TEXT]" class="mc-input" placeholder="Ein, zwei Sätze reichen."></textarea>
+                            <span class="mc-open" style="margin-top: 8px;">[OFFEN: Textfeld ja/nein – Michi]</span>
+                        </div>
+
+                        <label class="mc-consent">
+                            <input type="checkbox" name="field[FIELD_CONSENT][]" value="ja" required>
+                            <span><span class="mc-open">[OFFEN: Einwilligungstext und Link zur Datenschutzerklärung – Michi]</span></span>
+                        </label>
+
+                        <button id="_form_FORM_ID_submit" class="btn btn-primary mc-submit _submit" type="submit">
+                            Kostenlos anmelden
+                            <span class="btn-arrow">&rarr;</span>
+                        </button>
+                        <p class="mc-form-note">Du bekommst sofort eine Mail mit dem Zoom-Link.</p>
+                    </div>
+                    <div class="_form-thank-you" style="display:none;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FÜR DICH, WENN ... -->
+    <section class="mc-section bg-warm">
+        <div class="mc-wrap">
+            <div class="section-label reveal"><span>Für dich, wenn …</span></div>
+            <h2 class="section-title reveal">Du funktionierst.<br><em>Aber abschalten geht nicht mehr.</em></h2>
+            <ul class="mc-list">
+                <li class="reveal">du abends den Laptop zuklappst und dein Kopf trotzdem weiterläuft.</li>
+                <li class="reveal">du nachts um drei wach liegst, die To-do-Liste schon im Kopf.</li>
+                <li class="reveal">du Verantwortung trägst, für Firma, Team oder Familie, und selbst kaum noch durchatmest.</li>
+                <li class="reveal">du schon atmest, meditierst, dich runterredest, und es hält nur kurz.</li>
+                <li class="reveal">dir alle sagen „schalt halt mal ab“ und du nicht weißt, wie.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- WAS DU MITNIMMST -->
+    <section class="mc-section bg-white">
+        <div class="mc-wrap">
+            <div class="section-label reveal"><span>Was du mitnimmst</span></div>
+            <h2 class="section-title reveal">Ein Abend.<br><em>Vier Dinge, die bleiben.</em></h2>
+            <div class="mc-takeaways">
+                <div class="mc-takeaway reveal">
+                    <div class="mc-takeaway-num">1</div>
+                    <p>Du verstehst, warum dein Kopf dich nicht zur Ruhe bringt, egal wie sehr du es versuchst, und wo du stattdessen ansetzt.</p>
+                </div>
+                <div class="mc-takeaway reveal">
+                    <div class="mc-takeaway-num">2</div>
+                    <p>Du erkennst, woran du merkst, dass dein Körper dauerhaft unter Spannung steht, auch wenn es sich nach normalem Alltag anfühlt.</p>
+                </div>
+                <div class="mc-takeaway reveal">
+                    <div class="mc-takeaway-num">3</div>
+                    <p>Eine kurze Übung, die du live mitmachst und danach allein anwenden kannst.</p>
+                </div>
+                <div class="mc-takeaway reveal">
+                    <div class="mc-takeaway-num">4</div>
+                    <p>Klarheit, wie es für dich weitergehen kann. Ohne Druck.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SO LÄUFT DER ABEND -->
+    <section class="mc-section bg-cream">
+        <div class="mc-wrap">
+            <div class="section-label reveal"><span>So läuft der Abend</span></div>
+            <h2 class="section-title reveal">Kein Vortrag von der Bühne.</h2>
+            <p class="mc-evening-text reveal">Ich arbeite so, wie ich auch in meinen Sitzungen arbeite: direkt, am Körper, ohne Theater. Du kannst die Kamera anlassen oder ausschalten, ganz wie du willst. Fragen stellst du einfach im Chat.</p>
+            <ol class="mc-agenda reveal">
+                <li>Ankommen</li>
+                <li>Kurzer Check-in: Wie angespannt bist du gerade?</li>
+                <li>Die Kernidee: Warum du dich nicht entspannt denken kannst</li>
+                <li>Sanfte Übung zum Mitmachen</li>
+                <li>Drei Punkte, die du mitnimmst</li>
+                <li>Wie es weitergehen kann (kurzer Ausblick auf den Nervensystem Reset)</li>
+                <li>Deine Fragen</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ÜBER MICHI -->
+    <section class="mc-section bg-night mc-about">
+        <div class="mc-wrap">
+            <div class="mc-about-image reveal">
+                <!-- Vorläufiges Foto aus dem Bestand – wird durch Michis Foto ersetzt -->
+                <img src="images/DSCF0317.jpeg" alt="Michael Geiregger" loading="lazy">
+                <span class="mc-open">[FOTO – liefert Michi]</span>
+            </div>
+            <div class="section-label reveal"><span>Wer dich begleitet</span></div>
+            <h2 class="section-title reveal">Ich bin Michael Geiregger,<br><em>Michi.</em></h2>
+            <p class="mc-about-text reveal">Mentaltrainer, NLP- und Hypnose-Coach und PSYCHEDELIC BREATH® Facilitator, mit Praxis in Bruneck in Südtirol. Coach und Mentor für emotionale Freiheit.</p>
+            <p class="mc-about-text reveal">Ich begleite vor allem Unternehmerinnen und Unternehmer, die unter Druck funktionieren und dabei den Kontakt zu sich selbst verlieren.</p>
+            <p class="reveal"><span class="mc-open">[OFFEN: optional ein persönlicher Satz von Michi, warum ihm das Thema wichtig ist – liefert Michi]</span></p>
+            <div class="mc-credentials reveal">
+                <span class="mc-credential">Mentaltrainer</span>
+                <span class="mc-credential">NLP-Coach</span>
+                <span class="mc-credential">Hypnose-Coach</span>
+                <span class="mc-credential">PSYCHEDELIC BREATH®</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mc-section bg-white">
+        <div class="mc-wrap">
+            <div class="section-label reveal"><span>Kurz gefragt</span></div>
+            <h2 class="section-title reveal">Häufige Fragen</h2>
+            <div class="mc-faq reveal">
+                <details>
+                    <summary>Brauche ich Vorkenntnisse?</summary>
+                    <p>Nein.</p>
+                </details>
+                <details>
+                    <summary>Muss ich die Kamera einschalten?</summary>
+                    <p>Nein.</p>
+                </details>
+                <details>
+                    <summary>Gibt es eine Aufzeichnung?</summary>
+                    <p>Ja, du bekommst sie per Mail. Sie ist bis Freitag, 30. Oktober verfügbar.</p>
+                </details>
+                <details>
+                    <summary>Ist das eine Verkaufsveranstaltung?</summary>
+                    <p>Am Ende erzähle ich dir kurz vom Nervensystem Reset, meiner 4-wöchigen Begleitung in der Gruppe. Du musst nichts kaufen. Die Masterclass steht für sich.</p>
+                </details>
+                <details>
+                    <summary>Ist die Übung anstrengend?</summary>
+                    <p>Nein, sie ist bewusst sanft und du machst alles in deinem Tempo.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABSCHLUSS-CTA -->
+    <section class="mc-section bg-cream mc-final">
+        <div class="mc-wrap">
+            <h2 class="section-title reveal">Gönn dir diesen<br><em>einen Abend.</em></h2>
+            <p class="mc-final-meta reveal">Dienstag, 27. Oktober 2026 · 19:00–20:15 Uhr (MEZ) · live auf Zoom · kostenlos</p>
+            <a href="#anmeldung" class="btn btn-primary reveal" onclick="gtag('event', 'mc_cta_click', {cta_label: 'final_anmelden'});">
+                Kostenlos anmelden
+                <span class="btn-arrow">&rarr;</span>
+            </a>
+            <p class="mc-form-note reveal">Du bekommst sofort eine Mail mit dem Zoom-Link.</p>
+        </div>
+    </section>
+
+    <!-- BRÜCKE ZUM NERVENSYSTEM RESET -->
+    <section class="mc-bridge">
+        <div class="mc-wrap">
+            <div class="mc-bridge-card reveal">
+                <div class="mc-bridge-label">Und danach?</div>
+                <h3>Nervensystem Reset</h3>
+                <p>4-wöchiges Gruppenprogramm, Start Montag, 2. November 2026, montags und donnerstags um 19:00 Uhr auf Zoom. Coaching und Breathwork in einer kleinen, persönlich begleiteten Gruppe.</p>
+                <p>Anmeldeschluss: Samstag, 31. Oktober 2026.</p>
+                <a href="ns-reset.html" class="mc-bridge-link" onclick="gtag('event', 'nsr_cta_click', {cta_label: 'masterclass_bridge'});">Mehr zum Nervensystem Reset <span>&rarr;</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">Michael Geiregger</div>
+                    <p class="footer-brand-tagline">
+                        Coach & Mentor für Unternehmer, die Freiheit und Klarheit suchen.
+                        Weil du mehr verdienst als nur zu funktionieren.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+                        <a href="https://www.facebook.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="https://www.linkedin.com/in/michael-geiregger/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                        <a href="https://www.youtube.com/@ZwischenAlltagundUniversum" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="4" ry="4"/><polygon points="10 8.5 16 12 10 15.5" fill="currentColor" stroke="none"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Menü</h4>
+                    <ul>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="ueber-mich.html">Über mich</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Angebote</h4>
+                    <ul>
+                        <li><a href="ns-reset.html">Nervensystem Reset</a></li>
+                        <li><a href="klarheitsgespraech.html">Klarheitsgespräch</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="atemroutinen.html">Atemroutinen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Michael Geiregger. Alle Rechte vorbehalten.</span>
+                <span>Mit Leidenschaft gebaut.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=2"></script>
+    <script>
+        // ==============================
+        // MASTERCLASS — ActiveCampaign + GA4
+        // ==============================
+        (function() {
+            // Nach Anlage des AC-Formulars hier die Formular-ID eintragen (z. B. '47').
+            var MC_FORM_ID = 'FORM_ID';
+            var THANK_YOU_URL = 'masterclass-danke.html';
+            var isConnected = /^\d+$/.test(MC_FORM_ID);
+
+            var form = document.getElementById('_form_' + MC_FORM_ID + '_');
+            if (!form) return;
+
+            var banner = document.getElementById('mcPreviewBanner');
+            if (isConnected && banner) banner.style.display = 'none';
+
+            // GA4: Formular-Interaktion (einmalig)
+            var started = false;
+            form.addEventListener('focusin', function() {
+                if (started) return;
+                started = true;
+                gtag('event', 'mc_form_start', { form_name: 'masterclass_okt2026' });
+            });
+
+            function showError(message) {
+                var old = form.querySelector('.mc-form-error');
+                if (old) old.parentNode.removeChild(old);
+                var err = document.createElement('div');
+                err.className = 'mc-form-error';
+                err.innerHTML = message;
+                var button = form.querySelector('button[type="submit"]');
+                button.parentNode.insertBefore(err, button);
+                button.disabled = false;
+                button.innerHTML = 'Kostenlos anmelden <span class="btn-arrow">&rarr;</span>';
+            }
+
+            function goToThankYou() {
+                var firstname = form.querySelector('input[name="firstname"]').value.trim();
+                try { sessionStorage.setItem('mcFirstname', firstname); } catch (e) {}
+                window.location.href = THANK_YOU_URL;
+            }
+
+            // AC-JSONP-Callbacks: für dieses Formular auf die Danke-Seite leiten,
+            // für andere Formulare (Newsletter) das bestehende Verhalten aus main.js beibehalten.
+            var origThankYou = window._show_thank_you;
+            window._show_thank_you = function(id, message) {
+                if (String(id) === MC_FORM_ID) return goToThankYou();
+                if (origThankYou) origThankYou(id, message);
+            };
+            var origError = window._show_error;
+            window._show_error = function(id, message) {
+                if (String(id) === MC_FORM_ID) return showError(message);
+                if (origError) origError(id, message);
+            };
+
+            function serialize(f) {
+                var q = [];
+                for (var i = 0; i < f.elements.length; i++) {
+                    var el = f.elements[i];
+                    if (!el.name) continue;
+                    if ((el.type === 'checkbox' || el.type === 'radio') && !el.checked) continue;
+                    if (el.nodeName === 'BUTTON') continue;
+                    q.push(el.name + '=' + encodeURIComponent(el.value));
+                }
+                return q.join('&');
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var firstname = form.querySelector('input[name="firstname"]');
+                var email = form.querySelector('input[name="email"]');
+                var consent = form.querySelector('.mc-consent input[type="checkbox"]');
+
+                if (!firstname.value.trim()) return showError('Bitte gib deinen Vornamen ein.');
+                if (!email.value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)) {
+                    return showError('Bitte gib eine gültige E-Mail-Adresse ein.');
+                }
+                if (consent && !consent.checked) return showError('Bitte bestätige die Einwilligung.');
+
+                gtag('event', 'mc_form_submit', { form_name: 'masterclass_okt2026' });
+
+                var button = form.querySelector('button[type="submit"]');
+                button.disabled = true;
+                button.textContent = 'Wird gesendet …';
+
+                // Vorschau-Modus: Formular noch nicht mit ActiveCampaign verbunden
+                if (!isConnected) {
+                    try { sessionStorage.setItem('mcPreview', '1'); } catch (e) {}
+                    return goToThankYou();
+                }
+
+                var script = document.createElement('script');
+                script.charset = 'utf-8';
+                script.src = 'https://michael-geiregger.activehosted.com/proc.php?' + serialize(form).replace(/%0A/g, '\\n') + '&jsonp=true';
+                script.onerror = function() { showError('Übermittlung fehlgeschlagen. Bitte versuche es erneut.'); };
+                document.head.appendChild(script);
+            });
+        })();
+    </script>
+</body>
+</html>

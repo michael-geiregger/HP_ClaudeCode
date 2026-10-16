@@ -16,8 +16,7 @@
     <title>Kostenlose Masterclass: Endlich wieder zur Ruhe kommen | Michael Geiregger</title>
     <meta name="description" content="Kostenlose Live-Masterclass am 27. Oktober 2026 auf Zoom: Warum dein Körper nicht einfach auf Entspannung umschaltet – und wie du wieder mehr innere Ruhe findest. Mit Übung zum Mitmachen.">
     <meta name="author" content="Michael Geiregger">
-    <!-- noindex, bis Feld 8 in ActiveCampaign als Einwilligungsfeld umbenannt ist und die Hauptvariante feststeht. Danach "index, follow" + sitemap.xml. -->
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://michael-geiregger.com/masterclass.html">
 
     <!-- Open Graph -->
@@ -738,11 +737,7 @@
                         </div>
 
                         <label class="mc-consent">
-                            <!-- Übergang: field[10] = "Einwilligung Masterclass-E-Mails" (neu), field[8] = altes AGB-Feld.
-                                 Sobald Feld 8 aus AC-Formular 51 entfernt ist, field[8]-Zeilen löschen. -->
                             <input type="hidden" name="field[10][]" value="~|">
-                            <input type="hidden" name="field[8][]" value="~|">
-                            <input type="hidden" name="field[8][]" value="akzeptiert" id="mcLegacyConsent" disabled>
                             <input type="checkbox" name="field[10][]" value="eingewilligt" required>
                             <span>Ja, ich möchte an der kostenlosen Masterclass teilnehmen und per E-Mail den Zoom-Link, die Aufzeichnung sowie weitere Impulse und Angebote von Michael Geiregger (z.&nbsp;B. zum Nervensystem Reset) erhalten. Abmelden kann ich mich jederzeit über den Link in jeder E-Mail. Mehr dazu in der <a href="datenschutz.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Datenschutzerklärung</a>.</span>
                         </label>
@@ -1052,8 +1047,6 @@
                     return showError('Bitte gib eine gültige E-Mail-Adresse ein.');
                 }
                 if (consent && !consent.checked) return showError('Bitte bestätige die Einwilligung.');
-                var legacy = document.getElementById('mcLegacyConsent');
-                if (legacy) legacy.disabled = !consent.checked;
 
                 gtag('event', 'mc_form_submit', { form_name: 'masterclass_okt2026' });
 

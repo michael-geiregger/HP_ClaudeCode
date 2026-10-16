@@ -42,17 +42,17 @@
     }
 
     var css = '' +
-        '.mg-cc{position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:440px;margin:0 auto;' +
-        'padding:22px 22px 18px;border-radius:22px;background:rgba(30,38,48,.94);color:#f5f2ec;' +
+        '.mg-cc{position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:400px;margin:0 auto;' +
+        'padding:16px 16px 14px;border-radius:22px;background:rgba(30,38,48,.94);color:#f5f2ec;' +
         '-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.12);' +
         'box-shadow:0 24px 60px -12px rgba(0,0,0,.45);font:15px/1.55 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;' +
         'transform:translateY(24px);opacity:0;transition:transform .5s cubic-bezier(.22,1,.36,1),opacity .5s ease}' +
         '.mg-cc.show{transform:none;opacity:1}' +
         '.mg-cc h2{font-size:16px;font-weight:700;margin:0 0 6px;letter-spacing:-.01em;color:#fff}' +
-        '.mg-cc p{margin:0 0 16px;font-size:13.5px;color:rgba(245,242,236,.75)}' +
+        '.mg-cc p{margin:0 0 12px;font-size:14px;color:rgba(245,242,236,.85)}' +
         '.mg-cc a{color:#E8B860;text-decoration:underline}' +
         '.mg-cc-btns{display:flex;gap:10px}' +
-        '.mg-cc button{flex:1;padding:12px 14px;border-radius:999px;font-family:inherit;font-weight:600;font-size:14px;line-height:1.2;cursor:pointer;' +
+        '.mg-cc button{flex:1;padding:10px 14px;border-radius:999px;font-family:inherit;font-weight:600;font-size:14px;line-height:1.2;cursor:pointer;' +
         'transition:transform .3s cubic-bezier(.34,1.56,.64,1),background .2s ease;-webkit-tap-highlight-color:transparent}' +
         '.mg-cc button:active{transform:scale(.96)}' +
         '.mg-cc .mg-yes{background:#fff;color:#14181e;border:0}' +
@@ -75,12 +75,10 @@
         box.setAttribute('aria-live', 'polite');
         box.setAttribute('aria-label', 'Cookie-Einstellungen');
         box.innerHTML =
-            '<h2>Darf ich messen, was hilft?</h2>' +
-            '<p>Mit deiner Zustimmung nutze ich Google Analytics, um zu verstehen, welche Inhalte dich wirklich weiterbringen. ' +
-            'Dabei werden Cookies gesetzt und Daten an Google übertragen. Ohne Zustimmung funktioniert die Seite genauso. ' +
-            'Mehr in der <a href="' + privacy + '#analytics">Datenschutzerklärung</a>.</p>' +
+            '<p>Darf ich mit Google Analytics (Cookies) messen, wie meine Seite genutzt wird? ' +
+            '<a href="' + privacy + '#analytics">Datenschutz</a></p>' +
             '<div class="mg-cc-btns">' +
-            '<button type="button" class="mg-no">Nur notwendige</button>' +
+            '<button type="button" class="mg-no">Ablehnen</button>' +
             '<button type="button" class="mg-yes">Akzeptieren</button>' +
             '</div>';
         document.body.appendChild(box);

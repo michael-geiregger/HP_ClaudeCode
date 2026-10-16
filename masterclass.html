@@ -373,6 +373,28 @@
             margin-bottom: 32px;
         }
 
+        /* Ablauf: Timeline füllt sich beim Scrollen */
+        .mc-timeline { position: relative; }
+
+        .mc-timeline-track,
+        .mc-timeline-progress {
+            position: absolute;
+            left: 16px;
+            top: 14px;
+            width: 2px;
+            border-radius: 2px;
+        }
+
+        .mc-timeline-track {
+            bottom: 14px;
+            background: var(--color-sand);
+        }
+
+        .mc-timeline-progress {
+            height: calc((100% - 28px) * var(--p, 0));
+            background: var(--gradient-golden);
+        }
+
         .mc-agenda {
             list-style: none;
             counter-reset: agenda;
@@ -382,11 +404,12 @@
         .mc-agenda li {
             counter-increment: agenda;
             position: relative;
-            padding: 0 0 22px 52px;
+            padding: 0 0 24px 52px;
             font-size: 1rem;
-            color: var(--color-text);
+            color: var(--color-text-light);
             line-height: 1.55;
             min-height: 36px;
+            transition: color 0.5s ease;
         }
 
         .mc-agenda li::before {
@@ -397,8 +420,8 @@
             width: 34px;
             height: 34px;
             border-radius: 50%;
-            background: white;
-            border: 1.5px solid var(--color-primary);
+            background: var(--color-cream);
+            border: 1.5px solid rgba(200, 150, 62, 0.45);
             color: var(--color-primary);
             font-family: var(--font-display);
             font-weight: 700;
@@ -406,20 +429,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: background 0.5s ease, color 0.5s ease, border-color 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.5s ease;
         }
 
-        .mc-agenda li::after {
-            content: '';
-            position: absolute;
-            left: 17px;
-            top: 32px;
-            bottom: 0;
-            width: 1px;
-            background: var(--color-sand);
+        .mc-agenda li.done { color: var(--color-text); }
+
+        .mc-agenda li.done::before {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 0 0 6px rgba(200, 150, 62, 0.15);
         }
 
-        .mc-agenda li:last-child::after { display: none; }
         .mc-agenda li:last-child { padding-bottom: 0; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .mc-agenda li, .mc-agenda li::before { transition: none; }
+        }
 
         /* Über Michi */
         .mc-about .section-label { color: var(--color-golden); }
@@ -683,7 +710,7 @@
                     ACTIVECAMPAIGN-FORMULAR 51 "Masterclass Herbst 2026 - Anmeldung"
                     In AC eingestellt: Liste "Michi Liste Hauptkontakte" + Tag Michi_NS_Reset_Masterclass_Okt2026,
                     danach Weiterleitung auf masterclass-danke.html.
-                    Felder: firstname, email, field[8] (Einwilligung, Pflicht), field[9] (Belastung, optional).
+                    Felder: firstname, email, field[10] (Einwilligung Masterclass-E-Mails, Pflicht), field[9] (Belastung, optional).
                 -->
 
                 <form method="POST" action="https://michael-geiregger.activehosted.com/proc.php" id="_form_51_" class="_form mc-form" novalidate>
@@ -711,8 +738,12 @@
                         </div>
 
                         <label class="mc-consent">
+                            <!-- Übergang: field[10] = "Einwilligung Masterclass-E-Mails" (neu), field[8] = altes AGB-Feld.
+                                 Sobald Feld 8 aus AC-Formular 51 entfernt ist, field[8]-Zeilen löschen. -->
+                            <input type="hidden" name="field[10][]" value="~|">
                             <input type="hidden" name="field[8][]" value="~|">
-                            <input type="checkbox" name="field[8][]" value="akzeptiert" required>
+                            <input type="hidden" name="field[8][]" value="akzeptiert" id="mcLegacyConsent" disabled>
+                            <input type="checkbox" name="field[10][]" value="eingewilligt" required>
                             <span>Ja, ich möchte an der kostenlosen Masterclass teilnehmen und per E-Mail den Zoom-Link, die Aufzeichnung sowie weitere Impulse und Angebote von Michael Geiregger (z.&nbsp;B. zum Nervensystem Reset) erhalten. Abmelden kann ich mich jederzeit über den Link in jeder E-Mail. Mehr dazu in der <a href="datenschutz.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Datenschutzerklärung</a>.</span>
                         </label>
 
@@ -775,7 +806,10 @@
             <div class="section-label reveal"><span>So läuft der Abend</span></div>
             <h2 class="section-title reveal">Kein Vortrag von der Bühne.</h2>
             <p class="mc-evening-text reveal">Ich arbeite so, wie ich auch in meinen Sitzungen arbeite: direkt, am Körper, ohne Theater. Du kannst die Kamera anlassen oder ausschalten, ganz wie du willst. Fragen stellst du einfach im Chat.</p>
-            <ol class="mc-agenda reveal">
+            <div class="mc-timeline reveal" id="mcTimeline">
+                <span class="mc-timeline-track" aria-hidden="true"></span>
+                <span class="mc-timeline-progress" aria-hidden="true"></span>
+            <ol class="mc-agenda">
                 <li>Ankommen</li>
                 <li>Kurzer Check-in: Wie angespannt bist du gerade?</li>
                 <li>Die Kernidee: Warum du dich nicht entspannt denken kannst</li>
@@ -784,6 +818,7 @@
                 <li>Wie es weitergehen kann (kurzer Ausblick auf den Nervensystem Reset)</li>
                 <li>Deine Fragen</li>
             </ol>
+            </div>
         </div>
     </section>
 
@@ -917,6 +952,30 @@
 
     <script src="js/main.js?v=2"></script>
     <script>
+        // Ablauf-Timeline: Linie füllt sich, Schritte werden beim Scrollen aktiv
+        (function() {
+            var tl = document.getElementById('mcTimeline');
+            if (!tl) return;
+            var steps = tl.querySelectorAll('.mc-agenda li');
+            var ticking = false;
+            function update() {
+                ticking = false;
+                var vh = window.innerHeight;
+                var r = tl.getBoundingClientRect();
+                var p = Math.min(1, Math.max(0, (vh * 0.6 - r.top) / r.height));
+                tl.style.setProperty('--p', p.toFixed(3));
+                steps.forEach(function(li) {
+                    li.classList.toggle('done', li.getBoundingClientRect().top < vh * 0.6);
+                });
+            }
+            window.addEventListener('scroll', function() {
+                if (!ticking) { ticking = true; requestAnimationFrame(update); }
+            }, { passive: true });
+            window.addEventListener('resize', update);
+            update();
+        })();
+    </script>
+    <script>
         // ==============================
         // MASTERCLASS — ActiveCampaign + GA4
         // ==============================
@@ -974,7 +1033,7 @@
                 var q = [];
                 for (var i = 0; i < f.elements.length; i++) {
                     var el = f.elements[i];
-                    if (!el.name) continue;
+                    if (!el.name || el.disabled) continue;
                     if ((el.type === 'checkbox' || el.type === 'radio') && !el.checked) continue;
                     if (el.nodeName === 'BUTTON') continue;
                     q.push(el.name + '=' + encodeURIComponent(el.value));
@@ -993,6 +1052,8 @@
                     return showError('Bitte gib eine gültige E-Mail-Adresse ein.');
                 }
                 if (consent && !consent.checked) return showError('Bitte bestätige die Einwilligung.');
+                var legacy = document.getElementById('mcLegacyConsent');
+                if (legacy) legacy.disabled = !consent.checked;
 
                 gtag('event', 'mc_form_submit', { form_name: 'masterclass_okt2026' });
 

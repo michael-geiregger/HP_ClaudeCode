@@ -15,7 +15,7 @@
     <title>Kostenlose Masterclass: Endlich wieder zur Ruhe kommen | Michael Geiregger</title>
     <meta name="description" content="Kostenlose Live-Masterclass am 27. Oktober 2026 auf Zoom: Warum dein Körper nicht einfach auf Entspannung umschaltet – und wie du wieder mehr innere Ruhe findest. Mit Übung zum Mitmachen.">
     <meta name="author" content="Michael Geiregger">
-    <!-- Vorschau-Modus: noindex, bis das ActiveCampaign-Formular verbunden ist. Danach auf "index, follow" stellen und in sitemap.xml eintragen. -->
+    <!-- noindex, bis Feld 8 in ActiveCampaign als Einwilligungsfeld umbenannt ist und die Hauptvariante feststeht. Danach "index, follow" + sitemap.xml. -->
     <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://michael-geiregger.com/masterclass.html">
 
@@ -679,33 +679,21 @@
                 <p class="mc-form-sub">Di, 27. Oktober · 19:00 Uhr · Zoom · kostenlos</p>
 
                 <!--
-                    ACTIVECAMPAIGN-FORMULAR
-                    =======================
-                    Tag in ActiveCampaign (existiert bereits): Michi_NS_Reset_Masterclass_Okt2026
-                    Im AC-Formular einstellen:
-                      - Aktion: zur Liste hinzufügen + Tag "Michi_NS_Reset_Masterclass_Okt2026" setzen
-                      - Nach dem Absenden: "Zu URL weiterleiten" -> https://michael-geiregger.com/masterclass-danke.html
-
-                    Sobald das Formular angelegt ist, nur diese Werte ersetzen:
-                      - FORM_ID (in id="_form_FORM_ID_", name="u"/"f" und im Script unten: MC_FORM_ID)
-                      - name="or"            -> Wert aus dem AC-Embed-Code (Form-Version)
-                      - Name der Einwilligungs-Checkbox (z. B. field[12]) aus dem AC-Embed-Code
-                      - ggf. Name des freiwilligen Textfelds (z. B. field[13])
-                    Alternativ kann hier der komplette AC-Embed-Code eingefügt werden.
+                    ACTIVECAMPAIGN-FORMULAR 51 "Masterclass Herbst 2026 - Anmeldung"
+                    In AC eingestellt: Liste "Michi Liste Hauptkontakte" + Tag Michi_NS_Reset_Masterclass_Okt2026,
+                    danach Weiterleitung auf masterclass-danke.html.
+                    Felder: firstname, email, field[8] (Einwilligung, Pflicht), field[9] (Belastung, optional).
                 -->
-                <div class="mc-preview-banner" id="mcPreviewBanner">
-                    <span class="mc-open">[Formular-Embed folgt] – Vorschau, noch nicht mit ActiveCampaign verbunden</span>
-                </div>
 
-                <form method="POST" action="https://michael-geiregger.activehosted.com/proc.php" id="_form_FORM_ID_" class="_form mc-form" novalidate>
-                    <input type="hidden" name="u" value="FORM_ID">
-                    <input type="hidden" name="f" value="FORM_ID">
+                <form method="POST" action="https://michael-geiregger.activehosted.com/proc.php" id="_form_51_" class="_form mc-form" novalidate>
+                    <input type="hidden" name="u" value="51">
+                    <input type="hidden" name="f" value="51">
                     <input type="hidden" name="s">
                     <input type="hidden" name="c" value="0">
                     <input type="hidden" name="m" value="0">
                     <input type="hidden" name="act" value="sub">
                     <input type="hidden" name="v" value="2">
-                    <input type="hidden" name="or" value="FORM_VERSION">
+                    <input type="hidden" name="or" value="2456e3e5-d100-4047-8777-22f1070207d0">
 
                     <div class="_form-content">
                         <div class="mc-field">
@@ -716,20 +704,18 @@
                             <label for="mc-email">E-Mail</label>
                             <input type="email" id="mc-email" name="email" class="mc-input" placeholder="Deine E-Mail-Adresse" autocomplete="email" required>
                         </div>
-
-                        <!-- Freiwilliges Textfeld – ob es bleibt, entscheidet Michi -->
                         <div class="mc-field">
                             <label for="mc-burden">Was belastet dich gerade am meisten? <span class="mc-optional">(freiwillig)</span></label>
-                            <textarea id="mc-burden" name="field[FIELD_TEXT]" class="mc-input" placeholder="Ein, zwei Sätze reichen."></textarea>
-                            <span class="mc-open" style="margin-top: 8px;">[OFFEN: Textfeld ja/nein – Michi]</span>
+                            <textarea id="mc-burden" name="field[9]" class="mc-input" placeholder="Ein, zwei Sätze reichen."></textarea>
                         </div>
 
                         <label class="mc-consent">
-                            <input type="checkbox" name="field[FIELD_CONSENT][]" value="ja" required>
+                            <input type="hidden" name="field[8][]" value="~|">
+                            <input type="checkbox" name="field[8][]" value="akzeptiert" required>
                             <span>Ja, ich möchte an der kostenlosen Masterclass teilnehmen und per E-Mail den Zoom-Link, die Aufzeichnung sowie weitere Impulse und Angebote von Michael Geiregger (z.&nbsp;B. zum Nervensystem Reset) erhalten. Abmelden kann ich mich jederzeit über den Link in jeder E-Mail. Mehr dazu in der <a href="datenschutz.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Datenschutzerklärung</a>.</span>
                         </label>
 
-                        <button id="_form_FORM_ID_submit" class="btn btn-primary mc-submit _submit" type="submit">
+                        <button id="_form_51_submit" class="btn btn-primary mc-submit _submit" type="submit">
                             Kostenlos anmelden
                             <span class="btn-arrow">&rarr;</span>
                         </button>
@@ -934,8 +920,7 @@
         // MASTERCLASS — ActiveCampaign + GA4
         // ==============================
         (function() {
-            // Nach Anlage des AC-Formulars hier die Formular-ID eintragen (z. B. '47').
-            var MC_FORM_ID = 'FORM_ID';
+                        var MC_FORM_ID = '51';
             var THANK_YOU_URL = 'masterclass-danke.html';
             var isConnected = /^\d+$/.test(MC_FORM_ID);
 
@@ -1014,11 +999,12 @@
                 button.disabled = true;
                 button.textContent = 'Wird gesendet …';
 
-                // Vorschau-Modus: Formular noch nicht mit ActiveCampaign verbunden
-                if (!isConnected) {
-                    try { sessionStorage.setItem('mcPreview', '1'); } catch (e) {}
-                    return goToThankYou();
-                }
+                try {
+                    sessionStorage.setItem('mcFirstname', firstname.value.trim());
+                    if (isConnected) sessionStorage.removeItem('mcPreview'); else sessionStorage.setItem('mcPreview', '1');
+                } catch (e) {}
+
+                if (!isConnected) return goToThankYou();
 
                 var script = document.createElement('script');
                 script.charset = 'utf-8';

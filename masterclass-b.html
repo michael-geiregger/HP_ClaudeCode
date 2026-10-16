@@ -959,23 +959,21 @@
                 <p class="meta">Di, 27. Oktober · 19:00 Uhr · Zoom · kostenlos</p>
 
                 <!--
-                    ACTIVECAMPAIGN-FORMULAR (identisch zur Hauptversion masterclass.html)
-                    Tag: Michi_NS_Reset_Masterclass_Okt2026
-                    Platzhalter ersetzen: FORM_ID, FORM_VERSION, FIELD_TEXT, FIELD_CONSENT
+                    ACTIVECAMPAIGN-FORMULAR 51 "Masterclass Herbst 2026 - Anmeldung"
+                    In AC eingestellt: Liste "Michi Liste Hauptkontakte" + Tag Michi_NS_Reset_Masterclass_Okt2026,
+                    danach Weiterleitung auf masterclass-danke.html.
+                    Felder: firstname, email, field[8] (Einwilligung, Pflicht), field[9] (Belastung, optional).
                 -->
-                <div class="preview-banner" id="mcPreviewBanner">
-                    <span class="mc-open">[Formular-Embed folgt] – Vorschau, noch nicht mit ActiveCampaign verbunden</span>
-                </div>
 
-                <form method="POST" action="https://michael-geiregger.activehosted.com/proc.php" id="_form_FORM_ID_" class="_form" novalidate>
-                    <input type="hidden" name="u" value="FORM_ID">
-                    <input type="hidden" name="f" value="FORM_ID">
+                <form method="POST" action="https://michael-geiregger.activehosted.com/proc.php" id="_form_51_" class="_form" novalidate>
+                    <input type="hidden" name="u" value="51">
+                    <input type="hidden" name="f" value="51">
                     <input type="hidden" name="s">
                     <input type="hidden" name="c" value="0">
                     <input type="hidden" name="m" value="0">
                     <input type="hidden" name="act" value="sub">
                     <input type="hidden" name="v" value="2">
-                    <input type="hidden" name="or" value="FORM_VERSION">
+                    <input type="hidden" name="or" value="2456e3e5-d100-4047-8777-22f1070207d0">
 
                     <div class="_form-content">
                         <div class="field">
@@ -988,16 +986,16 @@
                         </div>
                         <div class="field">
                             <label for="mc-burden">Was belastet dich gerade am meisten? <em>(freiwillig)</em></label>
-                            <textarea id="mc-burden" name="field[FIELD_TEXT]" class="input" placeholder="Ein, zwei Sätze reichen."></textarea>
-                            <span class="mc-open" style="margin-top: 8px;">[OFFEN: Textfeld ja/nein – Michi]</span>
+                            <textarea id="mc-burden" name="field[9]" class="input" placeholder="Ein, zwei Sätze reichen."></textarea>
                         </div>
 
                         <label class="consent">
-                            <input type="checkbox" name="field[FIELD_CONSENT][]" value="ja" required>
+                            <input type="hidden" name="field[8][]" value="~|">
+                            <input type="checkbox" name="field[8][]" value="akzeptiert" required>
                             <span>Ja, ich möchte an der kostenlosen Masterclass teilnehmen und per E-Mail den Zoom-Link, die Aufzeichnung sowie weitere Impulse und Angebote von Michael Geiregger (z.&nbsp;B. zum Nervensystem Reset) erhalten. Abmelden kann ich mich jederzeit über den Link in jeder E-Mail. Mehr dazu in der <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.</span>
                         </label>
 
-                        <button id="_form_FORM_ID_submit" class="btn btn-light btn-glow submit _submit" type="submit">Kostenlos anmelden <span class="arrow">&rarr;</span></button>
+                        <button id="_form_51_submit" class="btn btn-light btn-glow submit _submit" type="submit">Kostenlos anmelden <span class="arrow">&rarr;</span></button>
                         <p class="form-note">Du bekommst sofort eine Mail mit dem Zoom-Link.</p>
                     </div>
                     <div class="_form-thank-you" style="display:none;"></div>
@@ -1205,7 +1203,7 @@
         // MASTERCLASS — ActiveCampaign + GA4 (wie Hauptversion)
         // ==============================
         (function() {
-            var MC_FORM_ID = 'FORM_ID';
+            var MC_FORM_ID = '51';
             var THANK_YOU_URL = 'masterclass-danke.html';
             var isConnected = /^\d+$/.test(MC_FORM_ID);
 
@@ -1282,10 +1280,12 @@
                 button.disabled = true;
                 button.textContent = 'Wird gesendet …';
 
-                if (!isConnected) {
-                    try { sessionStorage.setItem('mcPreview', '1'); } catch (e) {}
-                    return goToThankYou();
-                }
+                try {
+                    sessionStorage.setItem('mcFirstname', firstname.value.trim());
+                    if (isConnected) sessionStorage.removeItem('mcPreview'); else sessionStorage.setItem('mcPreview', '1');
+                } catch (e) {}
+
+                if (!isConnected) return goToThankYou();
 
                 var script = document.createElement('script');
                 script.charset = 'utf-8';

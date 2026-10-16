@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q32GSGRR7"></script>
+    <!-- Google Analytics (lädt erst nach Einwilligung, siehe js/consent.js) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
         gtag('js', new Date());
         gtag('config', 'G-8Q32GSGRR7');
     </script>
+    <script src="js/consent.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -100,9 +101,15 @@
                     Diese Daten werden zur Sicherstellung eines störungsfreien Betriebs sowie zur Verbesserung des Angebots verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse). Die Daten werden nach kurzer Zeit gelöscht, sofern keine Sicherheitsvorfälle eine längere Speicherung erfordern.
                 </p>
 
-                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;">4. Cookies</h2>
+                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;">4. Cookies &amp; Einwilligung</h2>
+                <p style="margin-bottom: 24px;">
+                    Technisch notwendige Speichermechanismen setze ich ein, damit die Website funktioniert (Art. 6 Abs. 1 lit. f DSGVO). Dazu gehört auch, dass deine Entscheidung im Cookie-Banner im Speicher deines Browsers (localStorage) abgelegt wird, damit ich dich nicht bei jedem Besuch erneut fragen muss.
+                </p>
+                <p style="margin-bottom: 24px;">
+                    Google Analytics (siehe Punkt 10) setzt Cookies und wird <strong style="color: var(--color-night);">erst nach deiner Einwilligung</strong> geladen (Art. 6 Abs. 1 lit. a DSGVO). Ohne Einwilligung findet keine Analyse mit Google Analytics statt. Deine Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen oder ändern: <a href="#" data-cookie-settings style="color: var(--color-primary);">Cookie-Einstellungen öffnen</a>. Der Link befindet sich auch unten auf jeder Seite.
+                </p>
                 <p style="margin-bottom: 32px;">
-                    Diese Website verwendet keine eigenen Cookies, die personenbezogene Daten erfassen. Lediglich technisch notwendige Speichermechanismen können zum Einsatz kommen, um grundlegende Funktionen zu gewährleisten. Sofern eingebundene Drittdienste (siehe Punkt 7) Cookies setzen, geschieht dies erst nach deiner Interaktion mit dem jeweiligen Inhalt.
+                    Sofern eingebundene Drittdienste (siehe Punkt 11) Cookies setzen, geschieht dies erst nach deiner Interaktion mit dem jeweiligen Inhalt.
                 </p>
 
                 <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;">5. Kontaktaufnahme &amp; Kontaktformular</h2>
@@ -132,7 +139,35 @@
                     <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener" style="color: var(--color-primary);">https://www.whatsapp.com/legal/privacy-policy</a>.
                 </p>
 
-                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;">7. Webanalyse mit Plausible Analytics</h2>
+                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;" id="activecampaign">7. Anmeldung zu Veranstaltungen &amp; Newsletter (ActiveCampaign)</h2>
+                <p style="margin-bottom: 24px;">
+                    Wenn du dich über ein Formular auf dieser Website zu einer kostenlosen Veranstaltung (z.&nbsp;B. einer Masterclass) oder zu meinem Newsletter anmeldest, verarbeite ich deinen Vornamen, deine E-Mail-Adresse und freiwillige Angaben, die du im Formular machst, sowie Datum und Uhrzeit der Anmeldung. Ich nutze diese Daten, um dir die Zugangsdaten, Erinnerungen und gegebenenfalls die Aufzeichnung zu senden. Wenn du eingewilligt hast, sende ich dir außerdem weitere Impulse und Informationen zu meinen Angeboten per E-Mail.
+                </p>
+                <p style="margin-bottom: 24px;">
+                    Rechtsgrundlage ist deine <strong style="color: var(--color-night);">Einwilligung</strong> (Art. 6 Abs. 1 lit. a DSGVO). Du kannst sie jederzeit mit Wirkung für die Zukunft widerrufen, über den Abmeldelink in jeder E-Mail oder mit einer kurzen Nachricht an <a href="mailto:info@michael-geiregger.com" style="color: var(--color-primary);">info@michael-geiregger.com</a>. Nach deiner Abmeldung lösche ich deine Daten, soweit keine gesetzlichen Aufbewahrungspflichten bestehen. Deine E-Mail-Adresse kann ich in einer Sperrliste speichern, damit du keine weiteren E-Mails erhältst.
+                </p>
+                <p style="margin-bottom: 24px;">
+                    Für den Versand und die Verwaltung der Anmeldungen nutze ich <strong style="color: var(--color-night);">ActiveCampaign</strong> (ActiveCampaign, LLC, 1 North Dearborn Street, Suite 500, Chicago, IL 60602, USA). ActiveCampaign verarbeitet die Daten in meinem Auftrag (Art. 28 DSGVO). Dabei können Daten in die <strong style="color: var(--color-night);">USA</strong> übertragen werden. Die Übermittlung erfolgt auf Grundlage des EU-US Data Privacy Framework bzw. von Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO). ActiveCampaign wertet außerdem aus, ob E-Mails geöffnet und Links angeklickt werden, damit ich meine Inhalte verbessern kann.
+                </p>
+                <p style="margin-bottom: 24px;">
+                    Zum Schutz vor Spam kann bei Formularen <strong style="color: var(--color-night);">Google reCAPTCHA</strong> (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) zum Einsatz kommen. reCAPTCHA prüft, ob eine Eingabe von einem Menschen stammt; dazu werden u.&nbsp;a. IP-Adresse und Browserinformationen an Google übermittelt (Art. 6 Abs. 1 lit. f DSGVO, berechtigtes Interesse am Schutz vor Missbrauch).
+                </p>
+                <p style="margin-bottom: 32px;">
+                    Weitere Informationen: <a href="https://www.activecampaign.com/legal/privacy-policy" target="_blank" rel="noopener" style="color: var(--color-primary);">https://www.activecampaign.com/legal/privacy-policy</a> und <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--color-primary);">https://policies.google.com/privacy</a>.
+                </p>
+
+                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;" id="zoom">8. Online-Veranstaltungen mit Zoom</h2>
+                <p style="margin-bottom: 24px;">
+                    Meine Online-Veranstaltungen (z.&nbsp;B. Masterclasses und Gruppenprogramme) führe ich über <strong style="color: var(--color-night);">Zoom</strong> durch (Zoom Communications, Inc., 55 Almaden Boulevard, Suite 600, San Jose, CA 95113, USA). Dabei werden die Daten verarbeitet, die du bei Zoom angibst (z.&nbsp;B. Anzeigename, E-Mail-Adresse), sowie Meeting-Metadaten wie IP-Adresse, Geräteinformationen und Zeitpunkt der Teilnahme. Wenn du Kamera, Mikrofon oder Chat nutzt, werden auch diese Inhalte verarbeitet. Kamera und Mikrofon kannst du jederzeit ausschalten.
+                </p>
+                <p style="margin-bottom: 24px;">
+                    Wenn ich eine Veranstaltung aufzeichne, um sie den Teilnehmenden später zur Verfügung zu stellen, weise ich zu Beginn darauf hin. Möchtest du nicht in der Aufzeichnung erscheinen, lass Kamera und Mikrofon ausgeschaltet und wähle einen beliebigen Anzeigenamen.
+                </p>
+                <p style="margin-bottom: 32px;">
+                    Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Durchführung der Veranstaltung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer reibungslosen Online-Durchführung). Zoom kann Daten in die <strong style="color: var(--color-night);">USA</strong> übertragen; die Übermittlung erfolgt auf Grundlage des EU-US Data Privacy Framework bzw. von Standardvertragsklauseln. Weitere Informationen: <a href="https://explore.zoom.us/de/privacy/" target="_blank" rel="noopener" style="color: var(--color-primary);">https://explore.zoom.us/de/privacy/</a>.
+                </p>
+
+                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;">9. Webanalyse mit Plausible Analytics</h2>
                 <p style="margin-bottom: 24px;">
                     Diese Website nutzt <strong style="color: var(--color-night);">Plausible Analytics</strong>, einen datenschutzfreundlichen Analysedienst der Plausible Insights OÜ (Estland, EU). Plausible verzichtet vollständig auf Cookies und erfasst keine personenbezogenen Daten. Es werden lediglich anonymisierte und aggregierte Nutzungsdaten ausgewertet (z. B. Seitenaufrufe, Verweisquelle, anonymisierte Geräte- und Browserinformationen).
                 </p>
@@ -141,7 +176,15 @@
                     <a href="https://plausible.io/data-policy" target="_blank" rel="noopener" style="color: var(--color-primary);">https://plausible.io/data-policy</a>.
                 </p>
 
-                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;">8. Eingebundene Inhalte Dritter</h2>
+                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;" id="analytics">10. Webanalyse mit Google Analytics 4</h2>
+                <p style="margin-bottom: 24px;">
+                    Diese Website nutzt <strong style="color: var(--color-night);">Google Analytics 4</strong>, einen Webanalysedienst der Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irland), <strong style="color: var(--color-night);">nur wenn du im Cookie-Banner eingewilligt hast</strong>. Google Analytics setzt Cookies und erfasst, wie du die Website nutzt, z.&nbsp;B. aufgerufene Seiten, Klicks, ungefährer Standort, Geräte- und Browserinformationen sowie bestimmte Aktionen wie das Absenden eines Anmeldeformulars. IP-Adressen werden von Google Analytics 4 nicht gespeichert. Ich nutze diese Informationen, um mein Angebot und meine Website zu verbessern.
+                </p>
+                <p style="margin-bottom: 32px;">
+                    Rechtsgrundlage ist deine <strong style="color: var(--color-night);">Einwilligung</strong> (Art. 6 Abs. 1 lit. a DSGVO), die du jederzeit über die <a href="#" data-cookie-settings style="color: var(--color-primary);">Cookie-Einstellungen</a> widerrufen kannst. Google kann Daten in die <strong style="color: var(--color-night);">USA</strong> übertragen; die Übermittlung erfolgt auf Grundlage des EU-US Data Privacy Framework. Die Daten werden nach Ablauf der in Google Analytics eingestellten Aufbewahrungsdauer (höchstens 14 Monate) gelöscht. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--color-primary);">https://policies.google.com/privacy</a>.
+                </p>
+
+                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;">11. Eingebundene Inhalte Dritter</h2>
 
                 <h3 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--color-night); margin-top: 24px; margin-bottom: 12px;">Google Fonts</h3>
                 <p style="margin-bottom: 24px;">
@@ -173,12 +216,12 @@
                     <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener" style="color: var(--color-primary);">https://www.apple.com/legal/privacy/</a>.
                 </p>
 
-                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;">9. Social-Media-Profile</h2>
+                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;">12. Social-Media-Profile</h2>
                 <p style="margin-bottom: 32px;">
                     Auf der Website befinden sich Verlinkungen zu meinen Profilen auf Instagram, Facebook, LinkedIn und YouTube. Dabei handelt es sich ausschließlich um einfache Hyperlinks &mdash; es werden vor dem Anklicken keine Daten an die jeweiligen Anbieter übermittelt. Erst beim Klick auf eines dieser Symbole wirst du zur jeweiligen Plattform weitergeleitet, und es gelten die Datenschutzbestimmungen des jeweiligen Anbieters.
                 </p>
 
-                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;">10. Deine Rechte als betroffene Person</h2>
+                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;">13. Deine Rechte als betroffene Person</h2>
                 <p style="margin-bottom: 16px;">
                     Du hast jederzeit das Recht:
                 </p>
@@ -195,18 +238,18 @@
                     Zur Ausübung deiner Rechte genügt eine formlose Mitteilung an <a href="mailto:info@michael-geiregger.com" style="color: var(--color-primary);">info@michael-geiregger.com</a>.
                 </p>
 
-                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;">11. Beschwerderecht bei der Aufsichtsbehörde</h2>
+                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;">14. Beschwerderecht bei der Aufsichtsbehörde</h2>
                 <p style="margin-bottom: 32px;">
                     Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung deiner personenbezogenen Daten zu beschweren. In Italien ist dies der <em>Garante per la protezione dei dati personali</em> (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener" style="color: var(--color-primary);">www.garanteprivacy.it</a>).
                 </p>
 
-                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;">12. Aktualität dieser Datenschutzerklärung</h2>
+                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-night); margin-top: 32px; margin-bottom: 16px;">15. Aktualität dieser Datenschutzerklärung</h2>
                 <p style="margin-bottom: 32px;">
                     Diese Datenschutzerklärung ist aktuell gültig. Durch die Weiterentwicklung der Website oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf dieser Seite abgerufen werden.
                 </p>
 
                 <p style="font-size: 0.85rem; color: var(--color-text-light); margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--color-sand);">
-                    Stand: April 2026
+                    Stand: Oktober 2026
                 </p>
 
             </div>

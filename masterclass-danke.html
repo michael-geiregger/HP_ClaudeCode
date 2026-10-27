@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Google Analytics (lädt erst nach Einwilligung, siehe js/consent.js) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+        gtag('js', new Date());
+        gtag('config', 'G-8Q32GSGRR7');
+    </script>
+    <script src="js/consent.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Du bist dabei – Masterclass | Michael Geiregger</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .mc-open {
+            display: inline-block;
+            padding: 2px 8px;
+            background: #fff3cd;
+            border: 1px dashed #c9a227;
+            border-radius: 6px;
+            color: #7a5d00;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .conf-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 24px 72px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--color-warm-white) 0%, var(--color-cream) 100%);
+        }
+
+        .conf-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 30%, rgba(200, 150, 62, 0.08) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .conf-section > * { position: relative; z-index: 1; }
+
+        .check-circle {
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 36px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.2s;
+        }
+
+        .check-circle svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--color-primary);
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 50;
+            stroke-dashoffset: 50;
+            animation: drawCheck 0.6s ease forwards 0.8s;
+        }
+
+        .conf-tag {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.4s;
+        }
+
+        .conf-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 7vw, 4rem);
+            font-weight: 800;
+            color: var(--color-night);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.5s;
+        }
+
+        .conf-title em {
+            font-style: italic;
+            color: var(--color-primary);
+        }
+
+        .conf-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 22px;
+            background: var(--color-night);
+            color: white;
+            border-radius: 50px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 28px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.6s;
+        }
+
+        .conf-date svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--color-primary-light);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .conf-subtitle {
+            font-size: 1.08rem;
+            color: var(--color-text-light);
+            max-width: 520px;
+            line-height: 1.75;
+            margin-bottom: 44px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.7s;
+        }
+
+        .conf-steps {
+            max-width: 500px;
+            width: 100%;
+            margin-bottom: 44px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.85s;
+        }
+
+        .conf-step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 22px 24px;
+            background: white;
+            border-left: 3px solid var(--color-primary);
+            margin-bottom: 2px;
+            text-align: left;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .conf-step-number {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            opacity: 0.6;
+            font-weight: 700;
+            line-height: 1;
+            min-width: 22px;
+        }
+
+        .conf-step-title {
+            font-family: var(--font-display);
+            font-size: 0.98rem;
+            font-weight: 600;
+            color: var(--color-night);
+            margin-bottom: 4px;
+        }
+
+        .conf-step-desc {
+            font-size: 0.88rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        .conf-cal {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .conf-cal a {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-night);
+            padding: 8px 14px;
+            border: 1px solid var(--color-sand);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .conf-cal a:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .conf-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gradient-golden);
+            border-radius: 2px;
+            margin: 0 auto 40px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.95s;
+        }
+
+        .conf-closing {
+            font-family: var(--font-display);
+            font-size: clamp(1.25rem, 3.5vw, 1.7rem);
+            font-weight: 600;
+            font-style: italic;
+            color: var(--color-night);
+            max-width: 480px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 1s;
+        }
+
+        .conf-closing em {
+            color: var(--color-primary);
+            font-style: normal;
+        }
+
+        .conf-signature {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            letter-spacing: 1px;
+            margin-bottom: 56px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 1.1s;
+        }
+
+        .conf-bridge {
+            max-width: 500px;
+            width: 100%;
+            padding: 26px 24px;
+            background: white;
+            border-radius: 18px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: left;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 1.2s;
+        }
+
+        .conf-bridge-label {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .conf-bridge p {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        .conf-bridge a {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: var(--color-primary);
+        }
+
+        .conf-preview {
+            margin-bottom: 24px;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes drawCheck {
+            to { stroke-dashoffset: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-text">
+            Du bist <span class="highlight">dabei</span>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- NAVIGATION (minimal) -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                Michael Geiregger
+            </a>
+        </div>
+    </nav>
+
+    <!-- BESTÄTIGUNG -->
+    <section class="conf-section">
+
+        <div class="conf-preview" id="confPreview" style="display:none;">
+            <span class="mc-open">Vorschau – Formular noch nicht mit ActiveCampaign verbunden, keine Anmeldung gespeichert</span>
+        </div>
+
+        <div class="check-circle">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+
+        <span class="conf-tag">Kostenlose Masterclass</span>
+
+        <h1 class="conf-title"><span id="confGreeting">Du bist</span><br><em>dabei.</em></h1>
+
+        <div class="conf-date">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Dienstag, 27. Oktober, 19:00 Uhr
+        </div>
+
+        <p class="conf-subtitle">Schau in dein Postfach, da ist dein Zoom-Link. Keine Mail da? Schau im Spam-Ordner nach oder schreib mir: <a href="mailto:info@michael-geiregger.com?subject=Masterclass%2027.%20Oktober" style="color: var(--color-primary); text-decoration: underline;">info@michael-geiregger.com</a> oder per <a href="https://wa.me/393483953550?text=Hallo%20Michi%2C%20ich%20habe%20mich%20f%C3%BCr%20die%20Masterclass%20am%2027.%20Oktober%20angemeldet%2C%20aber%20keine%20Mail%20mit%20dem%20Zoom-Link%20bekommen." target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;" onclick="gtag('event', 'mc_contact_click', {channel: 'whatsapp'});">WhatsApp</a>.</p>
+
+        <div class="conf-steps">
+            <div class="conf-step">
+                <div class="conf-step-number">1</div>
+                <div>
+                    <div class="conf-step-title">Postfach checken</div>
+                    <div class="conf-step-desc">Deine Mail mit dem Zoom-Link ist schon unterwegs.</div>
+                </div>
+            </div>
+            <div class="conf-step">
+                <div class="conf-step-number">2</div>
+                <div>
+                    <div class="conf-step-title">Termin eintragen</div>
+                    <div class="conf-step-desc">Damit der Abend nicht im Alltag untergeht.</div>
+                    <div class="conf-cal">
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Kostenlose%20Masterclass%20mit%20Michael%20Geiregger&amp;dates=20261027T180000Z/20261027T191500Z&amp;details=Live%20auf%20Zoom.%20Den%20Zoom-Link%20findest%20du%20in%20deiner%20Anmelde-Mail.&amp;location=Zoom" target="_blank" rel="noopener" onclick="gtag('event', 'mc_add_to_calendar', {calendar_type: 'google'});">Google Kalender</a>
+                        <a href="#" id="icsLink" download="masterclass-27-oktober.ics" onclick="gtag('event', 'mc_add_to_calendar', {calendar_type: 'ics'});">Apple / Outlook (.ics)</a>
+                    </div>
+                </div>
+            </div>
+            <div class="conf-step">
+                <div class="conf-step-number">3</div>
+                <div>
+                    <div class="conf-step-title">Live nicht dabei? Kein Problem.</div>
+                    <div class="conf-step-desc">Du bekommst die Aufzeichnung per Mail. Sie ist bis Donnerstag, 29. Oktober verfügbar.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="conf-divider"></div>
+
+        <p class="conf-closing">Ich freue mich <em>auf dich.</em></p>
+        <p class="conf-signature">— Michi</p>
+
+        <div class="conf-bridge">
+            <div class="conf-bridge-label">Schon neugierig?</div>
+            <p>Nervensystem Reset: 4 Wochen Coaching und Breathwork in einer kleinen, persönlich begleiteten Gruppe. Start Montag, 2. November 2026.</p>
+            <a href="ns-reset.html" onclick="gtag('event', 'nsr_cta_click', {cta_label: 'masterclass_danke_bridge'});">Mehr zum Nervensystem Reset &rarr;</a>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">Michael Geiregger</div>
+                    <p class="footer-brand-tagline">
+                        Coach & Mentor für Unternehmer, die Freiheit und Klarheit suchen.
+                        Weil du mehr verdienst als nur zu funktionieren.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+                        <a href="https://www.facebook.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="https://www.linkedin.com/in/michael-geiregger/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                        <a href="https://www.youtube.com/@ZwischenAlltagundUniversum" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="4" ry="4"/><polygon points="10 8.5 16 12 10 15.5" fill="currentColor" stroke="none"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Menü</h4>
+                    <ul>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="ueber-mich.html">Über mich</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Angebote</h4>
+                    <ul>
+                        <li><a href="ns-reset.html">Nervensystem Reset</a></li>
+                        <li><a href="klarheitsgespraech.html">Klarheitsgespräch</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="atemroutinen.html">Atemroutinen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Michael Geiregger. Alle Rechte vorbehalten.</span>
+                <span>Mit Leidenschaft gebaut.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=2"></script>
+    <script>
+        (function() {
+            var store = {
+                get: function(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
+                set: function(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
+            };
+
+            // Persönliche Ansprache, falls der Vorname von der Landingpage mitkommt
+            var firstname = store.get('mcFirstname');
+            if (firstname) {
+                var safe = firstname.replace(/[<>&"']/g, '').slice(0, 40);
+                if (safe) document.getElementById('confGreeting').textContent = safe + ', du bist';
+            }
+
+            // .ics-Datei für Apple Kalender / Outlook
+            var ics = [
+                'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Michael Geiregger//Masterclass//DE',
+                'BEGIN:VEVENT',
+                'UID:masterclass-20261027@michael-geiregger.com',
+                'DTSTAMP:20261015T000000Z',
+                'DTSTART:20261027T180000Z',
+                'DTEND:20261027T191500Z',
+                'SUMMARY:Kostenlose Masterclass mit Michael Geiregger',
+                'DESCRIPTION:Live auf Zoom. Den Zoom-Link findest du in deiner Anmelde-Mail.',
+                'LOCATION:Zoom',
+                'BEGIN:VALARM', 'TRIGGER:-PT30M', 'ACTION:DISPLAY', 'DESCRIPTION:Masterclass startet in 30 Minuten', 'END:VALARM',
+                'END:VEVENT', 'END:VCALENDAR'
+            ].join('\r\n');
+            document.getElementById('icsLink').href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+
+            // GA4: Lead-Conversion (einmal pro Sitzung). Im Vorschau-Modus nicht zählen.
+            if (store.get('mcPreview') === '1') {
+                document.getElementById('confPreview').style.display = 'block';
+                return;
+            }
+            if (store.get('mcLeadTracked') === '1') return;
+            gtag('event', 'generate_lead', {
+                lead_source: 'masterclass_okt2026',
+                form_name: 'masterclass_okt2026'
+            });
+            store.set('mcLeadTracked', '1');
+        })();
+    </script>
+</body>
+</html>

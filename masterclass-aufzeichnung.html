@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Google Analytics (lädt erst nach Einwilligung, siehe js/consent.js) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+        gtag('js', new Date());
+        gtag('config', 'G-8Q32GSGRR7');
+    </script>
+    <script src="js/consent.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Aufzeichnung der Masterclass | Michael Geiregger</title>
+    <!-- Nur für Angemeldete: nicht indexieren, nirgends verlinkt (nur über Mail 5) -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .rec-nav:not(.scrolled) .nav-logo { color: white; }
+
+        .rec-hero {
+            padding: 140px 0 48px;
+            background: var(--color-night);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rec-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(200, 150, 62, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .rec-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            position: relative;
+            z-index: 1;
+        }
+
+        .rec-label {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 50px;
+            background: rgba(200, 150, 62, 0.18);
+            border: 1px solid rgba(200, 150, 62, 0.4);
+            color: var(--color-primary-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .rec-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 6vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.12;
+            color: white;
+            letter-spacing: -0.02em;
+            margin-bottom: 14px;
+        }
+
+        .rec-hero h1 em {
+            font-style: italic;
+            color: var(--color-primary-light);
+        }
+
+        .rec-sub {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.02rem;
+            line-height: 1.6;
+        }
+
+        .rec-sub strong { color: white; }
+
+        .rec-video-section {
+            padding: 0 0 64px;
+            background: linear-gradient(180deg, var(--color-night) 0%, var(--color-night) 45%, var(--color-warm-white) 45%);
+        }
+
+        .rec-video {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #1e2833;
+            box-shadow: 0 24px 64px rgba(30, 40, 52, 0.3);
+        }
+
+        .rec-video iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .rec-video-msg {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 24px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .rec-video-msg strong {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .rec-section {
+            padding: 0 0 64px;
+            background: var(--color-warm-white);
+        }
+
+        .rec-tip {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 22px 24px;
+            background: white;
+            border-radius: 18px;
+            border-left: 3px solid var(--color-primary);
+            margin-bottom: 28px;
+        }
+
+        .rec-tip-icon { font-size: 1.4rem; line-height: 1.3; }
+
+        .rec-tip p {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        .rec-tip strong { color: var(--color-night); }
+
+        .rec-cta {
+            background: var(--color-night);
+            border-radius: 24px;
+            padding: 34px 28px;
+            color: white;
+        }
+
+        .rec-cta-label {
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-primary-light);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .rec-cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+
+        .rec-cta h2 em { font-style: italic; color: var(--color-primary-light); }
+
+        .rec-cta p {
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .rec-cta-facts {
+            list-style: none;
+            margin: 0 0 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .rec-cta-facts li {
+            display: flex;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 0.95rem;
+        }
+
+        .rec-cta-facts li::before { content: '→'; color: var(--color-primary-light); }
+
+        .rec-cta .btn { width: 100%; justify-content: center; }
+
+        .rec-contact {
+            text-align: center;
+            font-size: 0.88rem;
+            color: var(--color-text-muted);
+            margin-top: 22px;
+            line-height: 1.6;
+        }
+
+        .rec-contact a { color: var(--color-primary); text-decoration: underline; }
+
+        @media (min-width: 760px) {
+            .rec-hero { padding: 170px 0 60px; }
+            .rec-cta { padding: 44px 48px; }
+            .rec-cta .btn { width: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-text">
+            Die <span class="highlight">Aufzeichnung</span>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- NAVIGATION (minimal) -->
+    <nav class="nav rec-nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                Michael Geiregger
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="rec-hero">
+        <div class="rec-wrap">
+            <div class="rec-label">Aufzeichnung der Masterclass</div>
+            <h1>Du liebst, was du tust.<br><em>Aber kommst kaum noch zur Ruhe.</em></h1>
+            <p class="rec-sub" id="recSub">Die Aufzeichnung vom 27. Oktober ist <strong>bis Freitag, 30. Oktober</strong> für dich verfügbar.</p>
+        </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="rec-video-section">
+        <div class="rec-wrap">
+            <div class="rec-video" id="recVideo">
+                <div class="rec-video-msg" id="recVideoMsg">
+                    <strong>Die Aufzeichnung wird gerade vorbereitet.</strong>
+                    <span>Sie ist in Kürze hier verfügbar. Schau einfach etwas später noch einmal vorbei.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIPP + BRÜCKE -->
+    <section class="rec-section">
+        <div class="rec-wrap">
+            <div class="rec-tip" id="recTip">
+                <div class="rec-tip-icon">🌬</div>
+                <p><strong>Mein Tipp:</strong> Mach die Übung aus der Masterclass in den nächsten Tagen noch ein- oder zweimal für dich. Nicht, weil du musst, sondern weil dein Körper sich über Wiederholung merkt, dass er runterfahren darf.</p>
+            </div>
+
+            <div class="rec-cta" id="recCta">
+                <div class="rec-cta-label">Und danach?</div>
+                <h2>Nervensystem Reset:<br><em>Vier Wochen, in denen du nicht allein dranbleibst.</em></h2>
+                <p>Eine Übung an einem Abend kann viel auslösen. Im Alltag holt einen das alte Muster aber schnell wieder ein. Genau dafür gibt es den Nervensystem Reset: Coaching und Breathwork in einer kleinen, persönlich begleiteten Gruppe.</p>
+                <ul class="rec-cta-facts">
+                    <li>Start: Montag, 2. November 2026</li>
+                    <li>Montags und donnerstags, jeweils 19:00 Uhr auf Zoom</li>
+                    <li>Anmeldeschluss: Samstag, 31. Oktober</li>
+                </ul>
+                <a href="ns-reset.html" class="btn btn-primary" id="recCtaBtn" onclick="gtag('event', 'nsr_cta_click', {cta_label: 'mc_recording'});">
+                    Mehr zum Nervensystem Reset
+                    <span class="btn-arrow">&rarr;</span>
+                </a>
+            </div>
+
+            <p class="rec-contact">Fragen? Schreib mir an <a href="mailto:info@michael-geiregger.com?subject=Masterclass%20Aufzeichnung">info@michael-geiregger.com</a> oder per <a href="https://wa.me/393483953550?text=Hallo%20Michi%2C%20ich%20habe%20die%20Aufzeichnung%20der%20Masterclass%20gesehen%20und%20h%C3%A4tte%20eine%20Frage." target="_blank" rel="noopener">WhatsApp</a>.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">Michael Geiregger</div>
+                    <p class="footer-brand-tagline">
+                        Coach & Mentor für Unternehmer, die Freiheit und Klarheit suchen.
+                        Weil du mehr verdienst als nur zu funktionieren.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+                        <a href="https://www.facebook.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="https://www.linkedin.com/in/michael-geiregger/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                        <a href="https://www.youtube.com/@ZwischenAlltagundUniversum" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="4" ry="4"/><polygon points="10 8.5 16 12 10 15.5" fill="currentColor" stroke="none"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Menü</h4>
+                    <ul>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="ueber-mich.html">Über mich</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Angebote</h4>
+                    <ul>
+                        <li><a href="ns-reset.html">Nervensystem Reset</a></li>
+                        <li><a href="klarheitsgespraech.html">Klarheitsgespräch</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="atemroutinen.html">Atemroutinen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Michael Geiregger. Alle Rechte vorbehalten.</span>
+                <span>Mit Leidenschaft gebaut.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=2"></script>
+    <script>
+        // ==============================
+        // AUFZEICHNUNG
+        // ==============================
+        (function() {
+            // Nach dem Hochladen auf YouTube ("Nicht gelistet") hier die Video-ID eintragen,
+            // z. B. für https://youtu.be/AbCdEf12345 -> 'AbCdEf12345'
+            var VIDEO_ID = '';
+
+            var AVAILABLE_UNTIL = new Date('2026-10-30T23:59:59+01:00'); // Fr, 30.10., Ende des Tages
+            var RESET_DEADLINE = new Date('2026-10-31T23:59:59+01:00');  // Anmeldeschluss NS-Reset
+            var now = new Date();
+
+            var video = document.getElementById('recVideo');
+            var msg = document.getElementById('recVideoMsg');
+            var sub = document.getElementById('recSub');
+
+            if (now > AVAILABLE_UNTIL) {
+                // Aufzeichnung abgelaufen
+                msg.innerHTML = '<strong>Die Aufzeichnung ist nicht mehr verfügbar.</strong>' +
+                    '<span>Sie war bis Freitag, 30. Oktober abrufbar. Danke, dass du dabei warst.</span>';
+                sub.textContent = 'Die Aufzeichnung vom 27. Oktober war bis Freitag, 30. Oktober verfügbar.';
+                document.getElementById('recTip').style.display = 'none';
+            } else if (/^[A-Za-z0-9_-]{11}$/.test(VIDEO_ID)) {
+                var iframe = document.createElement('iframe');
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + VIDEO_ID + '?rel=0&modestbranding=1';
+                iframe.title = 'Aufzeichnung der Masterclass mit Michael Geiregger';
+                iframe.allow = 'accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+                iframe.allowFullscreen = true;
+                iframe.loading = 'lazy';
+                video.innerHTML = '';
+                video.appendChild(iframe);
+            }
+
+            // Nach dem Anmeldeschluss: statt Reset-Anmeldung zum Klarheitsgespräch
+            if (now > RESET_DEADLINE) {
+                var cta = document.getElementById('recCta');
+                cta.querySelector('.rec-cta-label').textContent = 'Wie es weitergehen kann';
+                cta.querySelector('h2').innerHTML = 'Lass uns<br><em>persönlich sprechen.</em>';
+                cta.querySelector('p').textContent = 'Wenn du nach der Masterclass spürst, dass du tiefer gehen willst, ist ein kostenloses Klarheitsgespräch der einfachste nächste Schritt.';
+                cta.querySelector('.rec-cta-facts').style.display = 'none';
+                var btn = document.getElementById('recCtaBtn');
+                btn.href = 'klarheitsgespraech.html';
+                btn.setAttribute('onclick', "gtag('event', 'mc_cta_click', {cta_label: 'recording_klarheitsgespraech'});");
+                btn.firstChild.textContent = 'Klarheitsgespräch buchen ';
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -252,7 +252,7 @@
         <div class="rec-wrap">
             <div class="rec-label">Aufzeichnung der Masterclass</div>
             <h1>Du liebst, was du tust.<br><em>Aber kommst kaum noch zur Ruhe.</em></h1>
-            <p class="rec-sub" id="recSub">Die Aufzeichnung vom 27. Oktober ist <strong>bis Freitag, 30. Oktober</strong> für dich verfügbar.</p>
+            <p class="rec-sub" id="recSub">Die Aufzeichnung vom 27. Oktober ist <strong>bis Donnerstag, 29. Oktober</strong> für dich verfügbar.</p>
         </div>
     </section>
 
@@ -283,7 +283,7 @@
                 <ul class="rec-cta-facts">
                     <li>Start: Montag, 2. November 2026</li>
                     <li>Montags und donnerstags, jeweils 19:00 Uhr auf Zoom</li>
-                    <li>Anmeldeschluss: Samstag, 31. Oktober</li>
+                    <li>Anmeldeschluss: Sonntag, 1. November</li>
                 </ul>
                 <a href="ns-reset.html" class="btn btn-primary" id="recCtaBtn" onclick="gtag('event', 'nsr_cta_click', {cta_label: 'mc_recording'});">
                     Mehr zum Nervensystem Reset
@@ -355,8 +355,8 @@
             // z. B. für https://youtu.be/AbCdEf12345 -> 'AbCdEf12345'
             var VIDEO_ID = '';
 
-            var AVAILABLE_UNTIL = new Date('2026-10-30T23:59:59+01:00'); // Fr, 30.10., Ende des Tages
-            var RESET_DEADLINE = new Date('2026-10-31T23:59:59+01:00');  // Anmeldeschluss NS-Reset
+            var AVAILABLE_UNTIL = new Date('2026-10-29T23:59:59+01:00'); // Do, 29.10., Ende des Tages
+            var RESET_DEADLINE = new Date('2026-11-01T23:59:59+01:00');  // Anmeldeschluss NS-Reset (So, 1.11.)
             var now = new Date();
 
             var video = document.getElementById('recVideo');
@@ -366,8 +366,8 @@
             if (now > AVAILABLE_UNTIL) {
                 // Aufzeichnung abgelaufen
                 msg.innerHTML = '<strong>Die Aufzeichnung ist nicht mehr verfügbar.</strong>' +
-                    '<span>Sie war bis Freitag, 30. Oktober abrufbar. Danke, dass du dabei warst.</span>';
-                sub.textContent = 'Die Aufzeichnung vom 27. Oktober war bis Freitag, 30. Oktober verfügbar.';
+                    '<span>Sie war bis Donnerstag, 29. Oktober abrufbar. Danke, dass du dabei warst.</span>';
+                sub.textContent = 'Die Aufzeichnung vom 27. Oktober war bis Donnerstag, 29. Oktober verfügbar.';
                 document.getElementById('recTip').style.display = 'none';
             } else if (/^[A-Za-z0-9_-]{11}$/.test(VIDEO_ID)) {
                 var iframe = document.createElement('iframe');

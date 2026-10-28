@@ -86,6 +86,84 @@
         ]
     }
     </script>
+    <style>
+        /* Nervensystem Reset: einfliegende Karte (bis Anmeldeschluss So, 1.11.2026) */
+        .nsr-slide {
+            position: fixed;
+            left: 12px;
+            right: 12px;
+            bottom: 90px;
+            z-index: 9998;
+            max-width: 360px;
+            padding: 20px 20px 18px;
+            border-radius: 20px;
+            background: var(--color-night);
+            color: white;
+            box-shadow: 0 20px 50px -12px rgba(30, 40, 52, 0.55);
+            border: 1px solid rgba(200, 150, 62, 0.35);
+            transform: translateY(30px);
+            opacity: 0;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+        }
+        .nsr-slide.show { transform: none; opacity: 1; }
+        .nsr-slide-close {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            border: 0;
+            border-radius: 50%;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.3rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+        .nsr-slide-close:hover { color: white; background: rgba(255, 255, 255, 0.08); }
+        .nsr-slide-label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-primary-light);
+            margin-bottom: 8px;
+            padding-right: 28px;
+        }
+        .nsr-slide-title {
+            font-family: var(--font-display);
+            font-size: 1.12rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 6px;
+            padding-right: 16px;
+        }
+        .nsr-slide-meta {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 16px;
+        }
+        .nsr-slide-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 20px;
+            border-radius: 50px;
+            background: var(--gradient-warm);
+            color: white;
+            font-weight: 600;
+            font-size: 0.92rem;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .nsr-slide-btn:hover { transform: translateY(-2px); color: white; }
+        @media (min-width: 769px) {
+            .nsr-slide { left: 24px; right: auto; bottom: 24px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .nsr-slide { transition: none; }
+        }
+    </style>
 </head>
 <body class="has-announcement">
 
@@ -556,6 +634,65 @@
                 document.body.classList.remove('has-announcement');
                 sessionStorage.setItem('nsResetAnnouncementDismissed', '1');
             });
+        })();
+    </script>
+    <script>
+        // ==============================
+        // NS-RESET EINFLIEGENDE KARTE (bis Anmeldeschluss So, 1.11.2026, 23:59 Uhr)
+        // ==============================
+        (function() {
+            var RESET_DEADLINE = new Date('2026-11-01T23:59:59+01:00');
+            if (new Date() > RESET_DEADLINE) return;
+
+            function store(type, key, value) {
+                try {
+                    var st = window[type];
+                    if (value === undefined) return st.getItem(key);
+                    st.setItem(key, value);
+                } catch (e) { return null; }
+            }
+            if (store('localStorage', 'nsrSlideDismissed') === '1') return;
+
+            var card = document.createElement('div');
+            card.className = 'nsr-slide';
+            card.setAttribute('role', 'dialog');
+            card.setAttribute('aria-label', 'Nervensystem Reset Anmeldung');
+            card.innerHTML =
+                '<button type="button" class="nsr-slide-close" aria-label="Hinweis schließen">&times;</button>' +
+                '<div class="nsr-slide-label">Nervensystem Reset</div>' +
+                '<div class="nsr-slide-title">Start: 2. November. Dein Platz wartet.</div>' +
+                '<div class="nsr-slide-meta">Anmeldeschluss: Sonntag, 1. November</div>' +
+                '<a href="ns-reset.html" class="nsr-slide-btn">Jetzt anmelden <span>&rarr;</span></a>';
+
+            var shown = false;
+            function show() {
+                if (shown) return;
+                // erst, wenn der Cookie-Banner beantwortet ist
+                if (document.getElementById('mgCookie')) { setTimeout(show, 1500); return; }
+                shown = true;
+                document.body.appendChild(card);
+                requestAnimationFrame(function() { requestAnimationFrame(function() { card.classList.add('show'); }); });
+                gtag('event', 'nsr_slidein_view');
+            }
+            card.querySelector('.nsr-slide-close').addEventListener('click', function() {
+                card.classList.remove('show');
+                store('localStorage', 'nsrSlideDismissed', '1');
+                setTimeout(function() { if (card.parentNode) card.parentNode.removeChild(card); }, 500);
+            });
+            card.querySelector('.nsr-slide-btn').addEventListener('click', function() {
+                gtag('event', 'nsr_cta_click', { cta_label: 'home_slidein' });
+                store('localStorage', 'nsrSlideDismissed', '1');
+            });
+
+            // nach 10 Sekunden oder sobald gut ein Drittel der Seite gescrollt ist
+            setTimeout(show, 10000);
+            window.addEventListener('scroll', function onScroll() {
+                var max = document.documentElement.scrollHeight - window.innerHeight;
+                if (max > 0 && window.scrollY / max > 0.35) {
+                    window.removeEventListener('scroll', onScroll);
+                    show();
+                }
+            }, { passive: true });
         })();
     </script>
 

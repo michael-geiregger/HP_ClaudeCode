@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Google Analytics (lädt erst nach Einwilligung, siehe js/consent.js) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+        gtag('js', new Date());
+        gtag('config', 'G-8Q32GSGRR7');
+    </script>
+    <script src="js/consent.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Kostenloser Guide: Raus aus dem Dauer-Alarm | Michael Geiregger</title>
+    <meta name="description" content="Kostenloser PDF-Guide für Unternehmer und Selbständige: Warum dein Nervensystem nie richtig abschaltet – und zwei Übungen, die das sofort verändern.">
+    <meta name="author" content="Michael Geiregger">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://michael-geiregger.com/dauer-alarm.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Raus aus dem Dauer-Alarm – kostenloser Guide">
+    <meta property="og:description" content="Warum dein Nervensystem nie richtig abschaltet – und zwei Übungen, die das sofort verändern. Kostenloses PDF von Michael Geiregger.">
+    <meta property="og:url" content="https://michael-geiregger.com/dauer-alarm.html">
+    <meta property="og:image" content="https://michael-geiregger.com/images/dauer-alarm-cover.jpg">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer data-domain="michael-geiregger.com" src="https://plausible.io/js/plausible.js"></script>
+
+    <style>
+        /* ========================================
+           MASTERCLASS PAGE SPECIFIC STYLES
+           Mobile first, einspaltig, ruhig
+           ======================================== */
+
+        .mc-wrap {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        /* Sichtbare Platzhalter für offene Punkte */
+        .mc-open {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #fff3cd;
+            border: 1px dashed #c9a227;
+            border-radius: 6px;
+            color: #7a5d00;
+            font-size: 0.85rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        /* Minimal-Navigation: nur Logo + CTA */
+        .mc-nav .nav-links { display: flex; }
+        .mc-nav .nav-cta { white-space: nowrap; }
+        .mc-nav:not(.scrolled) .nav-logo { color: white; }
+        .mc-nav:not(.scrolled) .nav-cta {
+            background: var(--color-primary) !important;
+            background-image: var(--gradient-warm) !important;
+        }
+
+        /* Hero */
+        .mc-hero {
+            position: relative;
+            padding: 130px 0 72px;
+            background: var(--color-night);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .mc-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 55% at 50% 0%, rgba(200, 150, 62, 0.22) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 50% at 50% 100%, rgba(253, 251, 236, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .mc-hero .mc-wrap { position: relative; z-index: 1; }
+
+        .mc-hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: rgba(200, 150, 62, 0.18);
+            border: 1px solid rgba(200, 150, 62, 0.4);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-primary-light);
+            margin-bottom: 28px;
+        }
+
+        .mc-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.1rem, 6.5vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.12;
+            color: white;
+            letter-spacing: -0.02em;
+            margin-bottom: 22px;
+        }
+
+        .mc-hero h1 em {
+            font-style: italic;
+            color: var(--color-primary-light);
+        }
+
+        .mc-subline {
+            font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.65;
+            margin: 0 auto 16px;
+            max-width: 560px;
+        }
+
+        .mc-addline {
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            margin: 0 auto 36px;
+            max-width: 520px;
+        }
+
+        /* Eckdaten */
+        .mc-facts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            max-width: 520px;
+            margin: 0 auto 12px;
+        }
+
+        .mc-fact {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: left;
+        }
+
+        .mc-fact svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--color-primary-light);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        .mc-recording-note {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            max-width: 520px;
+            margin: 16px auto 0;
+        }
+
+        /* Formular */
+        .mc-form-section {
+            padding: 0 0 72px;
+            background: linear-gradient(180deg, var(--color-night) 0%, var(--color-night) 90px, var(--color-warm-white) 90px);
+        }
+
+        .mc-form-card {
+            background: white;
+            border-radius: 24px;
+            padding: 36px 28px 28px;
+            box-shadow: 0 24px 64px rgba(30, 40, 52, 0.18);
+            max-width: 520px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .mc-form-title {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--color-night);
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .mc-form-sub {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .mc-field { margin-bottom: 14px; }
+
+        .mc-field label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--color-night);
+            margin-bottom: 6px;
+        }
+
+        .mc-field .mc-optional {
+            font-weight: 400;
+            color: var(--color-text-muted);
+        }
+
+        .mc-input {
+            width: 100%;
+            padding: 15px 18px;
+            border: 1.5px solid var(--color-sand);
+            border-radius: 12px;
+            background: var(--color-warm-white);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--color-text);
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+
+        textarea.mc-input { min-height: 88px; resize: vertical; }
+
+        .mc-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            background: white;
+        }
+
+        .mc-consent {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin: 18px 0 20px;
+            font-size: 0.82rem;
+            color: var(--color-text-light);
+            line-height: 1.55;
+        }
+
+        .mc-consent input {
+            width: 20px;
+            height: 20px;
+            margin-top: 1px;
+            accent-color: var(--color-primary);
+            flex-shrink: 0;
+        }
+
+        .mc-submit {
+            width: 100%;
+            justify-content: center;
+            font-size: 1.05rem;
+            padding: 18px 28px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mc-submit:disabled { opacity: 0.7; cursor: wait; }
+
+        .mc-form-note {
+            font-size: 0.82rem;
+            color: var(--color-text-muted);
+            text-align: center;
+            margin-top: 14px;
+            line-height: 1.6;
+        }
+
+        .mc-form-error {
+            color: #c0392b;
+            font-size: 0.88rem;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .mc-preview-banner {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Allgemeine Sektionen */
+        .mc-section {
+            padding: clamp(64px, 10vh, 112px) 0;
+        }
+
+        .mc-section.bg-warm { background: var(--color-warm-white); }
+        .mc-section.bg-cream { background: var(--color-cream); }
+        .mc-section.bg-white { background: white; }
+        .mc-section.bg-night { background: var(--color-night); }
+
+        .mc-section .section-title { margin-bottom: 28px; }
+
+        /* Für dich, wenn ... */
+        .mc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mc-list li {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 18px 20px;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            border-radius: 16px;
+            font-size: 1rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        .mc-list li::before {
+            content: '→';
+            color: var(--color-primary);
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        /* Was du mitnimmst */
+        .mc-takeaways {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .mc-takeaway {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            padding: 22px 22px;
+            background: var(--color-warm-white);
+            border-radius: 18px;
+            border-left: 3px solid var(--color-primary);
+        }
+
+        .mc-takeaway-num {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1.2;
+            min-width: 26px;
+        }
+
+        .mc-takeaway p {
+            font-size: 1rem;
+            color: var(--color-text);
+            line-height: 1.65;
+        }
+
+        /* So läuft der Abend */
+        .mc-evening-text {
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        /* Ablauf: Timeline füllt sich beim Scrollen */
+        .mc-timeline { position: relative; }
+
+        .mc-timeline-track,
+        .mc-timeline-progress {
+            position: absolute;
+            left: 16px;
+            top: 14px;
+            width: 2px;
+            border-radius: 2px;
+        }
+
+        .mc-timeline-track {
+            bottom: 14px;
+            background: var(--color-sand);
+        }
+
+        .mc-timeline-progress {
+            height: calc((100% - 28px) * var(--p, 0));
+            background: var(--gradient-golden);
+        }
+
+        .mc-agenda {
+            list-style: none;
+            counter-reset: agenda;
+            position: relative;
+        }
+
+        .mc-agenda li {
+            counter-increment: agenda;
+            position: relative;
+            padding: 0 0 24px 52px;
+            font-size: 1rem;
+            color: var(--color-text-light);
+            line-height: 1.55;
+            min-height: 36px;
+            transition: color 0.5s ease;
+        }
+
+        .mc-agenda li::before {
+            content: counter(agenda);
+            position: absolute;
+            left: 0;
+            top: -4px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--color-cream);
+            border: 1.5px solid rgba(200, 150, 62, 0.45);
+            color: var(--color-primary);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.5s ease, color 0.5s ease, border-color 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.5s ease;
+        }
+
+        .mc-agenda li.done { color: var(--color-text); }
+
+        .mc-agenda li.done::before {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 0 0 6px rgba(200, 150, 62, 0.15);
+        }
+
+        .mc-agenda li:last-child { padding-bottom: 0; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .mc-agenda li, .mc-agenda li::before { transition: none; }
+        }
+
+        /* Über Michi */
+        .mc-about .section-label { color: var(--color-golden); }
+        .mc-about .section-title { color: white; }
+        .mc-about .section-title em { color: var(--color-golden); }
+
+        .mc-about-image {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            max-width: 360px;
+            margin: 0 auto 36px;
+        }
+
+        .mc-about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+        }
+
+        .mc-about-image .mc-open {
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+        }
+
+        .mc-about-text {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.85;
+            margin-bottom: 18px;
+        }
+
+        .mc-credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .mc-credential {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-golden);
+            padding: 7px 14px;
+            border: 1px solid rgba(200, 150, 62, 0.3);
+            border-radius: 50px;
+        }
+
+        /* FAQ */
+        .mc-faq { border-top: 1px solid var(--color-sand); }
+
+        .mc-faq details { border-bottom: 1px solid var(--color-sand); }
+
+        .mc-faq summary {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            padding: 22px 0;
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-size: 1.08rem;
+            font-weight: 600;
+            color: var(--color-night);
+        }
+
+        .mc-faq summary::-webkit-details-marker { display: none; }
+
+        .mc-faq summary::after {
+            content: '+';
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--color-light-sage);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 400;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .mc-faq details[open] summary::after {
+            transform: rotate(45deg);
+            background: rgba(200, 150, 62, 0.15);
+        }
+
+        .mc-faq details p {
+            font-size: 0.97rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+            padding-bottom: 22px;
+        }
+
+        /* Abschluss-CTA */
+        .mc-final {
+            text-align: center;
+        }
+
+        .mc-final .section-title { margin-bottom: 14px; }
+
+        .mc-final-meta {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            margin-bottom: 32px;
+        }
+
+        /* Brücke zum Reset */
+        .mc-bridge {
+            padding: 0 0 clamp(64px, 10vh, 112px);
+            background: var(--color-cream);
+        }
+
+        .mc-bridge-card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px 24px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .mc-bridge-label {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .mc-bridge-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-night);
+            margin-bottom: 10px;
+        }
+
+        .mc-bridge-card p {
+            font-size: 0.92rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .mc-bridge-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .mc-bridge-link:hover { text-decoration: underline; }
+
+        @media (min-width: 760px) {
+            .mc-hero { padding: 170px 0 96px; }
+            .mc-facts { grid-template-columns: repeat(4, auto); justify-content: center; max-width: none; }
+            .mc-form-card { padding: 44px 40px 32px; }
+            .mc-bridge-card { padding: 36px 40px; }
+        }
+
+        @media (max-width: 768px) {
+            /* Minimal-Nav auch auf Mobile sichtbar halten (kein Burger-Menü) */
+            .mc-nav .nav-links {
+                position: static;
+                right: auto;
+                flex-direction: row;
+                align-items: center;
+                background: none;
+                padding: 0;
+                height: auto;
+                width: auto;
+                max-width: none;
+                box-shadow: none;
+            }
+            .mc-nav .nav-cta { padding: 9px 16px !important; font-size: 0.78rem !important; }
+        }
+
+        @media (max-width: 380px) {
+            .mc-facts { grid-template-columns: 1fr; }
+            .mc-nav .nav-logo { font-size: 1rem; }
+        }
+
+        /* ========================================
+           FREEBIE "RAUS AUS DEM DAUER-ALARM"
+           ======================================== */
+
+        /* Cover als "Heft" im Hero */
+        .da-cover {
+            width: min(230px, 58vw);
+            margin: 8px auto 34px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow:
+                0 30px 60px rgba(0, 0, 0, 0.35),
+                0 0 0 1px rgba(255, 255, 255, 0.08);
+            transform: rotate(-2.5deg);
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+        .da-cover:hover { transform: rotate(0deg) scale(1.02); }
+        .da-cover img { display: block; width: 100%; height: auto; }
+
+        .mc-facts.da-facts { grid-template-columns: repeat(3, 1fr); }
+
+        /* Inhaltsvorschau: Text + angeschnittene Seite */
+        .da-preview {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 36px;
+            align-items: center;
+        }
+        .da-preview-page {
+            width: min(320px, 80vw);
+            margin: 0 auto;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(61, 81, 101, 0.18);
+            transform: rotate(1.5deg);
+        }
+        .da-preview-page img { display: block; width: 100%; height: auto; }
+
+        .da-quote {
+            margin: 28px 0 0;
+            padding: 22px 26px;
+            border-left: 3px solid var(--color-primary);
+            background: var(--color-cream);
+            border-radius: 0 10px 10px 0;
+            font-size: 1.02rem;
+            line-height: 1.7;
+            color: var(--color-text);
+        }
+
+        .mc-form-note.da-legal {
+            font-size: 0.78rem;
+            line-height: 1.6;
+            text-align: left;
+            margin-top: 16px;
+        }
+        .mc-form-note.da-legal a { color: var(--color-primary); text-decoration: underline; }
+
+        @media (max-width: 560px) {
+            .mc-facts.da-facts { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-text">
+            Raus aus dem <span class="highlight">Dauer-Alarm</span>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- NAVIGATION (bewusst minimal: eine Aktion pro Seite) -->
+    <nav class="nav mc-nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                Michael Geiregger
+            </a>
+            <ul class="nav-links">
+                <li><a href="#anmeldung" class="nav-cta" onclick="gtag('event', 'da_cta_click', {cta_label: 'nav'});">Guide holen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="mc-hero">
+        <div class="mc-wrap">
+            <div class="mc-hero-label reveal">Kostenloser Guide für Unternehmer &amp; Selbständige</div>
+            <h1 class="reveal">Raus aus dem Dauer&#8209;Alarm.<br><em>Endlich wieder abschalten.</em></h1>
+            <p class="mc-subline reveal">Warum dein Nervensystem nie richtig abschaltet – und zwei Übungen, die das sofort verändern.</p>
+            <div class="da-cover reveal">
+                <img src="images/dauer-alarm-cover.jpg" alt="Cover des Guides „Raus aus dem Dauer-Alarm“ von Michael Geiregger" width="910" height="1287">
+            </div>
+            <div class="mc-facts da-facts reveal">
+                <div class="mc-fact">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF, 6 Seiten
+                </div>
+                <div class="mc-fact">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    10 Minuten Lesezeit
+                </div>
+                <div class="mc-fact">
+                    <svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+                    Kostenlos
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULAR -->
+    <section class="mc-form-section" id="anmeldung">
+        <div class="mc-wrap">
+            <div class="mc-form-card reveal-scale">
+                <div class="mc-form-title">Wohin darf ich dir den Guide schicken?</div>
+                <p class="mc-form-sub">Kostenlos · sofort als PDF</p>
+
+                <!--
+                    ACTIVECAMPAIGN-FORMULAR 53 "Freebie - Raus aus dem Dauer-Alarm (Nervensystem)"
+                    In AC eingestellt: Liste "Michi Liste Hauptkontakte" + Tag Michi_Freebie_Dauer_Alarm,
+                    Double-Opt-in an; nach dem Absenden -> dauer-alarm-postfach.html,
+                    nach Klick auf den Bestätigungslink -> dauer-alarm-download.html.
+                    Felder: firstname, email.
+                -->
+
+                <form method="POST" action="https://michael-geiregger.activehosted.com/proc.php" id="_form_53_" class="_form mc-form da-form" data-placement="landingpage" novalidate>
+                    <input type="hidden" name="u" value="53">
+                    <input type="hidden" name="f" value="53">
+                    <input type="hidden" name="s">
+                    <input type="hidden" name="c" value="0">
+                    <input type="hidden" name="m" value="0">
+                    <input type="hidden" name="act" value="sub">
+                    <input type="hidden" name="v" value="2">
+
+                    <div class="_form-content">
+                        <div class="mc-field">
+                            <label for="da-firstname">Vorname</label>
+                            <input type="text" id="da-firstname" name="firstname" class="mc-input" placeholder="Dein Vorname" autocomplete="given-name" required>
+                        </div>
+                        <div class="mc-field">
+                            <label for="da-email">E-Mail</label>
+                            <input type="email" id="da-email" name="email" class="mc-input" placeholder="Deine E-Mail-Adresse" autocomplete="email" required>
+                        </div>
+
+                        <button id="_form_53_submit" class="btn btn-primary mc-submit _submit" type="submit">
+                            Guide kostenlos anfordern
+                            <span class="btn-arrow">&rarr;</span>
+                        </button>
+                        <p class="mc-form-note da-legal">Du bekommst gleich eine kurze Mail mit einem Bestätigungslink. Ein Klick, und der Guide gehört dir. Danach schicke ich dir ab und zu Impulse zu innerer Freiheit sowie Infos zu meinen Angeboten (z.&nbsp;B. zum Nervensystem Reset). Abmelden kannst du dich jederzeit mit einem Klick. Mehr dazu in der <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.</p>
+                    </div>
+                    <div class="_form-thank-you" style="display:none;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- KENNST DU DAS? -->
+    <section class="mc-section bg-warm">
+        <div class="mc-wrap">
+            <div class="section-label reveal"><span>Kennst du das?</span></div>
+            <h2 class="section-title reveal">Der Körper sitzt auf der Couch.<br><em>Der Kopf ist noch im Büro.</em></h2>
+            <ul class="mc-list">
+                <li class="reveal">Du bist körperlich im Feierabend, gedanklich aber noch im nächsten Kundengespräch.</li>
+                <li class="reveal">Einschlafen dauert, oder du wachst nachts auf und dein Kopf startet sofort durch.</li>
+                <li class="reveal">Kleine Dinge, eine Nachricht, ein Ton, eine Nachfrage, bringen dich schneller aus der Ruhe, als sie es wert sind.</li>
+                <li class="reveal">Außen läuft alles. Innen bist du „irgendwie nie richtig da“.</li>
+            </ul>
+            <p class="da-quote reveal">Das ist kein Charakterfehler. Und auch keine Frage von „mehr Disziplin“ oder „einfach mal loslassen“. Es ist dein Nervensystem, das einen Job macht, für den es nie gebaut wurde: dauerhaft auf Empfang zu stehen.</p>
+        </div>
+    </section>
+
+    <!-- WAS DRIN IST -->
+    <section class="mc-section bg-white">
+        <div class="mc-wrap">
+            <div class="section-label reveal"><span>Was dich im Guide erwartet</span></div>
+            <h2 class="section-title reveal">10 Minuten lesen.<br><em>Sofort spüren.</em></h2>
+            <div class="mc-takeaways">
+                <div class="mc-takeaway reveal">
+                    <div class="mc-takeaway-num">1</div>
+                    <p><strong>Der stille Preis des Erfolgs:</strong> warum dein Körper eine unbeantwortete E-Mail wie einen Säbelzahntiger behandelt, und warum der „Entwarnung“-Befehl nie kommt.</p>
+                </div>
+                <div class="mc-takeaway reveal">
+                    <div class="mc-takeaway-num">2</div>
+                    <p><strong>Der Selbsttest:</strong> die 3 Anzeichen, dass dein Nervensystem im Alarmmodus feststeckt. Ehrlich ankreuzen, in einer Minute erledigt.</p>
+                </div>
+                <div class="mc-takeaway reveal">
+                    <div class="mc-takeaway-num">3</div>
+                    <p><strong>Chef im Kopf, Chef im Körper:</strong> Alarm-Modus und Ruhe-Modus, ohne Biologie-Vorlesung. Und wo du vom Getriebenen zum Erschaffer wirst.</p>
+                </div>
+                <div class="mc-takeaway reveal">
+                    <div class="mc-takeaway-num">4</div>
+                    <p><strong>Zwei Übungen, die sofort wirken:</strong> die 4-6-Atmung (2 Minuten) und der 3-Punkte-Check-in (1 Minute). Für vor dem wichtigen Gespräch, im Auto vor der Haustür, zwischen Büro und Feierabend.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VORSCHAU -->
+    <section class="mc-section bg-cream">
+        <div class="mc-wrap">
+            <div class="da-preview">
+                <div>
+                    <div class="section-label reveal"><span>Ein Blick hinein</span></div>
+                    <h2 class="section-title reveal">Kein Fachchinesisch.<br><em>Kein „einfach positiv denken“.</em></h2>
+                    <p class="mc-evening-text reveal">Nur das, was in meiner Praxis mit Unternehmern und Selbständigen tatsächlich funktioniert. Dein Ausatmen ist direkt mit dem Vagusnerv verbunden, dem größten Ruhe-Schalter deines Körpers. Genau dort setzen beide Übungen an: Der Körper reagiert, bevor der Kopf überhaupt mitreden kann.</p>
+                </div>
+                <div class="da-preview-page reveal">
+                    <img src="images/dauer-alarm-uebungen.jpg" alt="Seite aus dem Guide: Zwei Übungen, die sofort wirken" width="910" height="1287" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÜBER MICHI -->
+    <section class="mc-section bg-night mc-about">
+        <div class="mc-wrap">
+            <div class="mc-about-image reveal">
+                <img src="images/DSCF0317.jpeg" alt="Michael Geiregger" loading="lazy">
+            </div>
+            <div class="section-label reveal"><span>Von wem der Guide ist</span></div>
+            <h2 class="section-title reveal">Ich bin Michael Geiregger,<br><em>Michi.</em></h2>
+            <p class="mc-about-text reveal">Ich arbeite mit Menschen, die viel tragen: Unternehmen, Mitarbeiter, Familie, Entscheidungen. Und erstaunlich oft ist nicht die Verantwortung selbst das Problem, sondern dass das eigene System irgendwann verlernt hat, wann genug ist.</p>
+            <p class="mc-about-text reveal">Ich kenne dieses Funktionieren auch aus meinem eigenen Weg. In meiner Arbeit verbinde ich mentale Arbeit, Hypnose und Atemarbeit, damit im Alltag etwas Entscheidendes entsteht: mehr innere Freiheit, Klarheit und echte Präsenz.</p>
+            <div class="mc-credentials reveal">
+                <span class="mc-credential">Mentaltrainer</span>
+                <span class="mc-credential">NLP-Coach</span>
+                <span class="mc-credential">Hypnose-Coach</span>
+                <span class="mc-credential">PSYCHEDELIC BREATH®</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mc-section bg-white">
+        <div class="mc-wrap">
+            <div class="section-label reveal"><span>Kurz gefragt</span></div>
+            <h2 class="section-title reveal">Häufige Fragen</h2>
+            <div class="mc-faq reveal">
+                <details>
+                    <summary>Kostet der Guide wirklich nichts?</summary>
+                    <p>Ja, er ist kostenlos. Du trägst dich mit Vorname und E-Mail ein und bekommst ihn sofort.</p>
+                </details>
+                <details>
+                    <summary>Warum muss ich meine E-Mail bestätigen?</summary>
+                    <p>Damit niemand fremde Adressen eintragen kann. Du bekommst eine kurze Mail, klickst auf den Link und landest direkt beim Download.</p>
+                </details>
+                <details>
+                    <summary>Bekomme ich danach Werbung?</summary>
+                    <p>Ab und zu bekommst du Impulse zu innerer Freiheit und hörst von meinen Angeboten. Wenn es nicht mehr passt, meldest du dich mit einem Klick ab.</p>
+                </details>
+                <details>
+                    <summary>Brauche ich Vorkenntnisse für die Übungen?</summary>
+                    <p>Nein. Beide Übungen dauern ein bis zwei Minuten und funktionieren am Schreibtisch, im Auto oder auf der Couch.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABSCHLUSS-CTA -->
+    <section class="mc-section bg-cream mc-final">
+        <div class="mc-wrap">
+            <h2 class="section-title reveal">Dein Nervensystem darf<br><em>Entwarnung bekommen.</em></h2>
+            <p class="mc-final-meta reveal">Kostenloser Guide · PDF · 10 Minuten Lesezeit · 2 Übungen</p>
+            <a href="#anmeldung" class="btn btn-primary reveal" onclick="gtag('event', 'da_cta_click', {cta_label: 'final'});">
+                Guide kostenlos anfordern
+                <span class="btn-arrow">&rarr;</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">Michael Geiregger</div>
+                    <p class="footer-brand-tagline">
+                        Coach & Mentor für Unternehmer, die Freiheit und Klarheit suchen.
+                        Weil du mehr verdienst als nur zu funktionieren.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+                        <a href="https://www.facebook.com/michael.geiregger" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="https://www.linkedin.com/in/michael-geiregger/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                        <a href="https://www.youtube.com/@ZwischenAlltagundUniversum" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="4" ry="4"/><polygon points="10 8.5 16 12 10 15.5" fill="currentColor" stroke="none"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Menü</h4>
+                    <ul>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="ueber-mich.html">Über mich</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Angebote</h4>
+                    <ul>
+                        <li><a href="ns-reset.html">Nervensystem Reset</a></li>
+                        <li><a href="klarheitsgespraech.html">Klarheitsgespräch</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="atemroutinen.html">Atemroutinen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Michael Geiregger. Alle Rechte vorbehalten.</span>
+                <span>Mit Leidenschaft gebaut.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=2"></script>
+    <script src="js/freebie-form.js?v=1"></script>
+</body>
+</html>

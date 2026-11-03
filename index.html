@@ -87,7 +87,7 @@
     }
     </script>
     <style>
-        /* Nervensystem Reset: einfliegende Karte (bis Anmeldeschluss So, 1.11.2026) */
+        /* Einfliegende Karte (aktuell: Freebie „Raus aus dem Dauer-Alarm“) */
         .nsr-slide {
             position: fixed;
             left: 12px;
@@ -163,6 +163,74 @@
         @media (prefers-reduced-motion: reduce) {
             .nsr-slide { transition: none; }
         }
+        /* Freebie-Bereich auf der Startseite */
+        .da-home-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: center;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        .da-home-cover {
+            width: min(260px, 62vw);
+            margin: 0 auto;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.08);
+            transform: rotate(-2.5deg);
+        }
+        .da-home-cover img { display: block; width: 100%; height: auto; }
+        .da-home-content { text-align: center; }
+        .da-home .section-text { margin: 0 auto 24px; max-width: 520px; }
+        .da-home-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto 28px;
+            display: inline-flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+        }
+        .da-home-list li { position: relative; padding-left: 26px; }
+        .da-home-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 12px;
+            height: 2px;
+            background: var(--color-golden);
+            border-radius: 2px;
+        }
+        .da-home-form ._form-content { display: flex; flex-direction: column; gap: 12px; }
+        .da-home-note a { color: rgba(255, 255, 255, 0.6); text-decoration: underline; }
+        .da-home-note { line-height: 1.6; }
+        .da-home .da-form-error {
+            padding: 10px 16px;
+            border-radius: 12px;
+            background: rgba(220, 80, 60, 0.15);
+            border: 1px solid rgba(220, 80, 60, 0.4);
+            color: #ffd9d2;
+            font-size: 0.88rem;
+        }
+        .da-sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+        }
+        @media (min-width: 860px) {
+            .da-home-grid { grid-template-columns: 300px 1fr; gap: 64px; }
+            .da-home-cover { width: 100%; }
+            .da-home-content { text-align: left; }
+            .da-home .section-text { margin-left: 0; }
+            .da-home .section-label { justify-content: flex-start; }
+        }
+        @media (max-width: 600px) {
+            .da-home .newsletter-fields { flex-direction: column; }
+        }
     </style>
 </head>
 <body class="has-announcement">
@@ -170,8 +238,8 @@
     <!-- Announcement Bar -->
     <div class="announcement-bar" id="announcementBar">
         <div class="announcement-bar-inner">
-            <a href="ns-reset.html" class="announcement-link" onclick="gtag('event', 'nsr_cta_click', {cta_label: 'home_banner'});">
-                ✨ Nervensystem Reset: Nächste Runde startet 2. November – jetzt anmelden
+            <a href="dauer-alarm.html" class="announcement-link" onclick="gtag('event', 'da_cta_click', {cta_label: 'home_banner'});">
+                🎁 Kostenloser Guide: Raus aus dem Dauer-Alarm – jetzt holen
                 <span class="btn-arrow">&rarr;</span>
             </a>
             <button class="announcement-close" id="announcementClose" aria-label="Hinweis schließen">&times;</button>
@@ -501,50 +569,43 @@
         </div>
     </section>
 
-    <!-- NEWSLETTER SECTION -->
-    <section class="newsletter-section">
+    <!-- FREEBIE: RAUS AUS DEM DAUER-ALARM (ActiveCampaign-Formular 53, Double-Opt-in) -->
+    <section class="newsletter-section da-home" id="guide">
         <div class="container">
-            <div class="newsletter-content reveal-scale">
-                <div class="section-label" style="justify-content: center; color: var(--color-golden);">Newsletter</div>
-                <h2 class="section-title" style="color: white;">Inspiration für dein Postfach</h2>
-                <p class="section-text" style="color: rgba(255,255,255,0.6); margin: 0 auto 36px;">
-                    Erhalte regelmäßig Impulse zu Bewusstsein, Business und innerer Freiheit.
-                    Kein Spam, nur echte Inhalte.
-                </p>
-                <div class="ac-form-wrapper">
-                    <form method="POST" action="https://michael-geiregger.activehosted.com/proc.php" id="_form_43_" class="_form _form_43 _inline-form _dark" novalidate data-styles-version="5">
-                        <input type="hidden" name="u" value="43">
-                        <input type="hidden" name="f" value="43">
+            <div class="da-home-grid">
+                <div class="da-home-cover reveal">
+                    <img src="images/dauer-alarm-cover.jpg" alt="Cover des Guides „Raus aus dem Dauer-Alarm“ von Michael Geiregger" width="910" height="1287" loading="lazy">
+                </div>
+                <div class="da-home-content reveal">
+                    <div class="section-label" style="color: var(--color-golden);">Kostenloser Guide</div>
+                    <h2 class="section-title">Raus aus dem Dauer&#8209;Alarm</h2>
+                    <p class="section-text">Warum dein Nervensystem nie richtig abschaltet – und zwei Übungen, die das sofort verändern. Für Unternehmer und Selbständige, die abends auf der Couch sitzen, während der Kopf noch im Büro ist.</p>
+                    <ul class="da-home-list">
+                        <li>Selbsttest: 3 Anzeichen für den Alarmmodus</li>
+                        <li>Chef im Kopf, Chef im Körper: die zwei Modi</li>
+                        <li>4-6-Atmung &amp; 3-Punkte-Check-in, in 1–2 Minuten</li>
+                    </ul>
+                    <form method="POST" action="https://michael-geiregger.activehosted.com/proc.php" id="_form_53_" class="_form da-home-form" data-placement="startseite" novalidate>
+                        <input type="hidden" name="u" value="53">
+                        <input type="hidden" name="f" value="53">
                         <input type="hidden" name="s">
                         <input type="hidden" name="c" value="0">
                         <input type="hidden" name="m" value="0">
                         <input type="hidden" name="act" value="sub">
                         <input type="hidden" name="v" value="2">
-                        <input type="hidden" name="or" value="c14272df-92fd-4f06-9acf-22eaa0c190a4">
                         <div class="_form-content">
                             <div class="newsletter-fields">
-                                <div class="_form_element _full_width">
-                                    <div class="_field-wrapper">
-                                        <input type="text" id="fullname" name="fullname" class="newsletter-input" placeholder="Dein Vorname" required>
-                                    </div>
-                                </div>
-                                <div class="_form_element _full_width">
-                                    <div class="_field-wrapper">
-                                        <input type="text" id="email" name="email" class="newsletter-input" placeholder="Deine E-Mail-Adresse" required>
-                                    </div>
-                                </div>
+                                <label class="da-sr-only" for="da-home-firstname">Vorname</label>
+                                <input type="text" id="da-home-firstname" name="firstname" class="newsletter-input" placeholder="Dein Vorname" autocomplete="given-name" required>
+                                <label class="da-sr-only" for="da-home-email">E-Mail</label>
+                                <input type="email" id="da-home-email" name="email" class="newsletter-input" placeholder="Deine E-Mail-Adresse" autocomplete="email" required>
                             </div>
-                            <div class="_form_element _full_width" style="display:flex;justify-content:center;">
-                                <div class="g-recaptcha" data-sitekey="6LcwIw8TAAAAACP1ysM08EhCgzd6q5JAOUR1a0Go" data-theme="dark"></div>
-                            </div>
-                            <div class="_button-wrapper _full_width">
-                                <button id="_form_43_submit" class="_submit newsletter-btn" type="submit">Ja, will ich haben!</button>
-                            </div>
+                            <button id="_form_53_submit" class="_submit newsletter-btn" type="submit">Guide kostenlos anfordern &rarr;</button>
                         </div>
                         <div class="_form-thank-you" style="display:none;"></div>
                     </form>
+                    <p class="newsletter-note da-home-note">Du bekommst eine Mail mit Bestätigungslink, danach den Guide und ab und zu Impulse sowie Infos zu meinen Angeboten. Abmelden jederzeit mit einem Klick. <a href="datenschutz.html">Datenschutz</a></p>
                 </div>
-                <p class="newsletter-note">Kein Spam. Jederzeit abbestellbar.</p>
             </div>
         </div>
     </section>
@@ -619,12 +680,13 @@
     </footer>
 
     <script src="js/main.js?v=2"></script>
+    <script src="js/freebie-form.js?v=1"></script>
     <script>
         (function() {
             var bar = document.getElementById('announcementBar');
             var closeBtn = document.getElementById('announcementClose');
             if (!bar || !closeBtn) return;
-            if (sessionStorage.getItem('nsResetAnnouncementDismissed') === '1') {
+            if (sessionStorage.getItem('daAnnouncementDismissed') === '1') {
                 bar.style.display = 'none';
                 document.body.classList.remove('has-announcement');
                 return;
@@ -632,18 +694,15 @@
             closeBtn.addEventListener('click', function() {
                 bar.style.display = 'none';
                 document.body.classList.remove('has-announcement');
-                sessionStorage.setItem('nsResetAnnouncementDismissed', '1');
+                sessionStorage.setItem('daAnnouncementDismissed', '1');
             });
         })();
     </script>
     <script>
         // ==============================
-        // NS-RESET EINFLIEGENDE KARTE (bis Anmeldeschluss So, 1.11.2026, 23:59 Uhr)
+        // FREEBIE EINFLIEGENDE KARTE (Guide „Raus aus dem Dauer-Alarm“)
         // ==============================
         (function() {
-            var RESET_DEADLINE = new Date('2026-11-01T23:59:59+01:00');
-            if (new Date() > RESET_DEADLINE) return;
-
             function store(type, key, value) {
                 try {
                     var st = window[type];
@@ -651,18 +710,18 @@
                     st.setItem(key, value);
                 } catch (e) { return null; }
             }
-            if (store('localStorage', 'nsrSlideDismissed') === '1') return;
+            if (store('localStorage', 'daSlideDismissed') === '1') return;
 
             var card = document.createElement('div');
             card.className = 'nsr-slide';
             card.setAttribute('role', 'dialog');
-            card.setAttribute('aria-label', 'Nervensystem Reset Anmeldung');
+            card.setAttribute('aria-label', 'Kostenloser Guide');
             card.innerHTML =
                 '<button type="button" class="nsr-slide-close" aria-label="Hinweis schließen">&times;</button>' +
-                '<div class="nsr-slide-label">Nervensystem Reset</div>' +
-                '<div class="nsr-slide-title">Start: 2. November. Dein Platz wartet.</div>' +
-                '<div class="nsr-slide-meta">Anmeldeschluss: Sonntag, 1. November</div>' +
-                '<a href="ns-reset.html" class="nsr-slide-btn">Jetzt anmelden <span>&rarr;</span></a>';
+                '<div class="nsr-slide-label">Kostenloser Guide</div>' +
+                '<div class="nsr-slide-title">Raus aus dem Dauer-Alarm</div>' +
+                '<div class="nsr-slide-meta">Warum du nicht abschalten kannst – und 2 Übungen, die sofort wirken.</div>' +
+                '<a href="#guide" class="nsr-slide-btn">Gratis holen <span>&rarr;</span></a>';
 
             var shown = false;
             function show() {
@@ -672,16 +731,17 @@
                 shown = true;
                 document.body.appendChild(card);
                 requestAnimationFrame(function() { requestAnimationFrame(function() { card.classList.add('show'); }); });
-                gtag('event', 'nsr_slidein_view');
+                gtag('event', 'da_slidein_view');
             }
             card.querySelector('.nsr-slide-close').addEventListener('click', function() {
                 card.classList.remove('show');
-                store('localStorage', 'nsrSlideDismissed', '1');
+                store('localStorage', 'daSlideDismissed', '1');
                 setTimeout(function() { if (card.parentNode) card.parentNode.removeChild(card); }, 500);
             });
             card.querySelector('.nsr-slide-btn').addEventListener('click', function() {
-                gtag('event', 'nsr_cta_click', { cta_label: 'home_slidein' });
-                store('localStorage', 'nsrSlideDismissed', '1');
+                gtag('event', 'da_cta_click', { cta_label: 'home_slidein' });
+                store('localStorage', 'daSlideDismissed', '1');
+                card.classList.remove('show');
             });
 
             // nach 10 Sekunden oder sobald gut ein Drittel der Seite gescrollt ist

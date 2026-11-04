@@ -37,7 +37,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=3">
     <script defer data-domain="michael-geiregger.com" src="https://plausible.io/js/plausible.js"></script>
 
     <!-- Structured Data -->
@@ -316,49 +316,23 @@
         </div>
     </section>
 
-    <!-- NEWSLETTER -->
-    <section class="newsletter-section">
+    <!-- GUIDE-TEASER: Raus aus dem Dauer-Alarm -->
+    <section class="da-teaser-section">
         <div class="container">
-            <div class="newsletter-content reveal-scale">
-                <div class="section-label" style="justify-content: center; color: var(--color-golden);">Newsletter</div>
-                <h2 class="section-title" style="color: white;">Inspiration für dein Postfach</h2>
-                <p class="section-text" style="color: rgba(255,255,255,0.6); margin: 0 auto 36px;">
-                    Erhalte regelmäßig Impulse zu Bewusstsein, Business und innerer Freiheit. Kein Spam, nur echte Inhalte.
-                </p>
-                <div class="ac-form-wrapper">
-                    <form method="POST" action="https://michael-geiregger.activehosted.com/proc.php" id="_form_43_" class="_form _form_43 _inline-form _dark" novalidate data-styles-version="5">
-                        <input type="hidden" name="u" value="43">
-                        <input type="hidden" name="f" value="43">
-                        <input type="hidden" name="s">
-                        <input type="hidden" name="c" value="0">
-                        <input type="hidden" name="m" value="0">
-                        <input type="hidden" name="act" value="sub">
-                        <input type="hidden" name="v" value="2">
-                        <input type="hidden" name="or" value="c14272df-92fd-4f06-9acf-22eaa0c190a4">
-                        <div class="_form-content">
-                            <div class="newsletter-fields">
-                                <div class="_form_element _full_width">
-                                    <div class="_field-wrapper">
-                                        <input type="text" id="fullname" name="fullname" class="newsletter-input" placeholder="Dein Vorname" required>
-                                    </div>
-                                </div>
-                                <div class="_form_element _full_width">
-                                    <div class="_field-wrapper">
-                                        <input type="text" id="email" name="email" class="newsletter-input" placeholder="Deine E-Mail-Adresse" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="_form_element _full_width" style="display:flex;justify-content:center;">
-                                <div class="g-recaptcha" data-sitekey="6LcwIw8TAAAAACP1ysM08EhCgzd6q5JAOUR1a0Go" data-theme="dark"></div>
-                            </div>
-                            <div class="_button-wrapper _full_width">
-                                <button id="_form_43_submit" class="_submit newsletter-btn" type="submit">Ja, will ich haben!</button>
-                            </div>
-                        </div>
-                        <div class="_form-thank-you" style="display:none;"></div>
-                    </form>
+            <div class="da-teaser reveal-scale">
+                <a href="dauer-alarm.html" class="da-teaser-cover" onclick="gtag('event', 'da_cta_click', {cta_label: 'podcast'});">
+                    <img src="images/dauer-alarm-cover.jpg" alt="Cover des Guides „Raus aus dem Dauer-Alarm“" width="910" height="1287" loading="lazy">
+                </a>
+                <div>
+                    <div class="da-teaser-label">Kostenloser Guide zum Podcast</div>
+                    <h2>Raus aus dem Dauer&#8209;Alarm</h2>
+                    <p>Du hörst mir gern zu? Dann hol dir meinen Guide dazu: warum dein Nervensystem nie richtig abschaltet – und zwei Übungen, die das sofort verändern.</p>
+                    <a href="dauer-alarm.html" class="btn btn-primary" onclick="gtag('event', 'da_cta_click', {cta_label: 'podcast'});">
+                        Guide kostenlos holen
+                        <span class="btn-arrow">&rarr;</span>
+                    </a>
+                    <span class="da-teaser-note">PDF · 6 Seiten · 10 Minuten Lesezeit</span>
                 </div>
-                <p class="newsletter-note">Kein Spam. Jederzeit abbestellbar.</p>
             </div>
         </div>
     </section>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Links | Michael Geiregger</title>
+    <meta name="description" content="Alle wichtigen Links von Michael Geiregger – kostenloser Guide, Klarheitsgespräch, Programme und Podcast. Für mehr innere Freiheit und Klarheit.">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#f5f0e0">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="canonical" href="https://michael-geiregger.com/links/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Michael Geiregger – Alle Links">
+    <meta property="og:description" content="Kostenloser Guide, Klarheitsgespräch, Programme und Podcast.">
+    <meta property="og:url" content="https://michael-geiregger.com/links/">
+    <meta property="og:image" content="https://michael-geiregger.com/images/links/avatar.jpg">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Plausible (cookiefrei, kein Banner nötig). Klicks werden als Ereignisse gemessen, siehe Skript unten. -->
+    <script defer data-domain="michael-geiregger.com" src="https://plausible.io/js/plausible.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
+    <style>
+        :root {
+            --gold: #C8963E;
+            --gold-light: #D4A853;
+            --gold-dark: #A67B2E;
+            --gold-text: #8a6420;
+            --night: #3d5165;
+            --night-deep: #2c3d4f;
+            --cream: #f5f0e0;
+            --warm-white: #fdfbec;
+            --sand: #e8e0d0;
+            --text: #2A2A2A;
+            --text-light: #5A5A5A;
+            --card: rgba(255, 255, 255, 0.72);
+            --card-border: rgba(200, 150, 62, 0.18);
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+            --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { -webkit-text-size-adjust: 100%; }
+
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            background-image:
+                radial-gradient(circle at 15% 0%, rgba(212, 168, 83, 0.28), transparent 45%),
+                radial-gradient(circle at 100% 35%, rgba(61, 81, 101, 0.14), transparent 45%),
+                radial-gradient(circle at 0% 100%, rgba(200, 150, 62, 0.16), transparent 50%),
+                linear-gradient(180deg, var(--warm-white) 0%, var(--cream) 100%);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Sanft "atmende" Lichtkugel im Hintergrund */
+        .glow {
+            position: fixed;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 168, 83, 0.35) 0%, rgba(212, 168, 83, 0) 70%);
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: 0;
+            animation: breathe 9s ease-in-out infinite;
+        }
+        @keyframes breathe {
+            0%, 100% { transform: translateX(-50%) scale(0.85); opacity: 0.55; }
+            50% { transform: translateX(-50%) scale(1.15); opacity: 1; }
+        }
+
+        .wrap {
+            position: relative;
+            z-index: 1;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 48px 16px calc(32px + env(safe-area-inset-bottom));
+        }
+
+        /* ---------- Profil ---------- */
+        .profile { text-align: center; margin-bottom: 32px; }
+
+        .avatar {
+            position: relative;
+            width: 112px;
+            height: 112px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            padding: 3px;
+            background: conic-gradient(from 180deg, var(--gold-dark), var(--gold-light), #f3dca8, var(--gold), var(--gold-dark));
+            box-shadow: 0 14px 40px -12px rgba(166, 123, 46, 0.55);
+        }
+        .avatar img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--warm-white);
+        }
+
+        .name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--night-deep);
+        }
+        .role {
+            margin-top: 4px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gold-text);
+        }
+        .tagline {
+            margin: 14px auto 0;
+            max-width: 340px;
+            font-size: 0.98rem;
+            line-height: 1.55;
+            color: var(--text-light);
+        }
+        .tagline strong { color: var(--night-deep); font-weight: 600; }
+
+        /* ---------- Links ---------- */
+        .links { display: flex; flex-direction: column; gap: 14px; }
+
+        .card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 16px 12px 12px;
+            border-radius: 22px;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(14px);
+            box-shadow: 0 8px 28px -14px rgba(61, 81, 101, 0.35);
+            color: inherit;
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+            transition: transform 0.35s var(--spring), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 38px -16px rgba(61, 81, 101, 0.45);
+            border-color: rgba(200, 150, 62, 0.45);
+        }
+        .card:active { transform: scale(0.97); }
+        .card:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+        .thumb {
+            flex: 0 0 64px;
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            object-fit: cover;
+            background: var(--sand);
+        }
+        .card-body { flex: 1; min-width: 0; }
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.06rem;
+            font-weight: 600;
+            line-height: 1.25;
+            color: var(--night-deep);
+        }
+        .card-text {
+            margin-top: 3px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: var(--text-light);
+        }
+        .chip {
+            display: inline-block;
+            margin-bottom: 5px;
+            padding: 2px 9px;
+            border-radius: 999px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--gold-text);
+            background: rgba(200, 150, 62, 0.13);
+        }
+        .arrow {
+            flex: 0 0 auto;
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(61, 81, 101, 0.07);
+            color: var(--night);
+            transition: transform 0.35s var(--spring), background 0.3s ease;
+        }
+        .arrow svg { width: 16px; height: 16px; }
+        .card:hover .arrow { transform: translateX(3px); background: rgba(200, 150, 62, 0.18); }
+
+        /* ---------- Hervorgehobene Karte (Freebie) ---------- */
+        .card.featured {
+            position: relative;
+            overflow: hidden;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+            padding: 0;
+            border: 0;
+            color: #fff;
+            background: linear-gradient(150deg, #4a627a 0%, var(--night) 45%, var(--night-deep) 100%);
+            box-shadow: 0 22px 50px -18px rgba(44, 61, 79, 0.75);
+        }
+        .card.featured::before {
+            /* goldener Lichtschimmer */
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(115deg, transparent 30%, rgba(255, 225, 160, 0.22) 48%, transparent 66%);
+            transform: translateX(-100%);
+            animation: shimmer 5.5s var(--ease) 1.2s infinite;
+            pointer-events: none;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            40%, 100% { transform: translateX(100%); }
+        }
+        .featured-top {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            padding: 20px 20px 16px;
+        }
+        .cover {
+            flex: 0 0 86px;
+            width: 86px;
+            height: 122px;
+            border-radius: 6px 10px 10px 6px;
+            object-fit: cover;
+            box-shadow: 0 12px 26px -8px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.12);
+            transform: rotate(-3deg);
+        }
+        .featured .chip { color: #f3d79a; background: rgba(232, 184, 96, 0.18); }
+        .featured .card-title { color: #fff; font-size: 1.32rem; letter-spacing: -0.01em; }
+        .featured .card-text { color: rgba(255, 255, 255, 0.78); margin-top: 6px; }
+        .cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 0 20px 20px;
+            padding: 14px 18px;
+            border-radius: 999px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.02rem;
+            font-weight: 600;
+            color: #2a1f0c;
+            background: linear-gradient(135deg, #e8bf6e 0%, var(--gold-light) 45%, var(--gold) 100%);
+            box-shadow: 0 10px 24px -10px rgba(232, 184, 96, 0.8);
+            transition: transform 0.35s var(--spring);
+        }
+        .cta svg { width: 18px; height: 18px; }
+        .card.featured:hover { transform: translateY(-3px); }
+        .card.featured:hover .cta { transform: scale(1.02); }
+
+        /* ---------- Social & Footer ---------- */
+        .social {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 34px;
+        }
+        .social a {
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            color: var(--night);
+            background: rgba(255, 255, 255, 0.65);
+            border: 1px solid var(--card-border);
+            transition: transform 0.35s var(--spring), color 0.25s ease, background 0.25s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .social a:hover { transform: translateY(-3px); color: var(--gold-dark); background: #fff; }
+        .social a:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+        .social svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+        .footer {
+            margin-top: 28px;
+            text-align: center;
+            font-size: 0.78rem;
+            color: #8A8A8A;
+        }
+        .footer a { color: inherit; text-decoration: none; }
+        .footer a:hover { color: var(--gold-dark); text-decoration: underline; }
+        .footer span { margin: 0 8px; }
+
+        /* ---------- Einblend-Animation ---------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(16px);
+            animation: rise 0.8s var(--ease) forwards;
+            animation-delay: calc(var(--i, 0) * 80ms + 100ms);
+        }
+        @keyframes rise { to { opacity: 1; transform: none; } }
+
+        @media (min-width: 520px) {
+            .wrap { padding-top: 72px; }
+            .avatar { width: 124px; height: 124px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .glow, .card.featured::before { animation: none; }
+            .card.featured::before { display: none; }
+            .reveal { animation: none; opacity: 1; transform: none; }
+            .card, .arrow, .cta, .social a { transition: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="glow" aria-hidden="true"></div>
+
+    <main class="wrap">
+        <header class="profile">
+            <div class="avatar reveal" style="--i:0">
+                <img src="../images/links/avatar.jpg" alt="Michael Geiregger" width="240" height="240">
+            </div>
+            <h1 class="name reveal" style="--i:1">Michael Geiregger</h1>
+            <p class="role reveal" style="--i:1">Coach &amp; Mentor für emotionale Freiheit</p>
+            <p class="tagline reveal" style="--i:2">
+                Für Unternehmer &amp; Selbständige, die mehr wollen als nur zu funktionieren.
+                <strong>Vom Opfer zum Erschaffer.</strong>
+            </p>
+        </header>
+
+        <nav class="links" aria-label="Angebote">
+            <!-- 1 · Freebie (hervorgehoben) -->
+            <a class="card featured reveal" style="--i:3" href="../dauer-alarm.html" data-track="Guide Dauer-Alarm">
+                <div class="featured-top">
+                    <img class="cover" src="../images/links/guide.jpg" alt="Cover des Guides „Raus aus dem Dauer-Alarm“" width="300" height="425">
+                    <div class="card-body">
+                        <span class="chip">Kostenloser PDF-Guide</span>
+                        <div class="card-title">Raus aus dem Dauer&#8209;Alarm</div>
+                        <p class="card-text">Warum du selbst im Feierabend nicht abschaltest – und zwei einfache Übungen, die deinem Körper beim Runterfahren helfen.</p>
+                    </div>
+                </div>
+                <span class="cta">
+                    Guide gratis holen
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>
+                </span>
+            </a>
+
+            <!-- 2 · Klarheitsgespräch -->
+            <a class="card reveal" style="--i:4" href="../klarheitsgespraech.html" data-track="Klarheitsgespräch">
+                <img class="thumb" src="../images/links/klarheit.jpg" alt="" width="240" height="240" loading="lazy">
+                <div class="card-body">
+                    <span class="chip">Kostenlos · 25 Min.</span>
+                    <div class="card-title">Klarheitsgespräch buchen</div>
+                    <p class="card-text">Wo stehst du gerade – und was hält dich noch fest?</p>
+                </div>
+                <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+
+            <!-- 3 · Nervensystem Reset -->
+            <a class="card reveal" style="--i:5" href="../ns-reset.html" data-track="Nervensystem Reset">
+                <img class="thumb" src="../images/links/ns-reset.jpg" alt="" width="240" height="240" loading="lazy">
+                <div class="card-body">
+                    <span class="chip">Warteliste · Feb. 2027</span>
+                    <div class="card-title">Nervensystem Reset</div>
+                    <p class="card-text">4 Wochen raus aus dem Dauerkampfmodus – Coaching, NLP &amp; Atemarbeit.</p>
+                </div>
+                <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+
+            <!-- 4 · Podcast -->
+            <a class="card reveal" style="--i:6" href="../podcast.html" data-track="Podcast">
+                <img class="thumb" src="../images/links/podcast.jpg" alt="" width="240" height="240" loading="lazy">
+                <div class="card-body">
+                    <span class="chip">Podcast</span>
+                    <div class="card-title">Zwischen Alltag und Universum</div>
+                    <p class="card-text">Gespräche über Heilung, Bewusstsein &amp; Transformation – mit Jessi &amp; Michi.</p>
+                </div>
+                <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+
+            <!-- 5 · Frei von innen -->
+            <a class="card reveal" style="--i:7" href="../frei-von-innen.html" data-track="Frei von innen">
+                <img class="thumb" src="../images/links/frei-von-innen.jpg" alt="" width="240" height="240" loading="lazy">
+                <div class="card-body">
+                    <span class="chip">Online-Videoprogramm</span>
+                    <div class="card-title">Frei von innen</div>
+                    <p class="card-text">In 6 Schritten zu mehr Leichtigkeit, Selbstvertrauen und Freude.</p>
+                </div>
+                <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+        </nav>
+
+        <div class="social reveal" style="--i:8">
+            <a href="https://wa.me/393483953550?text=Hallo%20Michael%2C%20ich%20komme%20von%20deiner%20Link-Seite%20und%20h%C3%A4tte%20eine%20kurze%20Frage." target="_blank" rel="noopener" aria-label="WhatsApp" data-track="WhatsApp">
+                <svg viewBox="0 0 24 24"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 9.2c.2 1.6 1.9 3.6 3.9 4.6.6.3 1.3-.3 1.7-.8l1.2.6c.2.1.2.4.1.7-.4.9-1.4 1.4-2.4 1.1-2.4-.7-4.6-2.9-5.3-5.3-.3-1 .2-2 1.1-2.4.3-.1.6 0 .7.1l.6 1.2c-.5.4-1.1 1-.8 1.6"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@ZwischenAlltagundUniversum" target="_blank" rel="noopener" aria-label="YouTube" data-track="YouTube">
+                <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="4"/><path d="M10 8.5l6 3.5-6 3.5z" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/michael-geiregger/" target="_blank" rel="noopener" aria-label="LinkedIn" data-track="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="../index.html" aria-label="Website" data-track="Website">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+            </a>
+        </div>
+
+        <footer class="footer reveal" style="--i:9">
+            <a href="../impressum.html">Impressum</a><span>·</span><a href="../datenschutz.html">Datenschutz</a>
+        </footer>
+    </main>
+
+    <script>
+        // ==============================
+        // TRACKING
+        // ==============================
+        // 1) Jeder Klick wird in Plausible als Ereignis "Linkbaum Klick" mit dem Ziel gemessen
+        //    (cookiefrei). Auswertung: Plausible > Ziele > "Linkbaum Klick" > Eigenschaft "ziel".
+        // 2) Die Herkunft (z. B. ?utm_source=instagram&utm_medium=bio) wird an die Zielseite
+        //    weitergereicht, damit Plausible und Google Analytics dort sehen, woher die Person kam.
+        (function() {
+            var params = new URLSearchParams(location.search);
+            var source = params.get('utm_source') || 'linkbaum';
+            var medium = params.get('utm_medium') || 'linkbaum';
+            var campaign = params.get('utm_campaign') || 'linkbaum';
+
+            document.querySelectorAll('[data-track]').forEach(function(link) {
+                var ziel = link.getAttribute('data-track');
+                var href = link.getAttribute('href');
+
+                // UTM-Parameter nur an eigene Seiten hängen
+                if (href && href.indexOf('http') !== 0) {
+                    var url = new URL(href, location.href);
+                    url.searchParams.set('utm_source', source);
+                    url.searchParams.set('utm_medium', medium);
+                    url.searchParams.set('utm_campaign', campaign);
+                    url.searchParams.set('utm_content', ziel.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-'));
+                    link.setAttribute('href', url.pathname + url.search);
+                }
+
+                link.addEventListener('click', function(e) {
+                    var opensNewTab = link.target === '_blank' || e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0;
+                    var done = false;
+                    function go() {
+                        if (done) return;
+                        done = true;
+                        if (!opensNewTab) location.href = link.href;
+                    }
+                    // Kurz warten, bis das Ereignis gesendet ist – höchstens 400 ms, dann geht's sowieso weiter.
+                    if (!opensNewTab) {
+                        e.preventDefault();
+                        setTimeout(go, 400);
+                    }
+                    try {
+                        window.plausible('Linkbaum Klick', { props: { ziel: ziel, quelle: source }, callback: go });
+                    } catch (err) { go(); }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

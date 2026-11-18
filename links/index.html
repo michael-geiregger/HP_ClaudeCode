@@ -234,6 +234,50 @@
         .arrow svg { width: 16px; height: 16px; }
         .card:hover .arrow { transform: translateX(3px); background: rgba(200, 150, 62, 0.18); }
 
+        /* ---------- Event-Kachel (zeitlich begrenzt, siehe data-until) ---------- */
+        .event-slot { margin-bottom: 14px; }
+        .card.event {
+            position: relative;
+            gap: 14px;
+            padding: 12px 16px 12px 12px;
+            color: #f5efe0;
+            background: radial-gradient(circle at 100% 0%, rgba(200, 150, 62, 0.22), transparent 55%), #0e1420;
+            border: 1px solid rgba(212, 168, 83, 0.55);
+            box-shadow: 0 16px 36px -18px rgba(14, 20, 32, 0.8);
+        }
+        .card.event:hover { border-color: var(--gold-light); }
+        .card.event .chip { color: #f3d79a; background: rgba(232, 184, 96, 0.16); }
+        .live-dot {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            margin-right: 6px;
+            border-radius: 50%;
+            background: #e8bf6e;
+            vertical-align: 1px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(232, 191, 110, 0.6); }
+            50% { box-shadow: 0 0 0 5px rgba(232, 191, 110, 0); }
+        }
+        .card.event .card-title { color: #fff; }
+        .event-hook {
+            margin-top: 2px;
+            font-family: 'Outfit', sans-serif;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--gold-light);
+        }
+        .event-meta {
+            margin-top: 4px;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            color: rgba(245, 239, 224, 0.75);
+        }
+        .event-meta strong { color: #fff; font-weight: 600; }
+
         /* ---------- Hervorgehobene Karte (Freebie) ---------- */
         .card.featured {
             position: relative;
@@ -347,7 +391,7 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .glow, .card.featured::before { animation: none; }
+            .glow, .card.featured::before, .live-dot { animation: none; }
             .card.featured::before { display: none; }
             .reveal { animation: none; opacity: 1; transform: none; }
             .card, .arrow, .cta, .social a { transition: none; }
@@ -365,6 +409,28 @@
             <h1 class="name reveal" style="--i:1">Michael Geiregger</h1>
             <p class="role reveal" style="--i:1">Coach &amp; Mentor für Unternehmer</p>
         </header>
+
+        <!--
+            EVENT-KACHEL – erscheint ganz oben und verschwindet automatisch ab dem Datum in data-until.
+            Für das nächste Event: Link, Bild, Texte und data-until anpassen (data-until = Tag NACH dem Event).
+        -->
+        <div class="event-slot" data-until="2026-11-28T00:00:00+01:00">
+            <a class="card event reveal" style="--i:3" href="https://atem27nov.eventbrite.de" data-track="Event Atem 27.11.">
+                <img class="thumb" src="../images/links/event-atem.jpg" alt="" width="240" height="240">
+                <div class="card-body">
+                    <span class="chip"><span class="live-dot" aria-hidden="true"></span>Event · Bruneck</span>
+                    <div class="card-title">Psychedelic Breath®</div>
+                    <p class="event-hook">Was, wenn du nichts mehr musst?</p>
+                    <p class="event-meta"><strong>Fr 27.11. · 19:30 Uhr</strong> · Praxis Marama</p>
+                </div>
+            </a>
+        </div>
+        <script>
+            // Abgelaufene Events sofort entfernen (vor dem ersten Anzeigen)
+            document.querySelectorAll('[data-until]').forEach(function(el) {
+                if (Date.now() >= Date.parse(el.getAttribute('data-until'))) el.remove();
+            });
+        </script>
 
         <nav class="links" aria-label="Angebote">
             <!-- 1 · Freebie (hervorgehoben) -->
